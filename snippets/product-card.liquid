@@ -1,0 +1,29 @@
+{%- assign card_class = 'product-card' -%}
+{%- if light %}{% assign card_class = 'product-card product-card--light' %}{%- endif %}
+
+<a href="{{ product.url }}" class="{{ card_class }}">
+  <div class="product-card__image-wrap">
+    {%- if product.featured_image %}
+      {{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: product.title }}
+    {%- else %}
+      {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif %}
+
+    {%- if product.compare_at_price > product.price %}
+      {%- assign savings = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price -%}
+      <span class="product-card__badge">Save {{ savings }}%</span>
+    {%- endif %}
+  </div>
+
+  <div class="product-card__body">
+    <h3 class="product-card__title{% if light %} product-card__title--dark{% endif %}">
+      {{ product.title }}
+    </h3>
+    <div class="product-card__price">
+      <span class="product-card__price-sale">{{ product.price | money }}</span>
+      {%- if product.compare_at_price > product.price %}
+        <span class="product-card__price-compare">{{ product.compare_at_price | money }}</span>
+      {%- endif %}
+    </div>
+  </div>
+</a>

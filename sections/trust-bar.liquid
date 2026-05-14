@@ -1,0 +1,78 @@
+<section class="trust-bar">
+  <div class="trust-bar__grid">
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div class="trust-bar__text">
+        <strong>{{ section.settings.item_1_title | default: 'Free Shipping' }}</strong>
+        <span>{{ section.settings.item_1_sub | default: 'On orders over €50' }}</span>
+      </div>
+    </div>
+
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div class="trust-bar__text">
+        <strong>{{ section.settings.item_2_title | default: '30-Day Money Back' }}</strong>
+        <span>{{ section.settings.item_2_sub | default: 'No questions asked' }}</span>
+      </div>
+    </div>
+
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <div class="trust-bar__text">
+        <strong>{{ section.settings.item_3_title | default: 'Secure Payment' }}</strong>
+        <span>{{ section.settings.item_3_sub | default: 'SSL encrypted checkout' }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trust Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "item_1_title",
+      "label": "Item 1 Title",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "text",
+      "id": "item_1_sub",
+      "label": "Item 1 Subtitle",
+      "default": "On orders over €50"
+    },
+    {
+      "type": "text",
+      "id": "item_2_title",
+      "label": "Item 2 Title",
+      "default": "30-Day Money Back"
+    },
+    {
+      "type": "text",
+      "id": "item_2_sub",
+      "label": "Item 2 Subtitle",
+      "default": "No questions asked"
+    },
+    {
+      "type": "text",
+      "id": "item_3_title",
+      "label": "Item 3 Title",
+      "default": "Secure Payment"
+    },
+    {
+      "type": "text",
+      "id": "item_3_sub",
+      "label": "Item 3 Subtitle",
+      "default": "SSL encrypted checkout"
+    }
+  ],
+  "presets": [{ "name": "Trust Bar" }]
+}
+{% endschema %}

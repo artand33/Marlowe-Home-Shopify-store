@@ -1,0 +1,35 @@
+<section class="product-secondary-image">
+  {%- if section.settings.image %}
+    {{ section.settings.image | image_url: width: 1800 | image_tag: loading: 'lazy', alt: section.settings.quote }}
+  {%- elsif product.images[1] %}
+    {{ product.images[1] | image_url: width: 1800 | image_tag: loading: 'lazy', alt: product.title }}
+  {%- else %}
+    <div style="width:100%;height:100%;background:var(--color-bg-dark);"></div>
+  {%- endif %}
+  <div class="product-secondary-image__overlay">
+    <p class="product-secondary-image__quote">
+      "{{ section.settings.quote | default: 'Warmth you can feel. Atmosphere you can see.' }}"
+    </p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Secondary Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Override product image. Optional."
+    },
+    {
+      "type": "text",
+      "id": "quote",
+      "label": "Pull Quote",
+      "default": "Warmth you can feel. Atmosphere you can see."
+    }
+  ],
+  "presets": [{ "name": "Product Secondary Image" }]
+}
+{% endschema %}

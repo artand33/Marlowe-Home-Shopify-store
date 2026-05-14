@@ -1,0 +1,48 @@
+<section class="mood-banner">
+  {%- if section.settings.image %}
+    {{ section.settings.image | image_url: width: 1800 | image_tag: class: 'mood-banner__bg', loading: 'lazy', alt: section.settings.heading }}
+  {%- else %}
+    <div class="mood-banner__bg" style="background: linear-gradient(135deg, #1A1F2E 0%, #1C2526 100%);"></div>
+  {%- endif %}
+  <div class="mood-banner__overlay"></div>
+  <div class="mood-banner__content">
+    <h2 class="mood-banner__heading">{{ section.settings.heading | default: 'Your home. Your atmosphere.' }}</h2>
+    {%- if section.settings.button_label != blank %}
+      <a href="{{ section.settings.button_link | default: '/collections/all' }}" class="btn btn-gold">
+        {{ section.settings.button_label }}
+      </a>
+    {%- endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Mood Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image",
+      "info": "Dark atmospheric lifestyle photo. Recommended: 1800 x 900px."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your home. Your atmosphere."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Shop the Collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [{ "name": "Mood Banner" }]
+}
+{% endschema %}

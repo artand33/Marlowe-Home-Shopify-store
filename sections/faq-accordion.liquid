@@ -1,0 +1,75 @@
+<section class="faq-accordion section-pad">
+  <div class="faq-accordion__inner">
+    <div class="section-header">
+      <span class="label-tag">FAQ</span>
+      <h2 class="section-header__heading section-header__heading--dark">{{ section.settings.heading | default: 'Frequently Asked Questions' }}</h2>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger">
+        Do you offer free shipping?
+        <span class="accordion-trigger__icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <p>Yes! We offer free shipping on all orders over €50 to Belgium and the Netherlands. For orders below €50, a flat shipping rate of €4.95 applies.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger">
+        How long does delivery take to Belgium/Netherlands?
+        <span class="accordion-trigger__icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <p>Most orders are delivered within 2–5 business days. You will receive a tracking link by email as soon as your order is dispatched.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger">
+        Can I return the product if I don't love it?
+        <span class="accordion-trigger__icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <p>Absolutely. We offer a 30-day money back guarantee. Simply contact our support team within 30 days of receiving your order and we will arrange the return and a full refund. Items must be in their original condition.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger">
+        Is payment secure?
+        <span class="accordion-trigger__icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <p>Yes. Our checkout is fully SSL encrypted and we accept all major payment methods including Visa, Mastercard, Apple Pay, Shop Pay, iDEAL, and Bancontact. We never store your payment details.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger">
+        How do I contact customer support?
+        <span class="accordion-trigger__icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <p>You can reach us via our <a href="/pages/contact">contact page</a>. Our team is available Monday to Friday, 9am–6pm CET, with an average response time of 24 hours.</p>
+      </div>
+    </div>
+
+    <p class="faq-bottom">Support available Mon–Fri, 9am–6pm CET · Avg. response: 24h</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ Accordion",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    }
+  ],
+  "presets": [{ "name": "FAQ Accordion" }]
+}
+{% endschema %}

@@ -1,0 +1,110 @@
+<section class="main-cart">
+  <div class="container">
+
+    {%- if cart.item_count > 0 %}
+
+      <div class="cart-layout">
+        <!-- Cart Items -->
+        <div>
+          <h1 class="cart-heading">Your Cart</h1>
+
+          {%- for item in cart.items -%}
+            <div class="cart-item">
+              <div class="cart-item__image">
+                {%- if item.image %}
+                  {{ item.image | image_url: width: 200 | image_tag: loading: 'lazy', alt: item.title }}
+                {%- endif %}
+              </div>
+
+              <div class="cart-item__info">
+                <a href="{{ item.url }}" class="cart-item__title">{{ item.product.title }}</a>
+                {%- if item.variant.title != 'Default Title' %}
+                  <p class="cart-item__variant">{{ item.variant.title }}</p>
+                {%- endif %}
+
+                <div class="cart-item__qty">
+                  <button class="cart-item__qty-btn cart-item__qty-btn--minus" aria-label="Decrease quantity">&#8722;</button>
+                  <input
+                    type="number"
+                    name="updates[]"
+                    id="updates_{{ item.id }}"
+                    value="{{ item.quantity }}"
+                    min="1"
+                    class="cart-item__qty-val"
+                    aria-label="Quantity"
+                  >
+                  <button class="cart-item__qty-btn cart-item__qty-btn--plus" aria-label="Increase quantity">+</button>
+                </div>
+
+                <button
+                  class="cart-item__remove"
+                  onclick="window.location.href='{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0'"
+                >
+                  Remove
+                </button>
+              </div>
+
+              <div class="cart-item__price">{{ item.line_price | money }}</div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <!-- Cart Summary -->
+        <div>
+          <div class="cart-summary">
+            <h2 class="cart-summary__title">Order Summary</h2>
+
+            <div class="cart-summary__line">
+              <span>Subtotal</span>
+              <span class="cart-summary__val">{{ cart.total_price | money }}</span>
+            </div>
+
+            <div class="cart-summary__line">
+              <span>Shipping</span>
+              <span class="cart-summary__val">
+                {%- if cart.total_price >= 5000 %}
+                  Free
+                {%- else %}
+                  Calculated at checkout
+                {%- endif %}
+              </span>
+            </div>
+
+            <div class="cart-summary__line cart-summary__line--total">
+              <span>Estimated Total</span>
+              <span class="cart-summary__val">{{ cart.total_price | money }}</span>
+            </div>
+
+            <p class="cart-summary__shipping-note">Free shipping on orders over €50</p>
+
+            <a href="{{ routes.checkout }}" class="btn btn-gold btn-full cart-summary__checkout">
+              Proceed to Checkout
+            </a>
+
+            <a href="/collections/all" class="btn btn-ghost btn-full" style="margin-top: 10px;">
+              Continue Shopping
+            </a>
+          </div>
+        </div>
+      </div>
+
+    {%- else %}
+
+      <div class="cart-empty">
+        <h1 class="cart-empty__heading">Your cart is empty</h1>
+        <p class="cart-empty__sub">Looks like you haven't added anything yet.</p>
+        <a href="/collections/all" class="btn btn-gold">Start Shopping</a>
+      </div>
+
+    {%- endif %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Cart",
+  "settings": [],
+  "presets": [{ "name": "Main Cart" }]
+}
+{% endschema %}

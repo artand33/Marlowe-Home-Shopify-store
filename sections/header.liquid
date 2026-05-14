@@ -1,0 +1,108 @@
+<header class="site-header">
+  <div class="header__inner">
+
+    <a href="{{ routes.root_url }}" class="header__logo">
+      {{ section.settings.logo_text | default: shop.name }}
+    </a>
+
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="/collections/all" class="header__nav-link header__nav-link--sale">
+        {{ section.settings.nav_sale | default: 'Spring Sale' }}
+      </a>
+      <a href="/collections" class="header__nav-link">
+        {{ section.settings.nav_collections | default: 'Collections' }}
+      </a>
+      <a href="/pages/about" class="header__nav-link">
+        {{ section.settings.nav_about | default: 'About' }}
+      </a>
+      <a href="/pages/track-order" class="header__nav-link">
+        {{ section.settings.nav_track | default: 'Track Order' }}
+      </a>
+      <a href="/pages/contact" class="header__nav-link">
+        {{ section.settings.nav_contact | default: 'Contact' }}
+      </a>
+    </nav>
+
+    <div class="header__icons">
+      <a href="{{ routes.search_url }}" class="header__icon-btn header__icon-btn--search" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </a>
+
+      <a href="{{ routes.account_url }}" class="header__icon-btn header__icon-btn--account" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+
+      <a href="{{ routes.cart_url }}" class="header__icon-btn" aria-label="Cart ({{ cart.item_count }} items)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        {%- if cart.item_count > 0 %}
+          <span class="cart-count">{{ cart.item_count }}</span>
+        {%- endif %}
+      </a>
+
+      <button class="header__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<nav class="mobile-nav" aria-label="Mobile navigation">
+  <button class="mobile-nav__close" aria-label="Close menu">&#215;</button>
+  <ul class="mobile-nav__links">
+    <li><a href="/collections/all" class="mobile-nav__link" style="color: var(--color-accent-gold)">Spring Sale</a></li>
+    <li><a href="/collections" class="mobile-nav__link">Collections</a></li>
+    <li><a href="/pages/about" class="mobile-nav__link">About</a></li>
+    <li><a href="/pages/track-order" class="mobile-nav__link">Track Order</a></li>
+    <li><a href="/pages/contact" class="mobile-nav__link">Contact</a></li>
+    <li><a href="{{ routes.cart_url }}" class="mobile-nav__link">Cart ({{ cart.item_count }})</a></li>
+  </ul>
+</nav>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo Text",
+      "default": "Marlowe Home",
+      "info": "Override shop name in logo"
+    },
+    {
+      "type": "text",
+      "id": "nav_sale",
+      "label": "Nav: Sale link label",
+      "default": "Spring Sale"
+    },
+    {
+      "type": "text",
+      "id": "nav_collections",
+      "label": "Nav: Collections label",
+      "default": "Collections"
+    },
+    {
+      "type": "text",
+      "id": "nav_about",
+      "label": "Nav: About label",
+      "default": "About"
+    },
+    {
+      "type": "text",
+      "id": "nav_track",
+      "label": "Nav: Track Order label",
+      "default": "Track Order"
+    },
+    {
+      "type": "text",
+      "id": "nav_contact",
+      "label": "Nav: Contact label",
+      "default": "Contact"
+    }
+  ]
+}
+{% endschema %}

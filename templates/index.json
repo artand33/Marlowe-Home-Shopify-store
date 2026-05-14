@@ -1,0 +1,97 @@
+{
+  "sections": {
+    "hero-banner": {
+      "type": "hero-banner",
+      "settings": {
+        "heading": "Light Changes Everything",
+        "subheading": "Discover premium lighting crafted for the home you deserve.",
+        "button_label": "Shop Now",
+        "button_link": "/collections/all"
+      }
+    },
+    "trust-bar": {
+      "type": "trust-bar",
+      "settings": {}
+    },
+    "brand-story": {
+      "type": "brand-story",
+      "settings": {
+        "heading": "Welcome to Marlowe Home",
+        "body": "<p>At Marlowe Home, we believe your space should feel as good as it looks. We curate lighting and ambiance products with one thing in mind — warmth.</p><p>Designed for the modern home. Inspired by British elegance.</p>"
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Best Sellers",
+        "subheading": "Our most loved pieces this season.",
+        "collection": ""
+      }
+    },
+    "lifestyle-split": {
+      "type": "lifestyle-split",
+      "settings": {
+        "heading": "Crafted for the way you live",
+        "bullet_1": "Curated for Belgian & Dutch homes",
+        "bullet_2": "Premium materials, honest prices",
+        "bullet_3": "Designed to create atmosphere, not just light",
+        "bullet_4": "Every piece tested for warmth and quality",
+        "button_label": "Discover Our Story",
+        "button_link": "/pages/about"
+      }
+    },
+    "new-arrivals": {
+      "type": "new-arrivals-carousel",
+      "settings": {
+        "heading": "New Arrivals",
+        "subheading": "Fresh pieces for the season.",
+        "collection": ""
+      }
+    },
+    "mood-banner": {
+      "type": "mood-banner",
+      "settings": {
+        "heading": "Your home. Your atmosphere.",
+        "button_label": "Shop the Collection",
+        "button_link": "/collections/all"
+      }
+    },
+    "social-proof": {
+      "type": "social-proof-reviews",
+      "settings": {
+        "heading": "Trusted by 10,000+ Homes Across Europe",
+        "review_1_text": "Absolutely stunning. The quality is incredible and delivery was super fast to Belgium. My living room has never looked so warm and inviting.",
+        "review_1_author": "Sophie V.",
+        "review_2_text": "Finally a lighting brand that gets it. Premium quality, warm aesthetic — everything looks exactly as described. 100% recommend.",
+        "review_2_author": "Thomas K.",
+        "review_3_text": "Ordered twice now. The candle holders are a masterpiece. My guests always ask where I bought them. Love Marlowe Home!",
+        "review_3_author": "Emma D."
+      }
+    },
+    "contact-cta": {
+      "type": "contact-cta",
+      "settings": {
+        "heading": "We're here for you",
+        "body": "Our team is available Monday–Friday, 9am–6pm CET. Average response time: 24 hours.",
+        "button_label": "Contact Us",
+        "button_link": "/pages/contact"
+      }
+    },
+    "trust-bar-2": {
+      "type": "trust-bar",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero-banner",
+    "trust-bar",
+    "brand-story",
+    "featured-collection",
+    "lifestyle-split",
+    "new-arrivals",
+    "mood-banner",
+    "social-proof",
+    "contact-cta",
+    "trust-bar-2"
+  ]
+}

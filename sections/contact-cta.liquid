@@ -1,0 +1,44 @@
+<section class="contact-cta section-pad">
+  <div class="container">
+    <span class="label-tag">Support</span>
+    <h2 class="contact-cta__heading">{{ section.settings.heading | default: "We're here for you" }}</h2>
+    <p class="contact-cta__body">{{ section.settings.body | default: 'Our team is available Monday–Friday, 9am–6pm CET. Average response time: 24 hours.' }}</p>
+    {%- if section.settings.button_label != blank %}
+      <a href="{{ section.settings.button_link | default: '/pages/contact' }}" class="btn btn-gold">
+        {{ section.settings.button_label }}
+      </a>
+    {%- endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact CTA",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "We're here for you"
+    },
+    {
+      "type": "text",
+      "id": "body",
+      "label": "Body Text",
+      "default": "Our team is available Monday–Friday, 9am–6pm CET. Average response time: 24 hours."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Contact Us"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [{ "name": "Contact CTA" }]
+}
+{% endschema %}

@@ -1,0 +1,48 @@
+<div class="collection-header">
+  <span class="label-tag">{{ collection.title }}</span>
+  <h1 class="collection-header__title">{{ collection.title }}</h1>
+  {%- if collection.description != blank %}
+    <p class="collection-header__desc">{{ collection.description }}</p>
+  {%- endif %}
+</div>
+
+<section class="main-collection">
+  <div class="collection-toolbar">
+    <span class="collection-toolbar__count">
+      {{ collection.products_count }} products
+    </span>
+    <div class="collection-toolbar__sort">
+      <select onchange="window.location.href='?sort_by=' + this.value">
+        <option value="manual" {% if collection.sort_by == 'manual' %}selected{% endif %}>Featured</option>
+        <option value="price-ascending" {% if collection.sort_by == 'price-ascending' %}selected{% endif %}>Price: Low to High</option>
+        <option value="price-descending" {% if collection.sort_by == 'price-descending' %}selected{% endif %}>Price: High to Low</option>
+        <option value="created-descending" {% if collection.sort_by == 'created-descending' %}selected{% endif %}>Newest</option>
+        <option value="best-selling" {% if collection.sort_by == 'best-selling' %}selected{% endif %}>Best Selling</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="collection-grid">
+    {%- for product in collection.products -%}
+      {% render 'product-card', product: product, light: true %}
+    {%- else -%}
+      <p style="color: var(--color-text-muted); padding: 40px; grid-column: 1/-1; text-align:center;">
+        No products found in this collection.
+      </p>
+    {%- endfor -%}
+  </div>
+
+  {%- if paginate.pages > 1 %}
+    <div style="text-align:center; padding: 40px 0;">
+      {{ paginate | default_pagination }}
+    </div>
+  {%- endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Main Collection",
+  "settings": [],
+  "presets": [{ "name": "Main Collection" }]
+}
+{% endschema %}

@@ -1,0 +1,80 @@
+<section class="collapsible-info">
+  <div class="collapsible-info__inner">
+
+    <div class="accordion-item">
+      <button class="accordion-trigger">
+        {{ section.settings.block_1_title | default: 'Shipping Information' }}
+        <span class="accordion-trigger__icon">+</span>
+      </button>
+      <div class="accordion-body">
+        {{ section.settings.block_1_body | default: '<p>We ship to Belgium and the Netherlands within 2–5 business days. All orders are tracked and you will receive a tracking link via email once your order is dispatched.</p><p>Free shipping on orders over €50. Standard rate €4.95 for orders below that threshold.</p>' }}
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger">
+        {{ section.settings.block_2_title | default: 'Returns & Refund Policy' }}
+        <span class="accordion-trigger__icon">+</span>
+      </button>
+      <div class="accordion-body">
+        {{ section.settings.block_2_body | default: '<p>We offer a 30-day money back guarantee. If you are not satisfied with your purchase for any reason, contact us within 30 days of receiving your order and we will arrange a full refund.</p><p>Items must be returned in their original condition and packaging.</p>' }}
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger">
+        {{ section.settings.block_3_title | default: 'Have a Question?' }}
+        <span class="accordion-trigger__icon">+</span>
+      </button>
+      <div class="accordion-body">
+        {{ section.settings.block_3_body | default: '<p>Our customer support team is available Monday to Friday, 9am–6pm CET. Average response time is 24 hours.</p><p><a href="/pages/contact">Contact us here →</a></p>' }}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collapsible Info",
+  "settings": [
+    {
+      "type": "text",
+      "id": "block_1_title",
+      "label": "Block 1 Title",
+      "default": "Shipping Information"
+    },
+    {
+      "type": "richtext",
+      "id": "block_1_body",
+      "label": "Block 1 Body",
+      "default": "<p>We ship to Belgium and the Netherlands within 2–5 business days. All orders are tracked and you will receive a tracking link via email once your order is dispatched.</p>"
+    },
+    {
+      "type": "text",
+      "id": "block_2_title",
+      "label": "Block 2 Title",
+      "default": "Returns & Refund Policy"
+    },
+    {
+      "type": "richtext",
+      "id": "block_2_body",
+      "label": "Block 2 Body",
+      "default": "<p>We offer a 30-day money back guarantee. If you are not satisfied with your purchase, contact us within 30 days and we will arrange a full refund.</p>"
+    },
+    {
+      "type": "text",
+      "id": "block_3_title",
+      "label": "Block 3 Title",
+      "default": "Have a Question?"
+    },
+    {
+      "type": "richtext",
+      "id": "block_3_body",
+      "label": "Block 3 Body",
+      "default": "<p>Our customer support team is available Monday to Friday, 9am–6pm CET. Average response time is 24 hours.</p>"
+    }
+  ],
+  "presets": [{ "name": "Collapsible Info" }]
+}
+{% endschema %}

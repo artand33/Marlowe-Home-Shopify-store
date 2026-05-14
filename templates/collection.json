@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main-collection": {
+      "type": "main-collection",
+      "settings": {}
+    },
+    "trust-bar-collection": {
+      "type": "trust-bar",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main-collection",
+    "trust-bar-collection"
+  ]
+}

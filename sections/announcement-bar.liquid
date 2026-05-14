@@ -1,0 +1,37 @@
+<div class="announcement-bar">
+  <div class="announcement-bar__inner">
+    <button class="announcement-bar__arrow announcement-bar__arrow--prev" aria-label="Previous">&#8592;</button>
+    <div class="announcement-bar__messages">
+      <span class="announcement-bar__message">{{ section.settings.message_1 }}</span>
+      <span class="announcement-bar__message">{{ section.settings.message_2 }}</span>
+      <span class="announcement-bar__message">{{ section.settings.message_3 }}</span>
+    </div>
+    <button class="announcement-bar__arrow announcement-bar__arrow--next" aria-label="Next">&#8594;</button>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "message_1",
+      "label": "Message 1",
+      "default": "Free shipping on orders over €50"
+    },
+    {
+      "type": "text",
+      "id": "message_2",
+      "label": "Message 2",
+      "default": "30-day money back guarantee"
+    },
+    {
+      "type": "text",
+      "id": "message_3",
+      "label": "Message 3",
+      "default": "Spring Sale — 50% off selected items"
+    }
+  ]
+}
+{% endschema %}

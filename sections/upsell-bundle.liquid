@@ -1,0 +1,61 @@
+{%- assign related = collections[section.settings.collection] -%}
+{%- assign related_products = related.products | default: recommendations.products -%}
+
+<section class="upsell-bundle section-pad">
+  <div class="container">
+    <div class="section-header">
+      <span class="label-tag">Bundle & Save</span>
+      <h2 class="section-header__heading section-header__heading--dark">{{ section.settings.heading | default: 'Complete the Atmosphere — Save 15%' }}</h2>
+      <p class="section-header__sub">{{ section.settings.subheading | default: 'Customers who bought this also loved:' }}</p>
+    </div>
+
+    <div class="product-grid">
+      {%- for rp in related_products limit: 4 -%}
+        {%- unless rp.id == product.id -%}
+          {% render 'product-card', product: rp, light: true %}
+        {%- endunless -%}
+      {%- else -%}
+        {%- for i in (1..4) -%}
+          <div class="product-card product-card--light">
+            <div class="product-card__image-wrap">
+              {{ 'product-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title product-card__title--dark">Related Product {{ i }}</h3>
+              <div class="product-card__price">
+                <span class="product-card__price-sale">€44.99</span>
+                <span class="product-card__price-compare">€79.99</span>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Upsell Bundle",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Complete the Atmosphere — Save 15%"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Customers who bought this also loved:"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Related Collection"
+    }
+  ],
+  "presets": [{ "name": "Upsell Bundle" }]
+}
+{% endschema %}

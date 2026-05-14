@@ -1,0 +1,85 @@
+{
+  "sections": {
+    "main-product": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "product-description": {
+      "type": "product-description",
+      "settings": {}
+    },
+    "product-secondary-image": {
+      "type": "product-secondary-image",
+      "settings": {
+        "quote": "Warmth you can feel. Atmosphere you can see."
+      }
+    },
+    "product-specs": {
+      "type": "product-details-specs",
+      "settings": {
+        "heading": "Product Details"
+      }
+    },
+    "collapsible-info": {
+      "type": "collapsible-info",
+      "settings": {}
+    },
+    "social-proof-line": {
+      "type": "social-proof-line",
+      "settings": {}
+    },
+    "guarantee-block": {
+      "type": "guarantee-block",
+      "settings": {
+        "heading": "30-Day Money Back Guarantee",
+        "body": "We stand behind every product we sell. If you're not completely satisfied within 30 days of receiving your order, we'll arrange a full refund — no questions asked.",
+        "button_label": "Learn More",
+        "button_link": "/pages/returns"
+      }
+    },
+    "upsell-bundle": {
+      "type": "upsell-bundle",
+      "settings": {
+        "heading": "Complete the Atmosphere — Save 15%",
+        "subheading": "Customers who bought this also loved:"
+      }
+    },
+    "community-trust": {
+      "type": "community-trust",
+      "settings": {
+        "heading": "The Marlowe Home Community",
+        "subheading": "Join over 10,000 European homes that chose warmth."
+      }
+    },
+    "reviews-grid": {
+      "type": "reviews-grid",
+      "settings": {
+        "heading": "What Our Customers Say"
+      }
+    },
+    "faq-accordion": {
+      "type": "faq-accordion",
+      "settings": {
+        "heading": "Frequently Asked Questions"
+      }
+    },
+    "trust-bar-product": {
+      "type": "trust-bar",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main-product",
+    "product-description",
+    "product-secondary-image",
+    "product-specs",
+    "collapsible-info",
+    "social-proof-line",
+    "guarantee-block",
+    "upsell-bundle",
+    "community-trust",
+    "reviews-grid",
+    "faq-accordion",
+    "trust-bar-product"
+  ]
+}

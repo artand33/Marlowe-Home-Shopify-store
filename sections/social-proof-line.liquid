@@ -1,0 +1,23 @@
+<div class="social-proof-line">
+  <div class="container">
+    <p class="social-proof-line__text">
+      <span class="social-proof-line__check">&#10003;</span>
+      {{ section.settings.text | default: 'Margaret V. and 8,000+ others are lighting their home with Marlowe.' }}
+    </p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Social Proof Line",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Margaret V. and 8,000+ others are lighting their home with Marlowe."
+    }
+  ],
+  "presets": [{ "name": "Social Proof Line" }]
+}
+{% endschema %}

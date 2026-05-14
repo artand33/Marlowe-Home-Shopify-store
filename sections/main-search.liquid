@@ -1,0 +1,51 @@
+<section class="main-search section-pad">
+  <div class="container text-center">
+    <span class="label-tag">Search</span>
+    <h1 style="color: var(--color-text-dark); margin-bottom: 40px;">
+      {%- if search.performed %}
+        Results for "{{ search.terms }}"
+      {%- else %}
+        Search Our Store
+      {%- endif %}
+    </h1>
+
+    <div class="search-form-wrap">
+      <form action="{{ routes.search_url }}" method="get" class="search-form">
+        <input
+          type="text"
+          name="q"
+          class="search-form__input"
+          value="{{ search.terms | escape }}"
+          placeholder="Search our store..."
+          autocomplete="off"
+        >
+        <button type="submit" class="search-form__btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      </form>
+    </div>
+
+    {%- if search.performed %}
+      {%- if search.results_count > 0 %}
+        <p style="color: var(--color-text-muted); margin-bottom: 40px;">{{ search.results_count }} results for "{{ search.terms }}"</p>
+        <div class="collection-grid" style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+          {%- for result in search.results -%}
+            {%- if result.object_type == 'product' -%}
+              {% render 'product-card', product: result, light: true %}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- else %}
+        <p style="color: var(--color-text-muted);">No results for "{{ search.terms }}". Try a different search term.</p>
+      {%- endif %}
+    {%- endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Search",
+  "settings": [],
+  "presets": [{ "name": "Search" }]
+}
+{% endschema %}

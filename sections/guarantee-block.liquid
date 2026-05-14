@@ -1,9 +1,12 @@
 <section class="guarantee-block">
   <div class="guarantee-block__inner">
+
     <div class="guarantee-block__content">
-      <span class="label-tag">Our Promise</span>
+      <span class="guarantee-block__label">{{ section.settings.label | default: 'Our Promise' }}</span>
       <h2 class="guarantee-block__heading">{{ section.settings.heading | default: '30-Day Money Back Guarantee' }}</h2>
-      <p class="guarantee-block__body">{{ section.settings.body | default: 'We stand behind every product we sell. If you\'re not completely satisfied within 30 days of receiving your order, we\'ll arrange a full refund — no questions asked.' }}</p>
+      <div class="guarantee-block__body">
+        {{ section.settings.body | default: 'Your happiness means everything to us. Every Marlowe Home product comes with a full 30-day money-back guarantee. If it doesn\'t feel right in your home, simply return it — no questions asked, no hassle.' }}
+      </div>
       {%- if section.settings.button_label != blank %}
         <a href="{{ section.settings.button_link | default: '/pages/returns' }}" class="btn btn-ghost">
           {{ section.settings.button_label }}
@@ -13,11 +16,14 @@
 
     <div class="guarantee-block__image">
       {%- if section.settings.image %}
-        {{ section.settings.image | image_url: width: 700 | image_tag: loading: 'lazy', alt: section.settings.heading }}
+        {{ section.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', alt: section.settings.heading }}
       {%- else %}
-        {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        <div class="img-placeholder">
+          <span class="img-placeholder__label">[ Upload guarantee lifestyle image ]</span>
+        </div>
       {%- endif %}
     </div>
+
   </div>
 </section>
 
@@ -27,21 +33,27 @@
   "settings": [
     {
       "type": "text",
+      "id": "label",
+      "label": "Label (above heading)",
+      "default": "Our Promise"
+    },
+    {
+      "type": "text",
       "id": "heading",
       "label": "Heading",
       "default": "30-Day Money Back Guarantee"
     },
     {
-      "type": "textarea",
+      "type": "richtext",
       "id": "body",
       "label": "Body Text",
-      "default": "We stand behind every product we sell. If you're not completely satisfied within 30 days of receiving your order, we'll arrange a full refund — no questions asked."
+      "default": "<p>Your happiness means everything to us. Every Marlowe Home product comes with a full 30-day money-back guarantee. If it doesn't feel right in your home, simply return it — no questions asked, no hassle.</p>"
     },
     {
       "type": "text",
       "id": "button_label",
       "label": "Button Label",
-      "default": "Learn More"
+      "default": "Learn More About Our Policy"
     },
     {
       "type": "url",
@@ -51,7 +63,8 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image"
+      "label": "Right Column Image",
+      "info": "Warm lifestyle image. Recommended: 800 x 600px."
     }
   ],
   "presets": [{ "name": "Guarantee Block" }]

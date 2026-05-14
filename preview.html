@@ -9,14 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/theme.css">
   <style>
-    /* Preview-only placeholder overrides */
+    /* Preview-only overrides */
     .placeholder-svg { width: 100%; height: 100%; background: #2a3535; }
-    .hero-banner__bg { background: linear-gradient(135deg, #1C2526 0%, #1F2D2A 50%, #1A1F2E 100%) !important; }
     .mood-banner__bg { background: linear-gradient(135deg, #1A1F2E 0%, #1C2526 100%) !important; }
     .product-card__image-wrap { background: #2a3535; min-height: 200px; }
-    .lifestyle-split__image { background: #2a3535; min-height: 400px; }
-    .guarantee-block__image { background: #2a3535; }
-    img[src*="placeholder"] { display: none; }
   </style>
 </head>
 <body>
@@ -65,7 +61,9 @@
 
 <!-- HERO BANNER -->
 <section class="hero-banner">
-  <div class="hero-banner__bg"></div>
+  <div class="hero-banner__bg img-placeholder img-placeholder--hero">
+    <span class="img-placeholder__label">[ Upload image here ]</span>
+  </div>
   <div class="hero-banner__overlay"></div>
   <div class="hero-banner__content">
     <span class="label-tag">New Collection</span>
@@ -188,8 +186,10 @@
 <!-- LIFESTYLE SPLIT -->
 <section class="lifestyle-split">
   <div class="lifestyle-split__inner">
-    <div class="lifestyle-split__image" style="background: linear-gradient(135deg, #1a2828, #2a3535); display:flex; align-items:center; justify-content:center; min-height:500px;">
-      <span style="font-size:6rem; opacity:0.4;">🏠</span>
+    <div class="lifestyle-split__image">
+      <div class="img-placeholder">
+        <span class="img-placeholder__label">[ Upload lifestyle image — different from hero ]</span>
+      </div>
     </div>
     <div class="lifestyle-split__content">
       <span class="label-tag">Why Marlowe</span>
@@ -248,6 +248,90 @@
     <h2 class="contact-cta__heading">We're here for you</h2>
     <p class="contact-cta__body">Our team is available Monday–Friday, 9am–6pm CET. Average response time: 24 hours.</p>
     <a href="#" class="btn btn-gold">Contact Us</a>
+  </div>
+</section>
+
+<!-- GUARANTEE BLOCK -->
+<section class="guarantee-block">
+  <div class="guarantee-block__inner">
+    <div class="guarantee-block__content">
+      <span class="guarantee-block__label">Our Promise</span>
+      <h2 class="guarantee-block__heading">30-Day Money Back Guarantee</h2>
+      <p class="guarantee-block__body">Your happiness means everything to us. Every Marlowe Home product comes with a full 30-day money-back guarantee. If it doesn't feel right in your home, simply return it — no questions asked, no hassle.</p>
+      <a href="#" class="btn btn-ghost">Learn More About Our Policy</a>
+    </div>
+    <div class="guarantee-block__image">
+      <div class="img-placeholder" style="min-height:450px;">
+        <span class="img-placeholder__label">[ Upload guarantee lifestyle image ]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ ACCORDION -->
+<section class="faq-section">
+  <div class="faq-section__inner">
+    <div class="faq-section__header">
+      <h2 class="faq-section__heading">Frequently Asked Questions</h2>
+      <span class="faq-section__underline"></span>
+      <p class="faq-section__subheading">Everything you need to know before you order.</p>
+    </div>
+    <div class="faq-section__list">
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-trigger__text">Do you ship to Belgium and the Netherlands?</span>
+          <span class="faq-trigger__icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body__inner"><p>Yes, we ship to Belgium, the Netherlands, and across the EU. Orders typically arrive within 5–7 business days with full tracked delivery.</p></div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-trigger__text">What if I don't love my purchase?</span>
+          <span class="faq-trigger__icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body__inner"><p>We offer a 30-day money-back guarantee, no questions asked. If a piece doesn't feel right in your home, return it for a full refund.</p></div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-trigger__text">Are your products tested for quality?</span>
+          <span class="faq-trigger__icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body__inner"><p>Every product is hand-selected and tested for quality, durability, and warmth. We only carry pieces we would place in our own homes.</p></div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-trigger__text">Do you offer gift wrapping?</span>
+          <span class="faq-trigger__icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body__inner"><p>We offer premium gift packaging on select items. Contact our team before ordering to arrange this for someone special.</p></div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-trigger__text">How do I track my order?</span>
+          <span class="faq-trigger__icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body__inner"><p>You will receive a tracking number by email as soon as your order ships. You can follow your package every step of the way.</p></div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-trigger__text">How do I contact customer support?</span>
+          <span class="faq-trigger__icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body__inner"><p>Our team is available Monday to Friday, 9am to 6pm CET. Reach us via the contact page and we will respond within 24 hours.</p></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

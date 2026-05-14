@@ -3,6 +3,7 @@
     "hero-banner": {
       "type": "hero-banner",
       "settings": {
+        "label": "New Collection",
         "heading": "Light Changes Everything",
         "subheading": "Discover premium lighting crafted for the home you deserve.",
         "button_label": "Shop Now",
@@ -31,6 +32,7 @@
     "lifestyle-split": {
       "type": "lifestyle-split",
       "settings": {
+        "label": "Why Marlowe",
         "heading": "Crafted for the way you live",
         "bullet_1": "Curated for Belgian & Dutch homes",
         "bullet_2": "Premium materials, honest prices",
@@ -77,6 +79,23 @@
         "button_link": "/pages/contact"
       }
     },
+    "guarantee-block": {
+      "type": "guarantee-block",
+      "settings": {
+        "label": "Our Promise",
+        "heading": "30-Day Money Back Guarantee",
+        "body": "<p>Your happiness means everything to us. Every Marlowe Home product comes with a full 30-day money-back guarantee. If it doesn't feel right in your home, simply return it — no questions asked, no hassle.</p>",
+        "button_label": "Learn More About Our Policy",
+        "button_link": "/pages/returns"
+      }
+    },
+    "faq-accordion": {
+      "type": "faq-accordion",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "Everything you need to know before you order."
+      }
+    },
     "trust-bar-2": {
       "type": "trust-bar",
       "settings": {}
@@ -92,6 +111,8 @@
     "mood-banner",
     "social-proof",
     "contact-cta",
+    "guarantee-block",
+    "faq-accordion",
     "trust-bar-2"
   ]
 }

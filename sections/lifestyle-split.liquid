@@ -4,7 +4,9 @@
       {%- if section.settings.image %}
         {{ section.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: section.settings.heading }}
       {%- else %}
-        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        <div class="img-placeholder">
+          <span class="img-placeholder__label">[ Upload lifestyle image — different from hero ]</span>
+        </div>
       {%- endif %}
     </div>
 

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initStickyHeader();
   initMobileNav();
   initAccordions();
+  initFaqAccordions();
   initCarousels();
   initProductGallery();
   initStickyATC();
@@ -123,6 +124,35 @@ function initAccordions() {
       });
 
       item.classList.toggle('is-open', !isOpen);
+    });
+  });
+}
+
+/* =====================================================
+   FAQ ACCORDIONS (Homepage — .faq-trigger)
+   ===================================================== */
+
+function initFaqAccordions() {
+  const triggers = document.querySelectorAll('.faq-trigger');
+
+  triggers.forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      const item = trigger.closest('.faq-item');
+      const isOpen = item.classList.contains('is-open');
+
+      // Close all open siblings
+      const list = item.closest('.faq-section__list');
+      if (list) {
+        list.querySelectorAll('.faq-item.is-open').forEach(function (openItem) {
+          if (openItem !== item) {
+            openItem.classList.remove('is-open');
+            openItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      item.classList.toggle('is-open', !isOpen);
+      trigger.setAttribute('aria-expanded', String(!isOpen));
     });
   });
 }

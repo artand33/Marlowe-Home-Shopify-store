@@ -2,7 +2,9 @@
   {%- if section.settings.image %}
     {{ section.settings.image | image_url: width: 1800 | image_tag: class: 'hero-banner__bg', loading: 'eager', fetchpriority: 'high', alt: section.settings.heading }}
   {%- else %}
-    <div class="hero-banner__bg" style="background: linear-gradient(135deg, #1C2526 0%, #1F2D2A 50%, #1A1F2E 100%);"></div>
+    <div class="hero-banner__bg img-placeholder img-placeholder--hero">
+      <span class="img-placeholder__label">[ Upload image here ]</span>
+    </div>
   {%- endif %}
 
   <div class="hero-banner__overlay"></div>

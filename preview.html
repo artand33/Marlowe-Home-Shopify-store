@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marlowe Home — Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/theme.css">
+  <style>
+    /* Preview-only placeholder overrides */
+    .placeholder-svg { width: 100%; height: 100%; background: #2a3535; }
+    .hero-banner__bg { background: linear-gradient(135deg, #1C2526 0%, #1F2D2A 50%, #1A1F2E 100%) !important; }
+    .mood-banner__bg { background: linear-gradient(135deg, #1A1F2E 0%, #1C2526 100%) !important; }
+    .product-card__image-wrap { background: #2a3535; min-height: 200px; }
+    .lifestyle-split__image { background: #2a3535; min-height: 400px; }
+    .guarantee-block__image { background: #2a3535; }
+    img[src*="placeholder"] { display: none; }
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  <div class="announcement-bar__inner">
+    <button class="announcement-bar__arrow announcement-bar__arrow--prev">&#8592;</button>
+    <div class="announcement-bar__messages">
+      <span class="announcement-bar__message is-active">Free shipping on orders over €50</span>
+      <span class="announcement-bar__message">30-day money back guarantee</span>
+      <span class="announcement-bar__message">Spring Sale — 50% off selected items</span>
+    </div>
+    <button class="announcement-bar__arrow announcement-bar__arrow--next">&#8594;</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header__inner">
+    <a href="#" class="header__logo">Marlowe Home</a>
+    <nav class="header__nav">
+      <a href="#" class="header__nav-link header__nav-link--sale">Spring Sale</a>
+      <a href="#" class="header__nav-link">Collections</a>
+      <a href="#" class="header__nav-link">About</a>
+      <a href="#" class="header__nav-link">Track Order</a>
+      <a href="#" class="header__nav-link">Contact</a>
+    </nav>
+    <div class="header__icons">
+      <a href="#" class="header__icon-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </a>
+      <a href="#" class="header__icon-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a href="#" class="header__icon-btn" style="position:relative">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count">2</span>
+      </a>
+      <button class="header__hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO BANNER -->
+<section class="hero-banner">
+  <div class="hero-banner__bg"></div>
+  <div class="hero-banner__overlay"></div>
+  <div class="hero-banner__content">
+    <span class="label-tag">New Collection</span>
+    <h1 class="hero-banner__heading">Light Changes Everything</h1>
+    <p class="hero-banner__subheading">Discover premium lighting crafted for the home you deserve.</p>
+    <a href="#" class="btn btn-gold">Shop Now</a>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust-bar">
+  <div class="trust-bar__grid">
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div class="trust-bar__text">
+        <strong>Free Shipping</strong>
+        <span>On orders over €50</span>
+      </div>
+    </div>
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div class="trust-bar__text">
+        <strong>30-Day Money Back</strong>
+        <span>No questions asked</span>
+      </div>
+    </div>
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <div class="trust-bar__text">
+        <strong>Secure Payment</strong>
+        <span>SSL encrypted checkout</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND STORY -->
+<section class="brand-story section-pad">
+  <div class="brand-story__inner">
+    <span class="label-tag">Our Story</span>
+    <h2 class="brand-story__heading">Welcome to Marlowe Home</h2>
+    <div class="brand-story__body">
+      <p>At Marlowe Home, we believe your space should feel as good as it looks. We curate lighting and ambiance products with one thing in mind — warmth.</p>
+      <p>Designed for the modern home. Inspired by British elegance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED COLLECTION -->
+<section class="featured-collection section-pad">
+  <div class="container">
+    <div class="section-header">
+      <span class="label-tag">Featured</span>
+      <h2 class="section-header__heading">Best Sellers</h2>
+      <p class="section-header__sub">Our most loved pieces this season.</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-card__image-wrap" style="background: linear-gradient(135deg, #2a3535, #1a2828); min-height:220px; display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:3rem;">🕯️</span>
+          <span class="product-card__badge">Save 44%</span>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">Amber Glow Candle Set</h3>
+          <div class="product-card__price">
+            <span class="product-card__price-sale">€44.99</span>
+            <span class="product-card__price-compare">€79.99</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__image-wrap" style="background: linear-gradient(135deg, #2a3535, #1a2828); min-height:220px; display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:3rem;">💡</span>
+          <span class="product-card__badge">Save 38%</span>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">Brass Table Lamp</h3>
+          <div class="product-card__price">
+            <span class="product-card__price-sale">€89.99</span>
+            <span class="product-card__price-compare">€144.99</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__image-wrap" style="background: linear-gradient(135deg, #2a3535, #1a2828); min-height:220px; display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:3rem;">🪔</span>
+          <span class="product-card__badge">Save 50%</span>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">Nordic Lantern Trio</h3>
+          <div class="product-card__price">
+            <span class="product-card__price-sale">€34.99</span>
+            <span class="product-card__price-compare">€69.99</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__image-wrap" style="background: linear-gradient(135deg, #2a3535, #1a2828); min-height:220px; display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:3rem;">✨</span>
+          <span class="product-card__badge">Save 42%</span>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">String Light Cascade</h3>
+          <div class="product-card__price">
+            <span class="product-card__price-sale">€29.99</span>
+            <span class="product-card__price-compare">€51.99</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIFESTYLE SPLIT -->
+<section class="lifestyle-split">
+  <div class="lifestyle-split__inner">
+    <div class="lifestyle-split__image" style="background: linear-gradient(135deg, #1a2828, #2a3535); display:flex; align-items:center; justify-content:center; min-height:500px;">
+      <span style="font-size:6rem; opacity:0.4;">🏠</span>
+    </div>
+    <div class="lifestyle-split__content">
+      <span class="label-tag">Why Marlowe</span>
+      <h2 class="lifestyle-split__heading">Crafted for the way you live</h2>
+      <ul class="lifestyle-split__bullets">
+        <li class="lifestyle-split__bullet">Curated for Belgian &amp; Dutch homes</li>
+        <li class="lifestyle-split__bullet">Premium materials, honest prices</li>
+        <li class="lifestyle-split__bullet">Designed to create atmosphere, not just light</li>
+        <li class="lifestyle-split__bullet">Every piece tested for warmth and quality</li>
+      </ul>
+      <a href="#" class="btn btn-ghost">Discover Our Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- MOOD BANNER -->
+<section class="mood-banner">
+  <div class="mood-banner__bg"></div>
+  <div class="mood-banner__overlay"></div>
+  <div class="mood-banner__content">
+    <h2 class="mood-banner__heading">Your home. Your atmosphere.</h2>
+    <a href="#" class="btn btn-gold">Shop the Collection</a>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof section-pad">
+  <div class="container text-center">
+    <span class="label-tag">Customer Love</span>
+    <h2 class="social-proof__heading">Trusted by 10,000+ Homes Across Europe</h2>
+    <div class="social-proof__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <div class="reviews-strip">
+      <div class="review-card">
+        <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-card__text">"Absolutely stunning. The quality is incredible and delivery was super fast to Belgium. My living room has never looked so warm and inviting."</p>
+        <span class="review-card__author">— Sophie V.</span>
+      </div>
+      <div class="review-card">
+        <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-card__text">"Finally a lighting brand that gets it. Premium quality, warm aesthetic — everything looks exactly as described. 100% recommend."</p>
+        <span class="review-card__author">— Thomas K.</span>
+      </div>
+      <div class="review-card">
+        <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-card__text">"Ordered twice now. The candle holders are a masterpiece. My guests always ask where I bought them. Love Marlowe Home!"</p>
+        <span class="review-card__author">— Emma D.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="contact-cta section-pad">
+  <div class="container">
+    <span class="label-tag">Support</span>
+    <h2 class="contact-cta__heading">We're here for you</h2>
+    <p class="contact-cta__body">Our team is available Monday–Friday, 9am–6pm CET. Average response time: 24 hours.</p>
+    <a href="#" class="btn btn-gold">Contact Us</a>
+  </div>
+</section>
+
+<!-- TRUST BAR REPEAT -->
+<section class="trust-bar">
+  <div class="trust-bar__grid">
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div class="trust-bar__text"><strong>Free Shipping</strong><span>On orders over €50</span></div>
+    </div>
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div class="trust-bar__text"><strong>30-Day Money Back</strong><span>No questions asked</span></div>
+    </div>
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <div class="trust-bar__text"><strong>Secure Payment</strong><span>SSL encrypted checkout</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer__grid">
+    <div>
+      <p class="footer__brand-tagline">Marlowe Home</p>
+      <p class="footer__brand-body">We believe your home should feel as good as it looks. Premium lighting and ambiance products, curated for the modern European home. Inspired by British elegance.</p>
+    </div>
+    <div>
+      <h3 class="footer__col-heading">Join the Marlowe Circle</h3>
+      <div class="footer__newsletter-form">
+        <input type="email" class="footer__newsletter-input" placeholder="Your email address">
+        <button class="btn btn-gold">Subscribe</button>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer__col-heading">Shop</h3>
+      <ul class="footer__links">
+        <li><a href="#" class="footer__link">All Products</a></li>
+        <li><a href="#" class="footer__link">Collections</a></li>
+        <li><a href="#" class="footer__link">Spring Sale</a></li>
+        <li><a href="#" class="footer__link">About Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer__col-heading">Information</h3>
+      <ul class="footer__links">
+        <li><a href="#" class="footer__link">Privacy Policy</a></li>
+        <li><a href="#" class="footer__link">Returns &amp; Refunds</a></li>
+        <li><a href="#" class="footer__link">Shipping Policy</a></li>
+        <li><a href="#" class="footer__link">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p class="footer__copyright">&copy; 2025 Marlowe Home. All rights reserved.</p>
+    <div class="footer__payment-icons">
+      <span class="footer__payment-icon">Visa</span>
+      <span class="footer__payment-icon">MC</span>
+      <span class="footer__payment-icon">Apple Pay</span>
+      <span class="footer__payment-icon">Shop Pay</span>
+      <span class="footer__payment-icon">iDEAL</span>
+      <span class="footer__payment-icon">Bancontact</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/theme.js"></script>
+</body>
+</html>

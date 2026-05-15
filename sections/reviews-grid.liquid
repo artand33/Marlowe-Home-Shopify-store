@@ -1,24 +1,48 @@
-<section class="reviews-grid section-pad">
-  <div class="container">
-    <div class="section-header">
-      <span class="label-tag">Reviews</span>
-      <h2 class="section-header__heading section-header__heading--dark">{{ section.settings.heading | default: 'What Our Customers Say' }}</h2>
+<section class="reviews-grid">
+  <div class="reviews-grid__inner">
+
+    <div class="reviews-grid__header">
+      <span class="label-tag">Customer Reviews</span>
+      <h2 class="reviews-grid__heading">{{ section.settings.heading | default: 'What Our Customers Say' }}</h2>
+      <span class="reviews-grid__underline"></span>
+      <div class="reviews-grid__summary">
+        <span class="reviews-grid__stars" aria-label="4.8 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="reviews-grid__summary-text">{{ section.settings.rating | default: '4.8' }} out of 5 &nbsp;&middot;&nbsp; {{ section.settings.review_count | default: '500+' }} verified reviews</span>
+      </div>
     </div>
 
     <div class="reviews-grid__grid">
-      {%- for i in (1..4) -%}
-        {%- assign title_key = 'review_' | append: i | append: '_title' -%}
-        {%- assign text_key = 'review_' | append: i | append: '_text' -%}
+
+      {%- for i in (1..3) -%}
+        {%- assign title_key  = 'review_' | append: i | append: '_title' -%}
+        {%- assign text_key   = 'review_' | append: i | append: '_text' -%}
         {%- assign author_key = 'review_' | append: i | append: '_author' -%}
+        {%- assign date_key   = 'review_' | append: i | append: '_date' -%}
+        {%- assign rating_key = 'review_' | append: i | append: '_rating' -%}
+
+        {%- assign rating_val = section.settings[rating_key] | default: 5 | plus: 0 -%}
+
         <div class="review-card">
-          <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="review-card__top">
+            <div class="review-card__stars" aria-label="{{ rating_val }} out of 5 stars">
+              {%- for s in (1..rating_val) -%}&#9733;{%- endfor -%}
+              {%- assign empty = 5 | minus: rating_val -%}
+              {%- for s in (1..empty) -%}<span class="review-card__star--empty">&#9733;</span>{%- endfor -%}
+            </div>
+            <span class="review-card__date">{{ section.settings[date_key] | default: 'May 2025' }}</span>
+          </div>
           <p class="review-card__title">{{ section.settings[title_key] | default: 'Absolutely love it!' }}</p>
-          <p class="review-card__text">"{{ section.settings[text_key] | default: 'This product exceeded all my expectations. The quality is exceptional and delivery was quick to the Netherlands.' }}"</p>
-          <span class="review-card__author">— {{ section.settings[author_key] | default: 'Verified Customer' }}</span>
-          <div class="review-card__verified">&#10003; Verified Purchase</div>
+          <p class="review-card__text">&ldquo;{{ section.settings[text_key] | default: 'This product exceeded all my expectations. The quality is exceptional and delivery was quick.' }}&rdquo;</p>
+          <div class="review-card__footer">
+            <span class="review-card__author">{{ section.settings[author_key] | default: 'Verified Customer' }}</span>
+            <span class="review-card__verified">&#10003; Verified Purchase</span>
+          </div>
         </div>
+
       {%- endfor -%}
+
     </div>
+
   </div>
 </section>
 
@@ -29,80 +53,131 @@
     {
       "type": "text",
       "id": "heading",
-      "label": "Heading",
+      "label": "Section Heading",
       "default": "What Our Customers Say"
     },
     {
       "type": "text",
+      "id": "rating",
+      "label": "Overall Rating (e.g. 4.8)",
+      "default": "4.8"
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review Count Label",
+      "default": "500+"
+    },
+    {
+      "type": "header",
+      "content": "Review 1"
+    },
+    {
+      "type": "range",
+      "id": "review_1_rating",
+      "label": "Star Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
       "id": "review_1_title",
-      "label": "Review 1 Title",
-      "default": "Absolutely love it!"
+      "label": "Title",
+      "default": "Exactly what I was looking for"
     },
     {
       "type": "textarea",
       "id": "review_1_text",
-      "label": "Review 1 Text",
-      "default": "This product exceeded all my expectations. The quality is exceptional and delivery was quick to the Netherlands."
+      "label": "Review Text",
+      "default": "The lamp arrived beautifully packed. The brass finish is stunning and the light it casts is so warm and inviting. My living room has never looked so good."
     },
     {
       "type": "text",
       "id": "review_1_author",
-      "label": "Review 1 Author",
-      "default": "Lena B., Amsterdam"
+      "label": "Reviewer Name & Location",
+      "default": "Sophie V. — Belgium"
+    },
+    {
+      "type": "text",
+      "id": "review_1_date",
+      "label": "Date",
+      "default": "May 2025"
+    },
+    {
+      "type": "header",
+      "content": "Review 2"
+    },
+    {
+      "type": "range",
+      "id": "review_2_rating",
+      "label": "Star Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
     },
     {
       "type": "text",
       "id": "review_2_title",
-      "label": "Review 2 Title",
-      "default": "Perfect for our living room"
+      "label": "Title",
+      "default": "Premium quality, fast delivery"
     },
     {
       "type": "textarea",
       "id": "review_2_text",
-      "label": "Review 2 Text",
-      "default": "The warmth it creates in our space is exactly what we were looking for. Premium quality at a fair price."
+      "label": "Review Text",
+      "default": "Ordered on Monday, arrived Thursday to the Netherlands. The craftsmanship is excellent — feels like a luxury item at a very fair price. Highly recommend."
     },
     {
       "type": "text",
       "id": "review_2_author",
-      "label": "Review 2 Author",
-      "default": "Marc D., Brussels"
+      "label": "Reviewer Name & Location",
+      "default": "Thomas K. — Netherlands"
+    },
+    {
+      "type": "text",
+      "id": "review_2_date",
+      "label": "Date",
+      "default": "April 2025"
+    },
+    {
+      "type": "header",
+      "content": "Review 3"
+    },
+    {
+      "type": "range",
+      "id": "review_3_rating",
+      "label": "Star Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
     },
     {
       "type": "text",
       "id": "review_3_title",
-      "label": "Review 3 Title",
-      "default": "Beautiful craftsmanship"
+      "label": "Title",
+      "default": "Ordered twice already"
     },
     {
       "type": "textarea",
       "id": "review_3_text",
-      "label": "Review 3 Text",
-      "default": "Ordered this as a gift and it was a huge hit. The packaging was gorgeous and the product itself is stunning."
+      "label": "Review Text",
+      "default": "This is my second purchase. The first lamp was such a hit that I bought another for my bedroom. Customer service was also fantastic. Love Marlowe Home!"
     },
     {
       "type": "text",
       "id": "review_3_author",
-      "label": "Review 3 Author",
-      "default": "Sophie W., Antwerp"
+      "label": "Reviewer Name & Location",
+      "default": "Emma D. — Belgium"
     },
     {
       "type": "text",
-      "id": "review_4_title",
-      "label": "Review 4 Title",
-      "default": "Worth every euro"
-    },
-    {
-      "type": "textarea",
-      "id": "review_4_text",
-      "label": "Review 4 Text",
-      "default": "I was hesitant about the price but after seeing it in person I understood immediately. This is genuine quality."
-    },
-    {
-      "type": "text",
-      "id": "review_4_author",
-      "label": "Review 4 Author",
-      "default": "Jan V., Rotterdam"
+      "id": "review_3_date",
+      "label": "Date",
+      "default": "March 2025"
     }
   ],
   "presets": [{ "name": "Reviews Grid" }]

@@ -451,46 +451,68 @@
 </section>
 
 <!-- ============================================================
-     REVIEWS GRID
+     REVIEWS GRID (3 columns desktop, 1 mobile)
      ============================================================ -->
 <section class="reviews-grid">
-  <div style="max-width:var(--content-max-width);margin:0 auto;padding:0 24px;text-align:center;margin-bottom:40px;">
-    <h2 class="section-heading" style="color:var(--color-text-dark);">What Our Customers Say</h2>
-  </div>
-  <div class="reviews-grid__grid">
-    <div class="review-card">
-      <div class="review-card__title">Exactly what I was looking for</div>
-      <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="review-card__text">"The lamp arrived beautifully packed. The brass finish is stunning and the light it casts is so warm and inviting. My living room looks like a completely different space."</p>
-      <div class="review-card__author">Sophie V. &mdash; Belgium</div>
-      <span class="review-card__verified">&#10003; Verified Purchase</span>
+  <div class="reviews-grid__inner">
+
+    <div class="reviews-grid__header">
+      <span class="label-tag">Customer Reviews</span>
+      <h2 class="reviews-grid__heading">What Our Customers Say</h2>
+      <span class="reviews-grid__underline"></span>
+      <div class="reviews-grid__summary">
+        <span class="reviews-grid__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="reviews-grid__summary-text">4.8 out of 5 &nbsp;&middot;&nbsp; 500+ verified reviews</span>
+      </div>
     </div>
-    <div class="review-card">
-      <div class="review-card__title">Premium quality, fast delivery</div>
-      <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="review-card__text">"Ordered on Monday, arrived Thursday to the Netherlands. The craftsmanship is excellent — feels like a luxury item at a very fair price. Highly recommend Marlowe Home."</p>
-      <div class="review-card__author">Thomas K. &mdash; Netherlands</div>
-      <span class="review-card__verified">&#10003; Verified Purchase</span>
-    </div>
-    <div class="review-card">
-      <div class="review-card__title">Ordered twice already</div>
-      <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="review-card__text">"This is my second purchase. The first lamp was such a hit that I bought another for my bedroom. Customer service was also fantastic when I had a question about the bulb."</p>
-      <div class="review-card__author">Emma D. &mdash; Belgium</div>
-      <span class="review-card__verified">&#10003; Verified Purchase</span>
-    </div>
-    <div class="review-card">
-      <div class="review-card__title">Gift idea perfected</div>
-      <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="review-card__text">"Bought this as a housewarming gift and my friend was absolutely thrilled. The packaging is beautiful and the product itself looks even better in person than in the photos."</p>
-      <div class="review-card__author">Lena M. &mdash; Germany</div>
-      <span class="review-card__verified">&#10003; Verified Purchase</span>
+
+    <div class="reviews-grid__grid">
+
+      <div class="review-card">
+        <div class="review-card__top">
+          <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="review-card__date">May 2025</span>
+        </div>
+        <p class="review-card__title">Exactly what I was looking for</p>
+        <p class="review-card__text">&ldquo;The lamp arrived beautifully packed. The brass finish is stunning and the light it casts is so warm and inviting. My living room has never looked so good.&rdquo;</p>
+        <div class="review-card__footer">
+          <span class="review-card__author">Sophie V. &mdash; Belgium</span>
+          <span class="review-card__verified">&#10003; Verified Purchase</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__top">
+          <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="review-card__date">April 2025</span>
+        </div>
+        <p class="review-card__title">Premium quality, fast delivery</p>
+        <p class="review-card__text">&ldquo;Ordered on Monday, arrived Thursday to the Netherlands. The craftsmanship is excellent — feels like a luxury item at a very fair price. Highly recommend.&rdquo;</p>
+        <div class="review-card__footer">
+          <span class="review-card__author">Thomas K. &mdash; Netherlands</span>
+          <span class="review-card__verified">&#10003; Verified Purchase</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__top">
+          <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="review-card__date">March 2025</span>
+        </div>
+        <p class="review-card__title">Ordered twice already</p>
+        <p class="review-card__text">&ldquo;This is my second purchase. The first lamp was such a hit that I bought another for my bedroom. Customer service was also fantastic. Love Marlowe Home!&rdquo;</p>
+        <div class="review-card__footer">
+          <span class="review-card__author">Emma D. &mdash; Belgium</span>
+          <span class="review-card__verified">&#10003; Verified Purchase</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     FAQ ACCORDION
+     FAQ ACCORDION — 4 product-specific questions
      ============================================================ -->
 <section class="faq-section">
   <div class="faq-section__inner">
@@ -507,17 +529,21 @@
           <span class="faq-trigger__icon">+</span>
         </button>
         <div class="faq-body">
-          <div class="faq-body__inner"><p>Yes, we ship to Belgium, the Netherlands, and across the EU. Orders typically arrive within 5–7 business days with full tracked delivery.</p></div>
+          <div class="faq-body__inner">
+            <p>Yes &mdash; we ship to Belgium, the Netherlands, and across the EU within 5&ndash;7 business days. Every order includes full tracked delivery. You&rsquo;ll receive a tracking number by email as soon as your order ships.</p>
+          </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-trigger" aria-expanded="false">
-          <span class="faq-trigger__text">What if I don't love my purchase?</span>
+          <span class="faq-trigger__text">What is your return policy?</span>
           <span class="faq-trigger__icon">+</span>
         </button>
         <div class="faq-body">
-          <div class="faq-body__inner"><p>We offer a 30-day money-back guarantee, no questions asked. If a piece doesn't feel right in your home, return it for a full refund.</p></div>
+          <div class="faq-body__inner">
+            <p>We offer a 30-day money-back guarantee, no questions asked. If your purchase doesn&rsquo;t feel right in your home, simply contact us and we&rsquo;ll arrange a full refund. Items must be returned unused and in their original packaging.</p>
+          </div>
         </div>
       </div>
 
@@ -527,27 +553,21 @@
           <span class="faq-trigger__icon">+</span>
         </button>
         <div class="faq-body">
-          <div class="faq-body__inner"><p>The lamp uses a standard E27 base and supports LED bulbs up to 60W. For the best ambiance, we recommend a warm white bulb (2700K). LED bulbs are not included.</p></div>
+          <div class="faq-body__inner">
+            <p>This lamp uses a standard E27 base and is compatible with LED bulbs up to 60W. For the best warmth and atmosphere, we recommend a 2700K warm white LED bulb. Bulbs are not included with your purchase.</p>
+          </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-trigger" aria-expanded="false">
-          <span class="faq-trigger__text">How do I track my order?</span>
+          <span class="faq-trigger__text">How do I care for this product?</span>
           <span class="faq-trigger__icon">+</span>
         </button>
         <div class="faq-body">
-          <div class="faq-body__inner"><p>You will receive a tracking number by email as soon as your order ships. You can follow your package every step of the way via our tracking page.</p></div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false">
-          <span class="faq-trigger__text">How do I contact customer support?</span>
-          <span class="faq-trigger__icon">+</span>
-        </button>
-        <div class="faq-body">
-          <div class="faq-body__inner"><p>Our team is available Monday to Friday, 9am to 6pm CET. Reach us via the contact page and we will respond within 24 hours.</p></div>
+          <div class="faq-body__inner">
+            <p>Wipe the brass base with a soft dry cloth to maintain the finish. Avoid abrasive cleaners or moisture. The linen shade can be gently dusted with a soft brush. Do not exceed the maximum wattage stated on the product.</p>
+          </div>
         </div>
       </div>
 

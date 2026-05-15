@@ -1,3 +1,13 @@
+<style>
+  .mood-banner {
+    height: 45vh;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
 <section class="mood-banner">
   {%- if section.settings.image %}
     {{ section.settings.image | image_url: width: 1800 | image_tag: class: 'mood-banner__bg', loading: 'lazy', alt: section.settings.heading }}

@@ -1,6 +1,39 @@
 {%- assign arrivals = collections[section.settings.collection] -%}
 {%- assign arrival_products = arrivals.products | default: collections.all.products -%}
 
+<style>
+  .new-arrivals .carousel-wrapper {
+    position: relative;
+    overflow: visible;
+  }
+
+  .new-arrivals .carousel-track-container {
+    overflow: hidden;
+  }
+
+  .new-arrivals .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-accent-gold);
+    color: var(--color-bg-dark);
+    cursor: pointer;
+    border: none;
+  }
+
+  .new-arrivals .carousel-btn--prev {
+    left: 16px;
+  }
+
+  .new-arrivals .carousel-btn--next {
+    right: 16px;
+  }
+</style>
+
 <section class="new-arrivals section-pad">
   <div class="container">
     <div class="section-header">

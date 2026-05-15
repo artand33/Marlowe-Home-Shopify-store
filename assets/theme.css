@@ -2825,6 +2825,71 @@ p:last-child { margin-bottom: 0; }
   border-radius: 3px;
 }
 
+/* Countdown timer */
+.product-main__countdown {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--color-bg-dark);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: var(--radius-btn);
+  padding: 10px 16px;
+  margin-bottom: 24px;
+}
+
+.product-main__countdown-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+  opacity: 0.75;
+  flex-shrink: 0;
+}
+
+.product-main__countdown-timer {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.product-main__countdown-unit {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 1px;
+}
+
+.product-main__countdown-num {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-accent-gold);
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-body);
+  line-height: 1;
+  min-width: 2ch;
+  text-align: center;
+}
+
+.product-main__countdown-sep {
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: lowercase;
+}
+
+.product-main__countdown-colon {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-accent-gold);
+  margin: 0 3px;
+  line-height: 1;
+  opacity: 0.55;
+  align-self: center;
+}
+
 /* Urgency pill */
 .product-main__urgency {
   display: flex;
@@ -2982,6 +3047,70 @@ p:last-child { margin-bottom: 0; }
 
 .product-main__trust-item:last-child { border-right: none; }
 .product-main__trust-item svg { color: var(--color-accent-gold); }
+
+/* Buy More, Save More volume table */
+.product-main__volume {
+  margin-top: 20px;
+}
+
+.product-main__volume-heading {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 10px;
+}
+
+.volume-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--color-accent-gold);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--color-bg-dark);
+  table-layout: fixed;
+}
+
+.volume-table thead tr {
+  background: rgba(201, 168, 76, 0.14);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+.volume-table th {
+  padding: 9px 14px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: left;
+}
+
+.volume-table td {
+  padding: 9px 14px;
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  text-align: left;
+}
+
+.volume-table tbody tr {
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+  transition: background var(--transition);
+}
+
+.volume-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.volume-table tbody tr:hover {
+  background: rgba(201, 168, 76, 0.07);
+}
+
+.volume-table__discount {
+  color: var(--color-accent-gold);
+  font-weight: 700;
+}
 
 /* Highlight list */
 .product-main__highlights {

@@ -78,6 +78,24 @@
         Spring Sale &mdash; only a few left at this price
       </p>
 
+      <!-- Countdown timer -->
+      <div class="product-main__countdown" id="product-countdown" aria-live="polite" aria-label="Sale countdown timer">
+        <span class="product-main__countdown-label">Sale ends in:</span>
+        <div class="product-main__countdown-timer">
+          <span class="product-main__countdown-unit">
+            <span class="product-main__countdown-num" id="cd-hours">--</span><span class="product-main__countdown-sep">h</span>
+          </span>
+          <span class="product-main__countdown-colon">:</span>
+          <span class="product-main__countdown-unit">
+            <span class="product-main__countdown-num" id="cd-minutes">--</span><span class="product-main__countdown-sep">m</span>
+          </span>
+          <span class="product-main__countdown-colon">:</span>
+          <span class="product-main__countdown-unit">
+            <span class="product-main__countdown-num" id="cd-seconds">--</span><span class="product-main__countdown-sep">s</span>
+          </span>
+        </div>
+      </div>
+
       <!-- Variant selector -->
       {%- unless product.has_only_default_variant %}
         <div class="product-main__variants" id="product-variants">
@@ -155,6 +173,33 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
           <span>Secure Payment</span>
         </div>
+      </div>
+
+      <!-- ===== BUY MORE SAVE MORE ===== -->
+      <div class="product-main__volume">
+        <p class="product-main__volume-heading">Buy More, Save More</p>
+        <table class="volume-table" aria-label="Volume discount table">
+          <thead>
+            <tr>
+              <th scope="col">Quantity</th>
+              <th scope="col">You Save</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Buy 2</td>
+              <td class="volume-table__discount">10% off</td>
+            </tr>
+            <tr>
+              <td>Buy 3</td>
+              <td class="volume-table__discount">15% off</td>
+            </tr>
+            <tr>
+              <td>Buy 4+</td>
+              <td class="volume-table__discount">20% off</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <!-- ===== HIGHLIGHTS LIST ===== -->

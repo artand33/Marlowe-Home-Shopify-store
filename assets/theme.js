@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initVariantSwitcher();
   initCartQty();
   initQtySelector();
+  initCountdownTimer();
 });
 
 /* =====================================================
@@ -496,6 +497,57 @@ function initQtySelector() {
       });
     }
   });
+}
+
+/* =====================================================
+   COUNTDOWN TIMER — 24-hour rolling sale timer
+   ===================================================== */
+
+function initCountdownTimer() {
+  var hoursEl   = document.getElementById('cd-hours');
+  var minutesEl = document.getElementById('cd-minutes');
+  var secondsEl = document.getElementById('cd-seconds');
+  if (!hoursEl || !minutesEl || !secondsEl) return;
+
+  var STORAGE_KEY = 'marlowe_sale_end';
+  var DAY_MS      = 24 * 60 * 60 * 1000;
+
+  function getSaleEnd() {
+    var stored = localStorage.getItem(STORAGE_KEY);
+    var now    = Date.now();
+    if (stored) {
+      var end = parseInt(stored, 10);
+      if (!isNaN(end) && end > now) return end;
+    }
+    var newEnd = now + DAY_MS;
+    localStorage.setItem(STORAGE_KEY, String(newEnd));
+    return newEnd;
+  }
+
+  function pad(n) {
+    return n < 10 ? '0' + n : String(n);
+  }
+
+  function tick() {
+    var end       = getSaleEnd();
+    var remaining = Math.max(0, end - Date.now());
+    var total     = Math.floor(remaining / 1000);
+    var h         = Math.floor(total / 3600);
+    var m         = Math.floor((total % 3600) / 60);
+    var s         = total % 60;
+
+    hoursEl.textContent   = pad(h);
+    minutesEl.textContent = pad(m);
+    secondsEl.textContent = pad(s);
+
+    // When timer hits zero, clear storage so it resets on next tick
+    if (remaining === 0) {
+      localStorage.removeItem(STORAGE_KEY);
+    }
+  }
+
+  tick(); // paint immediately — no blank flash
+  setInterval(tick, 1000);
 }
 
 /* =====================================================

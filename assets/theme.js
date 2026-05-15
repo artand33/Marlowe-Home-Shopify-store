@@ -65,11 +65,15 @@ function initAnnouncementBar() {
    ===================================================== */
 
 function initStickyHeader() {
-  const header = document.querySelector('.site-header');
+  const header = document.getElementById('site-header');
   if (!header) return;
 
   window.addEventListener('scroll', function () {
-    header.classList.toggle('is-scrolled', window.scrollY > 30);
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
   }, { passive: true });
 }
 

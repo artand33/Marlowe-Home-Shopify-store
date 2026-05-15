@@ -353,16 +353,10 @@ p:last-child { margin-bottom: 0; }
     transition: box-shadow var(--transition);
   }
 
-  /* Cover any sub-pixel gap above the bar while it tracks the announcement */
-  .site-header::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 100%;
-    height: 48px;
-    background: var(--color-bg-dark);
-    pointer-events: none;
+  /* Stay above the fixed header until scrolled away naturally */
+  .announcement-bar {
+    position: relative;
+    z-index: 101;
   }
 
   /* Preview / non-Shopify markup: header is a direct body child */

@@ -326,7 +326,7 @@ p:last-child { margin-bottom: 0; }
   height: 2px;
   background: var(--color-text-light);
   border-radius: 2px;
-  transition: transform var(--transition), opacity var(--transition);
+  transition: background 0.35s ease, transform var(--transition), opacity var(--transition);
 }
 
 /* Desktop: graceful shrink on scroll */
@@ -2153,33 +2153,48 @@ p:last-child { margin-bottom: 0; }
     top: 0;
     z-index: 1000;
     width: 100%;
+    transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .site-header .header__inner {
+    max-height: 80px;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                min-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .site-header .header__logo,
+  .site-header .header__icons {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .site-header .header__hamburger {
+    transition: opacity 0.3s ease;
   }
 
   /* Scrolled past header: hide bar, float gold hamburger only */
   .site-header.is-past-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0;
-    min-height: 0;
     background: transparent;
-    border-bottom: none;
+    border-bottom-color: transparent;
     box-shadow: none;
     overflow: visible;
     pointer-events: none;
   }
 
   .site-header.is-past-header .header__inner {
-    height: 0;
+    max-height: 0;
     min-height: 0;
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     overflow: visible;
   }
 
   .site-header.is-past-header .header__logo,
   .site-header.is-past-header .header__icons {
-    display: none !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .site-header.is-past-header .header__mobile-end {
@@ -2199,6 +2214,7 @@ p:last-child { margin-bottom: 0; }
     border: none;
     box-shadow: none;
     padding: 4px;
+    opacity: 1;
   }
 
   .site-header.is-past-header .header__hamburger span {

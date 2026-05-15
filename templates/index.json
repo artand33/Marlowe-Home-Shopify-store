@@ -26,7 +26,7 @@
       "settings": {
         "heading": "Best Sellers",
         "subheading": "Our most loved pieces this season.",
-        "collection": ""
+        "collection": "all"
       }
     },
     "lifestyle-split": {
@@ -47,7 +47,7 @@
       "settings": {
         "heading": "New Arrivals",
         "subheading": "Fresh pieces for the season.",
-        "collection": ""
+        "collection": "all"
       }
     },
     "mood-banner": {

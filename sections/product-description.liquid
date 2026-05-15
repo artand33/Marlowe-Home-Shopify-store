@@ -1,7 +1,7 @@
 <section class="product-description">
   <div class="product-description__inner">
     <h2 class="product-description__heading">
-      {{ section.settings.heading | default: '✨ Why You\'ll Love This' }}
+      {{ section.settings.heading | default: 'Why You Will Love This' }}
     </h2>
     <div class="product-description__body">
       {%- if product.description != blank %}
@@ -23,7 +23,7 @@
       "type": "text",
       "id": "heading",
       "label": "Section Heading",
-      "default": "✨ Why You'll Love This"
+      "default": "Why You Will Love This"
     }
   ],
   "presets": [{ "name": "Product Description" }]

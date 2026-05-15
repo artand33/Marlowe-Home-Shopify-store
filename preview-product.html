@@ -242,17 +242,54 @@
      ============================================================ -->
 <section class="product-specs">
   <div class="product-specs__inner">
-    <h2 class="section-heading" style="color:var(--color-text-dark);margin-bottom:32px;">Product Details</h2>
-    <table class="specs-table">
-      <tr><td>Material</td><td>Solid brass, linen shade</td></tr>
-      <tr><td>Dimensions</td><td>H 42 cm × Ø 22 cm</td></tr>
-      <tr><td>Socket</td><td>E27, max. 60W</td></tr>
-      <tr><td>Cord length</td><td>180 cm, fabric braided</td></tr>
-      <tr><td>Switch</td><td>Inline dimmer switch</td></tr>
-      <tr><td>Finish</td><td>Brushed warm brass</td></tr>
-      <tr><td>Care</td><td>Wipe with dry cloth</td></tr>
-      <tr><td>Origin</td><td>Designed in Belgium</td></tr>
-    </table>
+    <h2 class="product-specs__heading">Product Details</h2>
+    <div class="specs-list">
+      <div class="specs-item">
+        <div class="specs-item__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18M3 6h18M3 18h18"/><line x1="9" y1="9" x2="9" y2="15"/><line x1="15" y1="9" x2="15" y2="15"/></svg>
+        </div>
+        <div class="specs-item__content">
+          <div class="specs-item__label">Dimensions</div>
+          <div class="specs-item__value">H 42 cm × Ø 22 cm</div>
+        </div>
+      </div>
+      <div class="specs-item">
+        <div class="specs-item__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2z"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <div class="specs-item__content">
+          <div class="specs-item__label">Materials</div>
+          <div class="specs-item__value">Solid brass, linen shade</div>
+        </div>
+      </div>
+      <div class="specs-item">
+        <div class="specs-item__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+        </div>
+        <div class="specs-item__content">
+          <div class="specs-item__label">Socket</div>
+          <div class="specs-item__value">E27, max. 60W LED</div>
+        </div>
+      </div>
+      <div class="specs-item">
+        <div class="specs-item__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8c0-1.1.9-2 2-2s2 .9 2 2-1 2-2 2-2-.9-2-2z"/><path d="M12 9v7c0 .6.4 1 1 1h3c.6 0 1-.4 1-1v-7M3 16h18v4H3z"/></svg>
+        </div>
+        <div class="specs-item__content">
+          <div class="specs-item__label">Care</div>
+          <div class="specs-item__value">Wipe brass with soft dry cloth</div>
+        </div>
+      </div>
+      <div class="specs-item">
+        <div class="specs-item__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5z"/></svg>
+        </div>
+        <div class="specs-item__content">
+          <div class="specs-item__label">Origin</div>
+          <div class="specs-item__value">Designed in Belgium</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -261,42 +298,61 @@
      ============================================================ -->
 <section class="collapsible-info">
   <div class="collapsible-info__inner">
+
+    <!-- Shipping Info -->
     <div class="accordion-item">
-      <button class="accordion-trigger">
-        <span>Shipping &amp; Delivery</span>
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="accordion-trigger__label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Shipping Info
+        </span>
         <span class="accordion-trigger__icon">+</span>
       </button>
       <div class="accordion-body">
-        We ship to Belgium, the Netherlands, and across the EU. Orders are dispatched within 1–2 business days. Delivery takes 5–7 business days with full tracking.
+        <div class="accordion-body__inner">
+          <p>We ship to Belgium, the Netherlands, and across the EU within 5–7 business days. All orders include full tracked delivery.</p>
+          <p><strong>Free shipping</strong> on orders over €50. Standard rate €4.95 for orders below €50.</p>
+          <p>You'll receive a tracking number via email as soon as your order ships.</p>
+        </div>
       </div>
     </div>
+
+    <!-- Materials & Care -->
     <div class="accordion-item">
-      <button class="accordion-trigger">
-        <span>Returns &amp; Refunds</span>
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="accordion-trigger__label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5.5 11h13M5.5 15h13M9 7h6m-6 12h6M9 3l-1 2h8l-1-2H9z"/></svg>
+          Materials &amp; Care
+        </span>
         <span class="accordion-trigger__icon">+</span>
       </button>
       <div class="accordion-body">
-        We offer a 30-day money-back guarantee. Return the item unused and in its original packaging for a full refund. No questions asked.
+        <div class="accordion-body__inner">
+          <p><strong>Materials:</strong> Premium brass, linen, and hand-selected natural fibers. Every piece is tested for durability and warmth.</p>
+          <p><strong>Care Instructions:</strong> Wipe brass with a soft dry cloth to maintain the finish. Dust linen shades gently. Avoid abrasive cleaners and excessive moisture.</p>
+          <p>Please consult the product details for specific care guidance per item.</p>
+        </div>
       </div>
     </div>
+
+    <!-- Returns Policy -->
     <div class="accordion-item">
-      <button class="accordion-trigger">
-        <span>Care Instructions</span>
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="accordion-trigger__label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg>
+          Returns Policy
+        </span>
         <span class="accordion-trigger__icon">+</span>
       </button>
       <div class="accordion-body">
-        Wipe the brass base with a soft dry cloth. Avoid abrasive cleaners. The linen shade can be gently dusted with a soft brush. Do not exceed 60W.
+        <div class="accordion-body__inner">
+          <p>We stand behind every product. If you're not completely satisfied within <strong>30 days</strong> of receiving your order, we'll arrange a full refund — no questions asked.</p>
+          <p><strong>Return conditions:</strong> Items must be returned in original condition and packaging, unused and unassembled.</p>
+          <p>Contact our team to arrange a return. We provide a prepaid return label for your convenience.</p>
+        </div>
       </div>
     </div>
-    <div class="accordion-item">
-      <button class="accordion-trigger">
-        <span>Compatible Bulbs</span>
-        <span class="accordion-trigger__icon">+</span>
-      </button>
-      <div class="accordion-body">
-        This lamp uses an E27 base and is compatible with standard LED bulbs up to 60W. We recommend a warm white bulb (2700K) for the best ambiance effect.
-      </div>
-    </div>
+
   </div>
 </section>
 

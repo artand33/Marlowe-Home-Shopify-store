@@ -1,3 +1,46 @@
+<style>
+  @media (max-width: 768px) {
+    .announcement-bar__arrow {
+      display: none !important;
+    }
+
+    .announcement-bar {
+      padding: 10px 0;
+    }
+
+    .announcement-bar__inner {
+      gap: 0;
+      padding: 0 16px;
+    }
+
+    .announcement-bar__messages {
+      flex: 1;
+      width: 100%;
+      min-height: 1.4em;
+      max-height: 1.4em;
+      text-align: center;
+    }
+
+    .announcement-bar__message,
+    .announcement-bar__message.is-active {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.4;
+      font-size: clamp(0.65rem, 2.8vw, 0.8rem);
+    }
+
+    .announcement-bar__message.is-active {
+      opacity: 1;
+    }
+  }
+</style>
+
 <div class="announcement-bar">
   <div class="announcement-bar__inner">
     <button class="announcement-bar__arrow announcement-bar__arrow--prev" aria-label="Previous">&#8592;</button>

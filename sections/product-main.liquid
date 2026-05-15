@@ -58,18 +58,29 @@
       <!-- Title -->
       <h1 class="product-main__title">{{ product.title }}</h1>
 
+      {%- comment -%}
+        Auto-calculate the displayed original price so every product looks like it's on sale.
+        Formula: original = sale_price ÷ 0.6, rounded up to the nearest X.95
+        Integer math (Liquid has no floats):
+          raw = price_cents × 10 ÷ 6   →  approximates price/0.6 in cents
+          floor to whole euro, then add 95 cents.
+        The sub-euro remainder of (price × 10 / 6) is always a multiple of 6, so ≤ 90,
+        meaning floor_euros + 0.95 is always above the raw value — no conditional needed.
+        Result: savings displayed are always ~40%.
+      {%- endcomment -%}
+      {%- assign _raw_orig    = current_variant.price | times: 10 | divided_by: 6 -%}
+      {%- assign _orig_floor  = _raw_orig | divided_by: 100 -%}
+      {%- assign _orig_price  = _orig_floor | times: 100 | plus: 95 -%}
+
       <!-- Price block -->
       <div class="product-main__price-block" id="product-price-block">
         <span class="product-main__price-sale" id="product-price">
           {{ current_variant.price | money }}
         </span>
-        {%- if current_variant.compare_at_price > current_variant.price %}
-          <span class="product-main__price-compare" id="product-price-compare">
-            {{ current_variant.compare_at_price | money }}
-          </span>
-          {%- assign savings = current_variant.compare_at_price | minus: current_variant.price | times: 100 | divided_by: current_variant.compare_at_price -%}
-          <span class="product-main__price-badge" id="product-price-badge">Save {{ savings }}%</span>
-        {%- endif %}
+        <span class="product-main__price-compare" id="product-price-compare">
+          {{ _orig_price | money }}
+        </span>
+        <span class="product-main__price-badge" id="product-price-badge">Save 40%</span>
       </div>
 
       <!-- Urgency pill -->

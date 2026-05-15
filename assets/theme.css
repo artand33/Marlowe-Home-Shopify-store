@@ -2810,8 +2810,9 @@ p:last-child { margin-bottom: 0; }
 
 .product-main__price-compare {
   font-size: 1.1rem;
-  color: var(--color-text-muted);
+  color: rgba(242, 237, 228, 0.4);
   text-decoration: line-through;
+  text-decoration-color: rgba(242, 237, 228, 0.35);
 }
 
 .product-main__price-badge {

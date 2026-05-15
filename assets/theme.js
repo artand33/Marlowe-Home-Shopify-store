@@ -436,21 +436,19 @@ function initVariantSwitcher() {
         if (el) el.textContent = priceFormatted;
       });
 
-      // Update compare-at price + badge
-      const compareEl = document.getElementById('product-price-compare');
-      const badgeEl = document.getElementById('product-price-badge');
+      // Auto-calculate original price: sale_price / 0.6, rounded to nearest X.95
+      // Mirrors the Liquid logic in product-main.liquid — always shows ~40% savings.
+      var compareEl = document.getElementById('product-price-compare');
+      var badgeEl   = document.getElementById('product-price-badge');
       if (compareEl) {
-        if (matched.compare_at_price && matched.compare_at_price > matched.price) {
-          compareEl.textContent = formatMoneyEUR(matched.compare_at_price);
-          compareEl.style.display = '';
-          if (badgeEl) {
-            const pct = Math.round((matched.compare_at_price - matched.price) / matched.compare_at_price * 100);
-            badgeEl.textContent = 'Save ' + pct + '%';
-            badgeEl.style.display = '';
-          }
-        } else {
-          compareEl.style.display = 'none';
-          if (badgeEl) badgeEl.style.display = 'none';
+        var rawOrig      = Math.floor(matched.price * 10 / 6);
+        var origFloor    = Math.floor(rawOrig / 100);
+        var origCents    = origFloor * 100 + 95;
+        compareEl.textContent = formatMoneyEUR(origCents);
+        compareEl.style.display = '';
+        if (badgeEl) {
+          badgeEl.textContent  = 'Save 40%';
+          badgeEl.style.display = '';
         }
       }
 

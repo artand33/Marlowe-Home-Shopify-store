@@ -24,7 +24,7 @@ ANNOUNCEMENT BAR
 - 3 rotating messages with left/right arrows:
   Message 1: "Free shipping on orders over €50"
   Message 2: "30-day money back guarantee"
-  Message 3: "Spring Sale — 50% off selected items"
+  Message 3: "Spring Sale — 40% off selected items"
 - Auto-rotates every 4 seconds
 
 HEADER / NAVIGATION

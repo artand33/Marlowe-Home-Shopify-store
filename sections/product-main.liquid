@@ -161,8 +161,8 @@
   </div>
 </section>
 
-<!-- Sticky ATC bar (mobile only, shown when main ATC scrolled past) -->
-<div class="sticky-atc" id="sticky-atc" style="display:none">
+<!-- Sticky ATC bar — mobile only, IntersectionObserver shows/hides via .is-visible -->
+<div class="sticky-atc" id="sticky-atc" aria-hidden="true">
   <div class="sticky-atc__thumb">
     {%- if product.featured_image %}
       <img

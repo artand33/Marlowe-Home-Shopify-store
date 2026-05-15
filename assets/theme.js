@@ -296,26 +296,43 @@ function initProductGallery() {
 }
 
 /* =====================================================
-   STICKY ATC (mobile)
+   STICKY ATC — mobile only, IntersectionObserver
    ===================================================== */
 
 function initStickyATC() {
-  const atcSection = document.querySelector('.main-product');
-  const stickyBar = document.querySelector('.sticky-atc');
-  const mainATC = document.querySelector('.product-info__atc');
-  if (!atcSection || !stickyBar || !mainATC) return;
+  var stickyBar = document.getElementById('sticky-atc');
+  // Target the main ATC button in the new product-main section
+  var mainAtcBtn = document.getElementById('product-atc-btn');
 
-  function checkVisibility() {
-    const rect = mainATC.getBoundingClientRect();
-    const isPastATC = rect.bottom < 0;
-    stickyBar.classList.toggle('is-visible', isPastATC);
-    stickyBar.style.display = isPastATC ? 'flex' : 'none';
-  }
+  if (!stickyBar || !mainAtcBtn) return;
 
-  // Only show on mobile
-  if (window.innerWidth <= 768) {
-    window.addEventListener('scroll', checkVisibility, { passive: true });
-  }
+  // Clear any inline display style — CSS + .is-visible class handles everything
+  stickyBar.style.display = '';
+
+  // IntersectionObserver: show sticky bar when the main ATC button
+  // is NOT visible in the viewport (scrolled above or below).
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          // Main ATC is on screen — hide the sticky bar
+          stickyBar.classList.remove('is-visible');
+        } else {
+          // Main ATC has left the viewport — show the sticky bar
+          stickyBar.classList.add('is-visible');
+        }
+      });
+    },
+    {
+      // Fire as soon as any pixel of the button leaves the viewport.
+      // rootMargin adds a small buffer so the bar appears just after
+      // the button starts sliding out of view.
+      threshold: 0,
+      rootMargin: '0px 0px -10px 0px'
+    }
+  );
+
+  observer.observe(mainAtcBtn);
 }
 
 /* =====================================================

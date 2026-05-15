@@ -1791,8 +1791,12 @@ p:last-child { margin-bottom: 0; }
   color: var(--color-text-muted);
 }
 
-/* Sticky ATC (mobile) */
+/* =====================================================
+   STICKY ATC BAR — mobile only, IntersectionObserver driven
+   ===================================================== */
+
 .sticky-atc {
+  /* Hidden on desktop — display:none removes it from layout entirely */
   display: none;
   position: fixed;
   bottom: 0;
@@ -1801,19 +1805,35 @@ p:last-child { margin-bottom: 0; }
   background: var(--color-bg-dark);
   border-top: var(--border-gold);
   padding: 12px 20px;
-  z-index: 50;
+  z-index: 200;
   align-items: center;
   gap: 16px;
+  /* Slide-up animation — starts off-screen on mobile */
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s ease;
+}
+
+/* On mobile: always in flex layout, slides in/out with class */
+@media (max-width: 768px) {
+  .sticky-atc {
+    display: flex;
+  }
+  .sticky-atc.is-visible {
+    transform: translateY(0);
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.45);
+  }
 }
 
 .sticky-atc__thumb {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   border-radius: 4px;
   overflow: hidden;
   flex-shrink: 0;
+  border: 1px solid rgba(201, 168, 76, 0.25);
 }
-.sticky-atc__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.sticky-atc__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .sticky-atc__info {
   flex: 1;
@@ -1821,24 +1841,31 @@ p:last-child { margin-bottom: 0; }
 }
 
 .sticky-atc__name {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--color-text-light);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 180px;
+  line-height: 1.3;
+  margin-bottom: 2px;
 }
 
 .sticky-atc__price {
   font-size: 0.9rem;
   color: var(--color-accent-gold);
-  font-weight: 600;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .sticky-atc__btn {
   flex-shrink: 0;
-  padding: 12px 20px;
-  font-size: 0.8rem;
+  padding: 12px 18px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 /* =====================================================
@@ -2649,8 +2676,6 @@ p:last-child { margin-bottom: 0; }
   .cart-item__info {
     min-width: 0;
   }
-
-  .sticky-atc { display: flex; }
 
   .hero-banner { height: 70vh; }
 

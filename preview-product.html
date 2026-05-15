@@ -665,13 +665,13 @@
   </div>
 </footer>
 
-<!-- Sticky ATC (mobile) — shown on scroll in real Shopify, always visible here for preview -->
-<div class="sticky-atc" id="sticky-atc" style="display:none;">
+<!-- Sticky ATC bar — mobile only, IntersectionObserver driven -->
+<div class="sticky-atc" id="sticky-atc" aria-hidden="true">
   <div class="sticky-atc__thumb">
-    <div style="width:46px;height:46px;background:#2a3535;border-radius:4px;"></div>
+    <div style="width:48px;height:48px;background:#2a3535;border-radius:4px;border:1px solid rgba(201,168,76,0.25);"></div>
   </div>
   <div class="sticky-atc__info">
-    <div class="sticky-atc__name">Warm Glow Table Lamp — Brass Edition</div>
+    <div class="sticky-atc__name">Warm Glow Table Lamp &mdash; Brass Edition</div>
     <div class="sticky-atc__price" id="sticky-price">€89,95</div>
   </div>
   <button class="btn btn-gold sticky-atc__btn">Add to Cart</button>
@@ -682,28 +682,42 @@
   // Preview: variant option click updates label text
   document.querySelectorAll('.variant-option').forEach(function(btn) {
     btn.addEventListener('click', function() {
-      const group = btn.closest('.variant-options');
-      const idx = group.dataset.optionIndex;
-      group.querySelectorAll('.variant-option').forEach(b => b.classList.remove('is-selected'));
+      var group = btn.closest('.variant-options');
+      var idx = group.dataset.optionIndex;
+      group.querySelectorAll('.variant-option').forEach(function(b) {
+        b.classList.remove('is-selected');
+      });
       btn.classList.add('is-selected');
-      const label = document.getElementById('selected-opt-' + (parseInt(idx) + 1));
+      var label = document.getElementById('selected-opt-' + (parseInt(idx) + 1));
       if (label) label.textContent = btn.dataset.value;
     });
   });
 
-  // Preview: show sticky ATC on scroll
-  window.addEventListener('scroll', function() {
-    const atcBtn = document.getElementById('product-atc-btn');
-    if (!atcBtn) return;
-    const rect = atcBtn.getBoundingClientRect();
-    const sticky = document.getElementById('sticky-atc');
-    if (!sticky) return;
-    if (rect.bottom < 0) {
-      sticky.style.display = 'flex';
-    } else {
-      sticky.style.display = 'none';
-    }
-  }, { passive: true });
+  // Preview: IntersectionObserver drives the sticky ATC bar
+  // (same logic as initStickyATC in theme.js, running here since
+  //  there's no real product JSON for the main JS to latch onto)
+  (function() {
+    var stickyBar = document.getElementById('sticky-atc');
+    var mainAtcBtn = document.getElementById('product-atc-btn');
+    if (!stickyBar || !mainAtcBtn) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          stickyBar.classList.remove('is-visible');
+          stickyBar.setAttribute('aria-hidden', 'true');
+        } else {
+          stickyBar.classList.add('is-visible');
+          stickyBar.setAttribute('aria-hidden', 'false');
+        }
+      });
+    }, {
+      threshold: 0,
+      rootMargin: '0px 0px -10px 0px'
+    });
+
+    observer.observe(mainAtcBtn);
+  })();
 </script>
 </body>
 </html>

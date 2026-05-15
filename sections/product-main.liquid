@@ -203,7 +203,6 @@
       </div>
 
       <!-- ===== HIGHLIGHTS LIST ===== -->
-      {%- assign highlights = section.settings.highlight_1 | append: '|||' | append: section.settings.highlight_2 | append: '|||' | append: section.settings.highlight_3 | append: '|||' | append: section.settings.highlight_4 -%}
       {%- assign has_highlights = false -%}
       {%- if section.settings.highlight_1 != blank or section.settings.highlight_2 != blank or section.settings.highlight_3 != blank or section.settings.highlight_4 != blank -%}
         {%- assign has_highlights = true -%}
@@ -281,46 +280,7 @@
 {% schema %}
 {
   "name": "Product Main",
-  "settings": [
-    {
-      "type": "header",
-      "content": "Product Highlights"
-    },
-    {
-      "type": "text",
-      "id": "highlight_1",
-      "label": "Highlight 1",
-      "default": "Warm ambient glow for any room"
-    },
-    {
-      "type": "text",
-      "id": "highlight_2",
-      "label": "Highlight 2",
-      "default": "Cordless & portable design"
-    },
-    {
-      "type": "text",
-      "id": "highlight_3",
-      "label": "Highlight 3",
-      "default": "Dimmable with touch control"
-    },
-    {
-      "type": "text",
-      "id": "highlight_4",
-      "label": "Highlight 4 (optional)",
-      "default": ""
-    },
-    {
-      "type": "header",
-      "content": "In the Box"
-    },
-    {
-      "type": "text",
-      "id": "in_the_box",
-      "label": "In the Box contents",
-      "default": "Lamp, USB charging cable, user guide"
-    }
-  ],
+  "settings": [],
   "presets": [{ "name": "Product Main" }]
 }
 {% endschema %}

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main-product": {
@@ -12,7 +21,9 @@
     },
     "product-description": {
       "type": "product-description",
-      "settings": {}
+      "settings": {
+        "heading": "Why You Will Love This"
+      }
     },
     "product-secondary-image": {
       "type": "product-secondary-image",
@@ -23,31 +34,53 @@
     "product-specs": {
       "type": "product-details-specs",
       "settings": {
-        "heading": "Product Details"
+        "heading": "Product Details",
+        "spec_1_label": "Dimensions",
+        "spec_1_value": "Set in Shopify admin",
+        "spec_2_label": "Materials",
+        "spec_2_value": "Set in Shopify admin",
+        "spec_3_label": "Power Source",
+        "spec_3_value": "Set in Shopify admin",
+        "spec_4_label": "Care Instructions",
+        "spec_4_value": "Set in Shopify admin",
+        "spec_5_label": "",
+        "spec_5_value": ""
       }
     },
     "collapsible-info": {
       "type": "collapsible-info",
-      "settings": {}
+      "settings": {
+        "block_1_title": "Shipping Information",
+        "block_1_body": "<p>We ship to Belgium and the Netherlands within 2-5 business days. All orders are tracked and you will receive a tracking link via email once your order is dispatched.</p>",
+        "block_2_title": "Returns & Refund Policy",
+        "block_2_body": "<p>We offer a 30-day money back guarantee. If you are not satisfied with your purchase, contact us within 30 days and we will arrange a full refund.</p>",
+        "block_3_title": "Have a Question?",
+        "block_3_body": "<p>Our customer support team is available Monday to Friday, 9am-6pm CET. Average response time is 24 hours.</p>"
+      }
     },
     "social-proof-line": {
       "type": "social-proof-line",
-      "settings": {}
+      "settings": {
+        "text": "Margaret V. and 8,000+ others are lighting their home with Marlowe."
+      }
     },
     "guarantee-block": {
       "type": "guarantee-block",
       "settings": {
+        "label": "Our Promise",
         "heading": "30-Day Money Back Guarantee",
         "body": "<p>We stand behind every product we sell. If you're not completely satisfied within 30 days of receiving your order, we'll arrange a full refund — no questions asked.</p>",
         "button_label": "Learn More",
-        "button_link": "/pages/returns"
+        "button_link": "/pages/returns",
+        "image": "shopify://shop_images/warm-cozy-british-home-interior-two-peop_hP0Yh34ZXp288Ff-kWo61w_6GbJtSNZQJakFi6_sZE3Fw_sd.jpg"
       }
     },
     "upsell-bundle": {
       "type": "upsell-bundle",
       "settings": {
         "heading": "Complete the Atmosphere — Save 15%",
-        "subheading": "Customers who bought this also loved:"
+        "subheading": "Customers who bought this also loved:",
+        "collection": ""
       }
     },
     "community-trust": {
@@ -60,7 +93,24 @@
     "reviews-grid": {
       "type": "reviews-grid",
       "settings": {
-        "heading": "What Our Customers Say"
+        "heading": "What Our Customers Say",
+        "rating": "4.8",
+        "review_count": "500+",
+        "review_1_rating": 5,
+        "review_1_title": "Exactly what I was looking for",
+        "review_1_text": "The lamp arrived beautifully packed. The brass finish is stunning and the light it casts is so warm and inviting. My living room has never looked so good.",
+        "review_1_author": "Sophie V. — Belgium",
+        "review_1_date": "May 2025",
+        "review_2_rating": 5,
+        "review_2_title": "Premium quality, fast delivery",
+        "review_2_text": "Ordered on Monday, arrived Thursday to the Netherlands. The craftsmanship is excellent — feels like a luxury item at a very fair price. Highly recommend.",
+        "review_2_author": "Thomas K. — Netherlands",
+        "review_2_date": "April 2025",
+        "review_3_rating": 5,
+        "review_3_title": "Ordered twice already",
+        "review_3_text": "This is my second purchase. The first lamp was such a hit that I bought another for my bedroom. Customer service was also fantastic. Love Marlowe Home!",
+        "review_3_author": "Emma D. — Belgium",
+        "review_3_date": "March 2025"
       }
     },
     "faq-accordion": {
@@ -72,7 +122,14 @@
     },
     "trust-bar-product": {
       "type": "trust-bar",
-      "settings": {}
+      "settings": {
+        "item_1_title": "Free Shipping",
+        "item_1_sub": "On orders over €50",
+        "item_2_title": "30-Day Money Back",
+        "item_2_sub": "No questions asked",
+        "item_3_title": "Secure Payment",
+        "item_3_sub": "SSL encrypted checkout"
+      }
     }
   },
   "order": [

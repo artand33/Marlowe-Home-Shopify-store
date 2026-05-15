@@ -331,6 +331,36 @@ p:last-child { margin-bottom: 0; }
 
 /* Desktop: graceful shrink on scroll */
 @media (min-width: 769px) {
+  /* Sticky fails inside Shopify's short section wrapper — use fixed + flow spacer */
+  #shopify-section-header {
+    min-height: 70px;
+    transition: min-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #shopify-section-header:has(.site-header.is-scrolled) {
+    min-height: 54px;
+  }
+
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+    transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow var(--transition);
+  }
+
+  /* Preview / non-Shopify markup: header is a direct body child */
+  body > .site-header + * {
+    padding-top: 70px;
+    transition: padding-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  body > .site-header.is-scrolled + * {
+    padding-top: 54px;
+  }
+
   .site-header .header__inner {
     transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }

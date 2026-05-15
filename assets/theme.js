@@ -74,6 +74,7 @@ function initStickyHeader() {
   function measureMobileHeader() {
     if (!mobileMq.matches) {
       mobileHeaderHeight = 0;
+      header.classList.remove('is-past-header');
       return;
     }
     const wasPast = header.classList.contains('is-past-header');
@@ -84,14 +85,32 @@ function initStickyHeader() {
     }
   }
 
+  function updateDesktopHeaderTop() {
+    if (mobileMq.matches) {
+      header.style.top = '';
+      return;
+    }
+
+    const announcement = document.querySelector('.announcement-bar');
+    if (!announcement) {
+      header.style.top = '0';
+      return;
+    }
+
+    const annBottom = announcement.getBoundingClientRect().bottom;
+    header.style.top = annBottom > 0 ? annBottom + 'px' : '0';
+  }
+
   function updateHeader() {
     header.classList.toggle('is-scrolled', window.scrollY > 30);
 
     if (mobileMq.matches) {
       if (!mobileHeaderHeight) measureMobileHeader();
       header.classList.toggle('is-past-header', window.scrollY > mobileHeaderHeight);
+      header.style.top = '';
     } else {
       header.classList.remove('is-past-header');
+      updateDesktopHeaderTop();
     }
   }
 

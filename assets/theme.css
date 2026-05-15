@@ -1298,8 +1298,7 @@ p:last-child { margin-bottom: 0; }
 /* Product secondary image */
 .product-secondary-image {
   position: relative;
-  height: 50vh;
-  min-height: 300px;
+  height: 220px;
   overflow: hidden;
   background: var(--color-bg-dark);
 }

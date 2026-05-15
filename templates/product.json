@@ -2,7 +2,13 @@
   "sections": {
     "main-product": {
       "type": "product-main",
-      "settings": {}
+      "settings": {
+        "highlight_1": "Warm ambient glow for any room",
+        "highlight_2": "Cordless & portable design",
+        "highlight_3": "Dimmable with touch control",
+        "highlight_4": "",
+        "in_the_box": "Lamp, USB charging cable, user guide"
+      }
     },
     "product-description": {
       "type": "product-description",

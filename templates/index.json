@@ -1,8 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero-banner": {
       "type": "hero-banner",
       "settings": {
+        "image": "shopify://shop_images/warm-cozy-british-home-interior-two-peop_H86LIzFOW02W6A0z95vqiw_6GbJtSNZQJakFi6_sZE3Fw_sd.jpg",
         "label": "New Collection",
         "heading": "Light Changes Everything",
         "subheading": "Discover premium lighting crafted for the home you deserve.",
@@ -12,7 +22,14 @@
     },
     "trust-bar": {
       "type": "trust-bar",
-      "settings": {}
+      "settings": {
+        "item_1_title": "Free Shipping",
+        "item_1_sub": "On orders over €50",
+        "item_2_title": "30-Day Money Back",
+        "item_2_sub": "No questions asked",
+        "item_3_title": "Secure Payment",
+        "item_3_sub": "SSL encrypted checkout"
+      }
     },
     "brand-story": {
       "type": "brand-story",
@@ -32,6 +49,7 @@
     "lifestyle-split": {
       "type": "lifestyle-split",
       "settings": {
+        "image": "shopify://shop_images/warm-cozy-british-home-interior-two-peop_hP0Yh34ZXp288Ff-kWo61w_6GbJtSNZQJakFi6_sZE3Fw_sd.jpg",
         "label": "Why Marlowe",
         "heading": "Crafted for the way you live",
         "bullet_1": "Curated for Belgian & Dutch homes",
@@ -86,7 +104,8 @@
         "heading": "30-Day Money Back Guarantee",
         "body": "<p>Your happiness means everything to us. Every Marlowe Home product comes with a full 30-day money-back guarantee. If it doesn't feel right in your home, simply return it — no questions asked, no hassle.</p>",
         "button_label": "Learn More About Our Policy",
-        "button_link": "/pages/returns"
+        "button_link": "/pages/returns",
+        "image": "shopify://shop_images/warm-cozy-british-home-interior-two-peop_n7JwmGSIWO6ubvT8MnDmcw_6GbJtSNZQJakFi6_sZE3Fw_cover_sd.jpg"
       }
     },
     "faq-accordion": {
@@ -98,7 +117,14 @@
     },
     "trust-bar-2": {
       "type": "trust-bar",
-      "settings": {}
+      "settings": {
+        "item_1_title": "Free Shipping",
+        "item_1_sub": "On orders over €50",
+        "item_2_title": "30-Day Money Back",
+        "item_2_sub": "No questions asked",
+        "item_3_title": "Secure Payment",
+        "item_3_sub": "SSL encrypted checkout"
+      }
     }
   },
   "order": [

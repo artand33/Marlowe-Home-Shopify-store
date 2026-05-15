@@ -32,7 +32,7 @@
       "type": "guarantee-block",
       "settings": {
         "heading": "30-Day Money Back Guarantee",
-        "body": "We stand behind every product we sell. If you're not completely satisfied within 30 days of receiving your order, we'll arrange a full refund — no questions asked.",
+        "body": "<p>We stand behind every product we sell. If you're not completely satisfied within 30 days of receiving your order, we'll arrange a full refund — no questions asked.</p>",
         "button_label": "Learn More",
         "button_link": "/pages/returns"
       }

@@ -1,3 +1,12 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* =====================================================
    MARLOWE HOME — THEME CSS
    ===================================================== */
@@ -2036,18 +2045,141 @@ p:last-child { margin-bottom: 0; }
   .header__nav { display: none; }
   .header__hamburger { display: flex; }
 
+  .container,
+  .carousel-wrapper,
   .product-grid,
-  .collection-grid { grid-template-columns: repeat(2, 1fr); }
+  .cart-layout {
+    max-width: 100%;
+  }
+
+  .product-grid,
+  .collection-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .product-grid .product-card,
+  .collection-grid .product-card {
+    width: 100%;
+    max-width: 100%;
+  }
 
   .trust-bar__grid { grid-template-columns: 1fr; gap: 20px; }
 
   .reviews-strip { grid-template-columns: 1fr; }
   .reviews-grid__grid { grid-template-columns: 1fr; }
 
-  .footer__grid { grid-template-columns: 1fr; gap: 28px; }
-  .footer__bottom { flex-direction: column; align-items: flex-start; }
+  /* Guarantee block */
+  .guarantee-block__inner {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+    gap: 32px;
+  }
 
-  .carousel-track .product-card { flex: 0 0 calc(50% - 12px); }
+  .guarantee-block__content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .guarantee-block__image {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: unset;
+    height: 250px;
+  }
+
+  .guarantee-block__image .img-placeholder {
+    min-height: 250px;
+    height: 250px;
+  }
+
+  .guarantee-block__content .btn {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  /* Lifestyle split */
+  .lifestyle-split__inner {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    min-height: unset;
+  }
+
+  .lifestyle-split__image {
+    order: -1;
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    aspect-ratio: unset;
+  }
+
+  .lifestyle-split__image img {
+    height: 100%;
+  }
+
+  .lifestyle-split__content {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px 20px;
+  }
+
+  /* Contact CTA */
+  .contact-cta .container {
+    padding: 0 20px;
+    max-width: 100%;
+  }
+
+  .contact-cta .btn {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  /* Footer */
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    max-width: 100%;
+  }
+
+  .footer__grid > div {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 100%;
+  }
+
+  .footer__payment-icons {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Carousel */
+  .carousel-btn--prev { left: 8px; }
+  .carousel-btn--next { right: 8px; }
+
+  .carousel-track .product-card {
+    flex: 0 0 calc(100% - 12px);
+    min-width: 0;
+  }
+
+  .new-arrivals .carousel-wrapper {
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .cart-item__info {
+    min-width: 0;
+  }
 
   .sticky-atc { display: flex; }
 

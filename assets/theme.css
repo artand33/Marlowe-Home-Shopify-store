@@ -334,11 +334,12 @@ p:last-child { margin-bottom: 0; }
   /* Sticky fails inside Shopify's short section wrapper — use fixed + flow spacer */
   #shopify-section-header {
     min-height: 70px;
-    transition: min-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--color-bg-dark);
   }
 
   #shopify-section-header:has(.site-header.is-scrolled) {
     min-height: 54px;
+    transition: min-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .site-header {
@@ -348,17 +349,30 @@ p:last-child { margin-bottom: 0; }
     right: 0;
     width: 100%;
     z-index: 100;
-    transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow var(--transition);
+    will-change: transform;
+    transition: box-shadow var(--transition);
+  }
+
+  /* Cover any sub-pixel gap above the bar while it tracks the announcement */
+  .site-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: 48px;
+    background: var(--color-bg-dark);
+    pointer-events: none;
   }
 
   /* Preview / non-Shopify markup: header is a direct body child */
   body > .site-header + * {
     padding-top: 70px;
-    transition: padding-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   body > .site-header.is-scrolled + * {
     padding-top: 54px;
+    transition: padding-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .site-header .header__inner {

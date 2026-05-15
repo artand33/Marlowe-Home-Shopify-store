@@ -85,32 +85,41 @@ function initStickyHeader() {
     }
   }
 
-  function updateDesktopHeaderTop() {
+  function isDesktopScrolled() {
+    const announcement = document.querySelector('.announcement-bar');
+    if (announcement && announcement.getBoundingClientRect().bottom > 0) {
+      return false;
+    }
+    return window.scrollY > 30;
+  }
+
+  function updateDesktopHeaderPosition() {
     if (mobileMq.matches) {
-      header.style.top = '';
+      header.style.transform = '';
       return;
     }
 
     const announcement = document.querySelector('.announcement-bar');
     if (!announcement) {
-      header.style.top = '0';
+      header.style.transform = '';
       return;
     }
 
     const annBottom = announcement.getBoundingClientRect().bottom;
-    header.style.top = annBottom > 0 ? annBottom + 'px' : '0';
+    header.style.transform = annBottom > 0 ? 'translate3d(0, ' + annBottom + 'px, 0)' : '';
   }
 
   function updateHeader() {
-    header.classList.toggle('is-scrolled', window.scrollY > 30);
+    const scrolled = mobileMq.matches ? window.scrollY > 30 : isDesktopScrolled();
+    header.classList.toggle('is-scrolled', scrolled);
 
     if (mobileMq.matches) {
       if (!mobileHeaderHeight) measureMobileHeader();
       header.classList.toggle('is-past-header', window.scrollY > mobileHeaderHeight);
-      header.style.top = '';
+      header.style.transform = '';
     } else {
       header.classList.remove('is-past-header');
-      updateDesktopHeaderTop();
+      updateDesktopHeaderPosition();
     }
   }
 

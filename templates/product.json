@@ -62,38 +62,7 @@
       "settings": {
         "heading": "Frequently Asked Questions",
         "subheading": "Everything you need to know before you order."
-      },
-      "blocks": {
-        "faq-1": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do you ship to Belgium and the Netherlands?",
-            "answer": "<p>Yes — we ship to Belgium, the Netherlands, and across the EU within 5–7 business days. Every order includes full tracked delivery. You'll receive a tracking number by email as soon as your order ships.</p>"
-          }
-        },
-        "faq-2": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What is your return policy?",
-            "answer": "<p>We offer a 30-day money-back guarantee, no questions asked. If your purchase doesn't feel right in your home, simply contact us and we'll arrange a full refund. Items must be returned unused and in their original packaging.</p>"
-          }
-        },
-        "faq-3": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Which bulb type does this lamp use?",
-            "answer": "<p>This lamp uses a standard E27 base and is compatible with LED bulbs up to 60W. For the best warmth and atmosphere, we recommend a 2700K warm white LED bulb. Bulbs are not included with your purchase.</p>"
-          }
-        },
-        "faq-4": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How do I care for this product?",
-            "answer": "<p>Wipe the brass base with a soft dry cloth to maintain the finish. Avoid abrasive cleaners or moisture. The linen shade can be gently dusted with a soft brush. Do not exceed the maximum wattage stated on the product.</p>"
-          }
-        }
-      },
-      "block_order": ["faq-1", "faq-2", "faq-3", "faq-4"]
+      }
     },
     "trust-bar-product": {
       "type": "trust-bar",

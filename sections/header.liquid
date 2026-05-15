@@ -98,16 +98,18 @@
 
 <!-- Mobile Navigation Overlay -->
 <nav class="mobile-nav" aria-label="Mobile navigation">
-  <button class="mobile-nav__close" aria-label="Close menu">&#215;</button>
-  <ul class="mobile-nav__links">
-    <li><a href="/" class="mobile-nav__link">Home</a></li>
-    <li><a href="/collections/all" class="mobile-nav__link" style="color: var(--color-accent-gold)">Spring Sale</a></li>
-    <li><a href="/collections" class="mobile-nav__link">Collections</a></li>
-    <li><a href="/pages/about" class="mobile-nav__link">About</a></li>
-    <li><a href="/pages/track-order" class="mobile-nav__link">Track Order</a></li>
-    <li><a href="/pages/contact" class="mobile-nav__link">Contact</a></li>
-    <li><a href="{{ routes.cart_url }}" class="mobile-nav__link">Cart ({{ cart.item_count }})</a></li>
-  </ul>
+  <div class="mobile-nav__panel">
+    <button class="mobile-nav__close" aria-label="Close menu">&#215;</button>
+    <ul class="mobile-nav__links">
+      <li><a href="/" class="mobile-nav__link">Home</a></li>
+      <li><a href="/collections/all" class="mobile-nav__link mobile-nav__link--sale">Spring Sale</a></li>
+      <li><a href="/collections" class="mobile-nav__link">Collections</a></li>
+      <li><a href="/pages/about" class="mobile-nav__link">About</a></li>
+      <li><a href="/pages/track-order" class="mobile-nav__link">Track Order</a></li>
+      <li><a href="/pages/contact" class="mobile-nav__link">Contact</a></li>
+      <li><a href="{{ routes.cart_url }}" class="mobile-nav__link">Cart ({{ cart.item_count }})</a></li>
+    </ul>
+  </div>
 </nav>
 
 {% schema %}

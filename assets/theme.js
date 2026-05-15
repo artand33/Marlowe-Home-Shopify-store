@@ -100,6 +100,10 @@ function initMobileNav() {
     if (e.target === mobileNav) closeNav();
   });
 
+  mobileNav.querySelectorAll('.mobile-nav__link').forEach(function (link) {
+    link.addEventListener('click', closeNav);
+  });
+
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeNav();
   });

@@ -3,7 +3,6 @@
 }
 
 html, body {
-  overflow-x: hidden;
   max-width: 100%;
 }
 
@@ -2102,6 +2101,11 @@ p:last-child { margin-bottom: 0; }
 }
 
 @media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   :root {
     --section-pad-desktop: var(--section-pad-mobile);
   }

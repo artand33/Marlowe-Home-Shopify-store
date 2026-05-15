@@ -2926,8 +2926,16 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: 0;
 }
 
+/* Qty + ATC same-row layout */
+.product-main__qty-atc-row {
+  display: flex;
+  align-items: flex-end;   /* label sits above qty; button aligns to bottom of that */
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
 /* Quantity selector */
-.product-main__qty-group { margin-bottom: 16px; }
+.product-main__qty-group { margin-bottom: 0; flex-shrink: 0; }
 
 .product-main__qty-label {
   display: block;
@@ -2985,13 +2993,15 @@ p:last-child { margin-bottom: 0; }
 .qty-input::-webkit-inner-spin-button,
 .qty-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
 
-/* ATC button */
+/* ATC button — shares row with qty selector */
 .product-main__atc {
-  font-size: 1rem;
+  flex: 1;                  /* fills remaining width next to qty widget */
+  font-size: 0.92rem;
   font-weight: 700;
-  padding: 18px 32px;
-  margin-bottom: 12px;
+  height: 44px;             /* exact match to .qty-btn / .qty-input height */
+  padding: 0 20px;
   letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 .product-main__atc:disabled { opacity: 0.6; cursor: not-allowed; }
@@ -3232,10 +3242,10 @@ p:last-child { margin-bottom: 0; }
     width: 100%;
   }
 
-  /* ATC: slightly smaller padding so text isn't clipped */
+  /* ATC: keep height-based sizing; just tighten side padding on narrow screens */
   .product-main__atc {
-    padding: 16px 20px;
-    font-size: 0.9rem;
+    padding: 0 14px;
+    font-size: 0.85rem;
   }
 
   .product-main__bitn { margin-bottom: 20px; }

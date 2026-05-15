@@ -134,34 +134,37 @@
       {%- form 'product', product, id: 'product-form' -%}
         <input type="hidden" name="id" id="variant-id" value="{{ current_variant.id }}">
 
-        <!-- Quantity selector -->
-        <div class="product-main__qty-group">
-          <label class="product-main__qty-label" for="qty-input">Quantity</label>
-          <div class="qty-selector">
-            <button type="button" class="qty-btn qty-btn--minus" aria-label="Decrease quantity">&minus;</button>
-            <input
-              type="number"
-              id="qty-input"
-              name="quantity"
-              value="1"
-              min="1"
-              max="99"
-              class="qty-input"
-              readonly
-            >
-            <button type="button" class="qty-btn qty-btn--plus" aria-label="Increase quantity">+</button>
-          </div>
-        </div>
+        <!-- Quantity + ATC row -->
+        <div class="product-main__qty-atc-row">
 
-        <!-- Add to Cart -->
-        <button
-          type="submit"
-          class="btn btn-gold btn-full product-main__atc"
-          id="product-atc-btn"
-          {%- unless current_variant.available %} disabled{%- endunless %}
-        >
-          {%- if current_variant.available -%}Add to Cart{%- else -%}Sold Out{%- endif -%}
-        </button>
+          <div class="product-main__qty-group">
+            <label class="product-main__qty-label" for="qty-input">Quantity</label>
+            <div class="qty-selector">
+              <button type="button" class="qty-btn qty-btn--minus" aria-label="Decrease quantity">&minus;</button>
+              <input
+                type="number"
+                id="qty-input"
+                name="quantity"
+                value="1"
+                min="1"
+                max="99"
+                class="qty-input"
+                readonly
+              >
+              <button type="button" class="qty-btn qty-btn--plus" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-gold product-main__atc"
+            id="product-atc-btn"
+            {%- unless current_variant.available %} disabled{%- endunless %}
+          >
+            {%- if current_variant.available -%}Add to Cart{%- else -%}Sold Out{%- endif -%}
+          </button>
+
+        </div>
 
         <!-- Buy it Now -->
         <div class="product-main__bitn">

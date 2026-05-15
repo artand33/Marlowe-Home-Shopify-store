@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marlowe Home — Product Page Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/theme.css">
+  <style>
+    /* Preview-only overrides */
+    .placeholder-svg { width: 100%; height: 100%; background: #2a3535; }
+    .product-main__bitn { display: none; } /* hide Shopify payment button in preview */
+    .product-main__bitn-preview {
+      display: block;
+      width: 100%;
+      padding: 14px 24px;
+      background: transparent;
+      border: 1px solid #2C2C2C;
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #2C2C2C;
+      cursor: pointer;
+      text-align: center;
+      margin-bottom: 28px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .product-main__bitn-preview:hover { background: #2C2C2C; color: #fff; }
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  <div class="announcement-bar__inner">
+    <button class="announcement-bar__arrow announcement-bar__arrow--prev">&#8592;</button>
+    <div class="announcement-bar__messages">
+      <span class="announcement-bar__message is-active">Free shipping on orders over €50</span>
+      <span class="announcement-bar__message">30-day money back guarantee</span>
+      <span class="announcement-bar__message">Spring Sale &mdash; up to 50% off</span>
+    </div>
+    <button class="announcement-bar__arrow announcement-bar__arrow--next">&#8594;</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header__inner">
+    <a href="#" class="header__logo">Marlowe Home</a>
+    <nav class="header__nav">
+      <a href="#" class="header__nav-link header__nav-link--sale">Spring Sale</a>
+      <a href="#" class="header__nav-link">Collections</a>
+      <a href="#" class="header__nav-link">About</a>
+      <a href="#" class="header__nav-link">Track Order</a>
+      <a href="#" class="header__nav-link">Contact</a>
+    </nav>
+    <div class="header__icons">
+      <a href="#" class="header__icon-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </a>
+      <a href="#" class="header__icon-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a href="#" class="header__icon-btn" style="position:relative">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+      <button class="header__hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <button class="mobile-nav__close">&times;</button>
+  <nav class="mobile-nav__links">
+    <a href="#" class="mobile-nav__link">Spring Sale</a>
+    <a href="#" class="mobile-nav__link">Collections</a>
+    <a href="#" class="mobile-nav__link">About</a>
+    <a href="#" class="mobile-nav__link">Track Order</a>
+    <a href="#" class="mobile-nav__link">Contact</a>
+  </nav>
+</div>
+
+<!-- ============================================================
+     PRODUCT MAIN SECTION
+     ============================================================ -->
+<section class="product-main">
+  <div class="product-main__layout">
+
+    <!-- LEFT: Gallery -->
+    <div class="product-main__gallery">
+      <div class="product-main__main-img">
+        <div class="img-placeholder" style="min-height: unset; height: 100%; background: #E8E0D4; border-radius: 12px; aspect-ratio: 1;">
+          <span class="img-placeholder__label">[ Upload product image ]</span>
+        </div>
+      </div>
+
+      <div class="product-main__thumbs" id="product-thumbs">
+        <button class="product-main__thumb is-active" data-src="#" type="button">
+          <div style="width:100%;height:100%;background:#D9D0C5;"></div>
+        </button>
+        <button class="product-main__thumb" data-src="#" type="button">
+          <div style="width:100%;height:100%;background:#C8BFAF;"></div>
+        </button>
+        <button class="product-main__thumb" data-src="#" type="button">
+          <div style="width:100%;height:100%;background:#B8AFA0;"></div>
+        </button>
+        <button class="product-main__thumb" data-src="#" type="button">
+          <div style="width:100%;height:100%;background:#A89F90;"></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- RIGHT: Product Info -->
+    <div class="product-main__info">
+
+      <!-- Rating row -->
+      <div class="product-main__rating">
+        <span class="product-main__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="product-main__rating-text">4.8 &nbsp;&middot;&nbsp; 500+ reviews</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="product-main__title">Warm Glow Table Lamp — Brass Edition</h1>
+
+      <!-- Price block -->
+      <div class="product-main__price-block">
+        <span class="product-main__price-sale">€89,95</span>
+        <span class="product-main__price-compare">€149,95</span>
+        <span class="product-main__price-badge">Save 40%</span>
+      </div>
+
+      <!-- Urgency pill -->
+      <p class="product-main__urgency">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Spring Sale &mdash; only a few left at this price
+      </p>
+
+      <!-- Variant selector — Color -->
+      <div class="product-main__variants">
+        <div class="variant-group">
+          <div class="variant-group__label">
+            Colour: <strong id="selected-opt-1">Warm Brass</strong>
+          </div>
+          <div class="variant-options" data-option-index="0">
+            <button class="variant-option is-selected" data-option-index="0" data-value="Warm Brass" type="button">Warm Brass</button>
+            <button class="variant-option" data-option-index="0" data-value="Matte Black" type="button">Matte Black</button>
+            <button class="variant-option" data-option-index="0" data-value="Aged Copper" type="button">Aged Copper</button>
+          </div>
+        </div>
+
+        <div class="variant-group">
+          <div class="variant-group__label">
+            Size: <strong id="selected-opt-2">Standard</strong>
+          </div>
+          <div class="variant-options" data-option-index="1">
+            <button class="variant-option is-selected" data-option-index="1" data-value="Standard" type="button">Standard</button>
+            <button class="variant-option" data-option-index="1" data-value="Large" type="button">Large</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form: Quantity + ATC + BiTN -->
+      <form id="product-form">
+        <input type="hidden" id="variant-id" value="123456789">
+
+        <!-- Qty -->
+        <div class="product-main__qty-group">
+          <label class="product-main__qty-label" for="qty-input">Quantity</label>
+          <div class="qty-selector">
+            <button type="button" class="qty-btn qty-btn--minus" aria-label="Decrease">&minus;</button>
+            <input type="number" id="qty-input" name="quantity" value="1" min="1" max="99" class="qty-input" readonly>
+            <button type="button" class="qty-btn qty-btn--plus" aria-label="Increase">+</button>
+          </div>
+        </div>
+
+        <!-- ATC -->
+        <button type="submit" class="btn btn-gold btn-full product-main__atc" id="product-atc-btn">
+          Add to Cart
+        </button>
+
+        <!-- Buy it Now (preview simulation) -->
+        <button type="button" class="product-main__bitn-preview">
+          Buy it Now
+        </button>
+      </form>
+
+      <!-- Trust icons -->
+      <div class="product-main__trust">
+        <div class="product-main__trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <span>Free Shipping</span>
+        </div>
+        <div class="product-main__trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>30-Day Returns</span>
+        </div>
+        <div class="product-main__trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          <span>Secure Payment</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PRODUCT DESCRIPTION
+     ============================================================ -->
+<section class="product-description">
+  <div class="product-description__inner">
+    <h2 class="product-description__heading">About This Piece</h2>
+    <div class="product-description__body">
+      <p>The <strong>Warm Glow Table Lamp</strong> is a statement of understated elegance. Hand-finished in warm brass, this lamp casts a golden, atmospheric light that transforms any room into a sanctuary of warmth.</p>
+      <p>Designed with the European home in mind — crafted from premium materials with an adjustable dimmer and E27 socket compatible with LED bulbs up to 60W. Each piece is individually inspected before shipping.</p>
+      <p>Whether placed on a side table, a reading nook, or a bedside cabinet — the Warm Glow lamp brings the Marlowe Home aesthetic to life in your space.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PRODUCT SECONDARY IMAGE
+     ============================================================ -->
+<div class="product-secondary-image">
+  <div class="img-placeholder img-placeholder--hero">
+    <span class="img-placeholder__label">[ Upload lifestyle / mood image ]</span>
+  </div>
+  <div class="product-secondary-image__overlay">
+    <p class="product-secondary-image__quote">"Warmth you can feel. Atmosphere you can see."</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     PRODUCT SPECS
+     ============================================================ -->
+<section class="product-specs">
+  <div class="product-specs__inner">
+    <h2 class="section-heading" style="color:var(--color-text-dark);margin-bottom:32px;">Product Details</h2>
+    <table class="specs-table">
+      <tr><td>Material</td><td>Solid brass, linen shade</td></tr>
+      <tr><td>Dimensions</td><td>H 42 cm × Ø 22 cm</td></tr>
+      <tr><td>Socket</td><td>E27, max. 60W</td></tr>
+      <tr><td>Cord length</td><td>180 cm, fabric braided</td></tr>
+      <tr><td>Switch</td><td>Inline dimmer switch</td></tr>
+      <tr><td>Finish</td><td>Brushed warm brass</td></tr>
+      <tr><td>Care</td><td>Wipe with dry cloth</td></tr>
+      <tr><td>Origin</td><td>Designed in Belgium</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================================
+     COLLAPSIBLE INFO
+     ============================================================ -->
+<section class="collapsible-info">
+  <div class="collapsible-info__inner">
+    <div class="accordion-item">
+      <button class="accordion-trigger">
+        <span>Shipping &amp; Delivery</span>
+        <span class="accordion-trigger__icon">+</span>
+      </button>
+      <div class="accordion-body">
+        We ship to Belgium, the Netherlands, and across the EU. Orders are dispatched within 1–2 business days. Delivery takes 5–7 business days with full tracking.
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-trigger">
+        <span>Returns &amp; Refunds</span>
+        <span class="accordion-trigger__icon">+</span>
+      </button>
+      <div class="accordion-body">
+        We offer a 30-day money-back guarantee. Return the item unused and in its original packaging for a full refund. No questions asked.
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-trigger">
+        <span>Care Instructions</span>
+        <span class="accordion-trigger__icon">+</span>
+      </button>
+      <div class="accordion-body">
+        Wipe the brass base with a soft dry cloth. Avoid abrasive cleaners. The linen shade can be gently dusted with a soft brush. Do not exceed 60W.
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-trigger">
+        <span>Compatible Bulbs</span>
+        <span class="accordion-trigger__icon">+</span>
+      </button>
+      <div class="accordion-body">
+        This lamp uses an E27 base and is compatible with standard LED bulbs up to 60W. We recommend a warm white bulb (2700K) for the best ambiance effect.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SOCIAL PROOF LINE
+     ============================================================ -->
+<section class="social-proof-line">
+  <div class="social-proof-line__text">
+    <span class="social-proof-line__check">&#10003;</span>
+    Trusted by over 10,000 European homes &mdash; rated 4.8/5 by verified buyers
+    <span class="social-proof-line__check">&#10003;</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     GUARANTEE BLOCK
+     ============================================================ -->
+<section class="guarantee-block">
+  <div class="guarantee-block__inner">
+    <div class="guarantee-block__content">
+      <span class="guarantee-block__label">Our Promise</span>
+      <h2 class="guarantee-block__heading">30-Day Money Back Guarantee</h2>
+      <p class="guarantee-block__body">We stand behind every product we sell. If you're not completely satisfied within 30 days of receiving your order, we'll arrange a full refund &mdash; no questions asked, no hassle.</p>
+      <a href="#" class="btn btn-ghost">Learn More About Our Policy</a>
+    </div>
+    <div class="guarantee-block__image">
+      <div class="img-placeholder" style="min-height:unset;height:100%;aspect-ratio:4/3;">
+        <span class="img-placeholder__label">[ Upload guarantee lifestyle image ]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     UPSELL BUNDLE
+     ============================================================ -->
+<section class="upsell-bundle">
+  <div style="max-width:var(--content-max-width);margin:0 auto;padding:0 24px;">
+    <div class="section-header" style="text-align:center;margin-bottom:48px;">
+      <h2 class="section-heading" style="color:var(--color-text-dark);">Complete the Atmosphere &mdash; Save 15%</h2>
+      <p class="section-subheading">Customers who bought this also loved:</p>
+    </div>
+    <div class="product-grid" style="grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div class="product-card">
+        <div class="product-card__image-wrap">
+          <div class="img-placeholder" style="min-height:200px;">
+            <span class="img-placeholder__label">[ Product image ]</span>
+          </div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">Amber Pillar Candle Set</h3>
+          <div class="product-card__price">€34,95</div>
+          <a href="#" class="btn btn-gold" style="width:100%;margin-top:12px;font-size:0.82rem;padding:12px;">Add to Bundle</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__image-wrap">
+          <div class="img-placeholder" style="min-height:200px;">
+            <span class="img-placeholder__label">[ Product image ]</span>
+          </div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">Woven Jute Placemat</h3>
+          <div class="product-card__price">€22,95</div>
+          <a href="#" class="btn btn-gold" style="width:100%;margin-top:12px;font-size:0.82rem;padding:12px;">Add to Bundle</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__image-wrap">
+          <div class="img-placeholder" style="min-height:200px;">
+            <span class="img-placeholder__label">[ Product image ]</span>
+          </div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">Linen Throw — Ivory</h3>
+          <div class="product-card__price">€59,95</div>
+          <a href="#" class="btn btn-gold" style="width:100%;margin-top:12px;font-size:0.82rem;padding:12px;">Add to Bundle</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     COMMUNITY TRUST
+     ============================================================ -->
+<section class="community-trust">
+  <div style="max-width:var(--content-max-width);margin:0 auto;padding:0 24px;">
+    <h2 class="community-trust__heading">The Marlowe Home Community</h2>
+    <p class="community-trust__sub">Join over 10,000 European homes that chose warmth.</p>
+    <div class="trustpilot-badge">
+      <span class="trustpilot-badge__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span>Excellent &mdash; 4.8 / 5 based on 2,300+ reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     REVIEWS GRID
+     ============================================================ -->
+<section class="reviews-grid">
+  <div style="max-width:var(--content-max-width);margin:0 auto;padding:0 24px;text-align:center;margin-bottom:40px;">
+    <h2 class="section-heading" style="color:var(--color-text-dark);">What Our Customers Say</h2>
+  </div>
+  <div class="reviews-grid__grid">
+    <div class="review-card">
+      <div class="review-card__title">Exactly what I was looking for</div>
+      <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-card__text">"The lamp arrived beautifully packed. The brass finish is stunning and the light it casts is so warm and inviting. My living room looks like a completely different space."</p>
+      <div class="review-card__author">Sophie V. &mdash; Belgium</div>
+      <span class="review-card__verified">&#10003; Verified Purchase</span>
+    </div>
+    <div class="review-card">
+      <div class="review-card__title">Premium quality, fast delivery</div>
+      <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-card__text">"Ordered on Monday, arrived Thursday to the Netherlands. The craftsmanship is excellent — feels like a luxury item at a very fair price. Highly recommend Marlowe Home."</p>
+      <div class="review-card__author">Thomas K. &mdash; Netherlands</div>
+      <span class="review-card__verified">&#10003; Verified Purchase</span>
+    </div>
+    <div class="review-card">
+      <div class="review-card__title">Ordered twice already</div>
+      <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-card__text">"This is my second purchase. The first lamp was such a hit that I bought another for my bedroom. Customer service was also fantastic when I had a question about the bulb."</p>
+      <div class="review-card__author">Emma D. &mdash; Belgium</div>
+      <span class="review-card__verified">&#10003; Verified Purchase</span>
+    </div>
+    <div class="review-card">
+      <div class="review-card__title">Gift idea perfected</div>
+      <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-card__text">"Bought this as a housewarming gift and my friend was absolutely thrilled. The packaging is beautiful and the product itself looks even better in person than in the photos."</p>
+      <div class="review-card__author">Lena M. &mdash; Germany</div>
+      <span class="review-card__verified">&#10003; Verified Purchase</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ ACCORDION
+     ============================================================ -->
+<section class="faq-section">
+  <div class="faq-section__inner">
+    <div class="faq-section__header">
+      <h2 class="faq-section__heading">Frequently Asked Questions</h2>
+      <span class="faq-section__underline"></span>
+      <p class="faq-section__subheading">Everything you need to know before you order.</p>
+    </div>
+    <div class="faq-section__list">
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-trigger__text">Do you ship to Belgium and the Netherlands?</span>
+          <span class="faq-trigger__icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body__inner"><p>Yes, we ship to Belgium, the Netherlands, and across the EU. Orders typically arrive within 5–7 business days with full tracked delivery.</p></div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-trigger__text">What if I don't love my purchase?</span>
+          <span class="faq-trigger__icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body__inner"><p>We offer a 30-day money-back guarantee, no questions asked. If a piece doesn't feel right in your home, return it for a full refund.</p></div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-trigger__text">Which bulb type does this lamp use?</span>
+          <span class="faq-trigger__icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body__inner"><p>The lamp uses a standard E27 base and supports LED bulbs up to 60W. For the best ambiance, we recommend a warm white bulb (2700K). LED bulbs are not included.</p></div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-trigger__text">How do I track my order?</span>
+          <span class="faq-trigger__icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body__inner"><p>You will receive a tracking number by email as soon as your order ships. You can follow your package every step of the way via our tracking page.</p></div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-trigger__text">How do I contact customer support?</span>
+          <span class="faq-trigger__icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body__inner"><p>Our team is available Monday to Friday, 9am to 6pm CET. Reach us via the contact page and we will respond within 24 hours.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRUST BAR (bottom)
+     ============================================================ -->
+<section class="trust-bar">
+  <div class="trust-bar__grid">
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div class="trust-bar__text">
+        <strong>Free Shipping</strong>
+        <span>On all orders over €50</span>
+      </div>
+    </div>
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="trust-bar__text">
+        <strong>30-Day Returns</strong>
+        <span>No questions asked</span>
+      </div>
+    </div>
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <div class="trust-bar__text">
+        <strong>Secure Payment</strong>
+        <span>SSL encrypted checkout</span>
+      </div>
+    </div>
+    <div class="trust-bar__item">
+      <div class="trust-bar__icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="trust-bar__text">
+        <strong>Fast Delivery</strong>
+        <span>Ships in 1–2 business days</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="footer__grid">
+    <div class="footer__col">
+      <div class="footer__brand-tagline">Marlowe Home</div>
+      <p class="footer__brand-body">Premium lighting and ambiance for the modern European home. Inspired by British elegance. Curated for warmth.</p>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-heading">Customer Care</div>
+      <div class="footer__links">
+        <a href="#" class="footer__link">Track Your Order</a>
+        <a href="#" class="footer__link">Returns &amp; Refunds</a>
+        <a href="#" class="footer__link">FAQ</a>
+        <a href="#" class="footer__link">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-heading">Company</div>
+      <div class="footer__links">
+        <a href="#" class="footer__link">About Marlowe Home</a>
+        <a href="#" class="footer__link">Privacy Policy</a>
+        <a href="#" class="footer__link">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-heading">Stay Connected</div>
+      <form class="footer__newsletter-form">
+        <input class="footer__newsletter-input" type="email" placeholder="Your email address">
+        <button class="btn btn-gold" type="submit" style="font-size:0.82rem;padding:12px 20px;">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span class="footer__copyright">&copy; 2025 Marlowe Home. All rights reserved.</span>
+    <div class="footer__payment-icons">
+      <span class="footer__payment-icon">VISA</span>
+      <span class="footer__payment-icon">MC</span>
+      <span class="footer__payment-icon">AMEX</span>
+      <span class="footer__payment-icon">iDEAL</span>
+      <span class="footer__payment-icon">BANC</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky ATC (mobile) — shown on scroll in real Shopify, always visible here for preview -->
+<div class="sticky-atc" id="sticky-atc" style="display:none;">
+  <div class="sticky-atc__thumb">
+    <div style="width:46px;height:46px;background:#2a3535;border-radius:4px;"></div>
+  </div>
+  <div class="sticky-atc__info">
+    <div class="sticky-atc__name">Warm Glow Table Lamp — Brass Edition</div>
+    <div class="sticky-atc__price" id="sticky-price">€89,95</div>
+  </div>
+  <button class="btn btn-gold sticky-atc__btn">Add to Cart</button>
+</div>
+
+<script src="assets/theme.js"></script>
+<script>
+  // Preview: variant option click updates label text
+  document.querySelectorAll('.variant-option').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const group = btn.closest('.variant-options');
+      const idx = group.dataset.optionIndex;
+      group.querySelectorAll('.variant-option').forEach(b => b.classList.remove('is-selected'));
+      btn.classList.add('is-selected');
+      const label = document.getElementById('selected-opt-' + (parseInt(idx) + 1));
+      if (label) label.textContent = btn.dataset.value;
+    });
+  });
+
+  // Preview: show sticky ATC on scroll
+  window.addEventListener('scroll', function() {
+    const atcBtn = document.getElementById('product-atc-btn');
+    if (!atcBtn) return;
+    const rect = atcBtn.getBoundingClientRect();
+    const sticky = document.getElementById('sticky-atc');
+    if (!sticky) return;
+    if (rect.bottom < 0) {
+      sticky.style.display = 'flex';
+    } else {
+      sticky.style.display = 'none';
+    }
+  }, { passive: true });
+</script>
+</body>
+</html>

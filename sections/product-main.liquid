@@ -1,0 +1,198 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+<section class="product-main">
+  <div class="product-main__layout">
+
+    <!-- ===== LEFT: GALLERY ===== -->
+    <div class="product-main__gallery">
+
+      <div class="product-main__main-img">
+        {%- if product.featured_image %}
+          <img
+            id="main-product-img"
+            src="{{ product.featured_image | image_url: width: 900 }}"
+            alt="{{ product.title | escape }}"
+            loading="eager"
+            width="900"
+            height="900"
+          >
+        {%- else %}
+          <div class="img-placeholder" style="min-height: unset; height: 100%; aspect-ratio: 1;">
+            <span class="img-placeholder__label">[ Upload product image ]</span>
+          </div>
+        {%- endif %}
+      </div>
+
+      {%- if product.images.size > 1 %}
+        <div class="product-main__thumbs" id="product-thumbs">
+          {%- for image in product.images limit: 5 -%}
+            <button
+              class="product-main__thumb{% if forloop.first %} is-active{% endif %}"
+              data-src="{{ image | image_url: width: 900 }}"
+              aria-label="View image {{ forloop.index }}"
+              type="button"
+            >
+              <img
+                src="{{ image | image_url: width: 150 }}"
+                alt="{{ product.title | escape }}"
+                loading="lazy"
+                width="150"
+                height="150"
+              >
+            </button>
+          {%- endfor -%}
+        </div>
+      {%- endif %}
+
+    </div>
+
+    <!-- ===== RIGHT: PRODUCT INFO ===== -->
+    <div class="product-main__info">
+
+      <!-- Rating row (above title) -->
+      <div class="product-main__rating">
+        <span class="product-main__stars" aria-label="4.8 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="product-main__rating-text">4.8 &nbsp;&middot;&nbsp; 500+ reviews</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="product-main__title">{{ product.title }}</h1>
+
+      <!-- Price block -->
+      <div class="product-main__price-block" id="product-price-block">
+        <span class="product-main__price-sale" id="product-price">
+          {{ current_variant.price | money }}
+        </span>
+        {%- if current_variant.compare_at_price > current_variant.price %}
+          <span class="product-main__price-compare" id="product-price-compare">
+            {{ current_variant.compare_at_price | money }}
+          </span>
+          {%- assign savings = current_variant.compare_at_price | minus: current_variant.price | times: 100 | divided_by: current_variant.compare_at_price -%}
+          <span class="product-main__price-badge" id="product-price-badge">Save {{ savings }}%</span>
+        {%- endif %}
+      </div>
+
+      <!-- Urgency pill -->
+      <p class="product-main__urgency">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Spring Sale &mdash; only a few left at this price
+      </p>
+
+      <!-- Variant selector -->
+      {%- unless product.has_only_default_variant %}
+        <div class="product-main__variants" id="product-variants">
+          {%- for option in product.options_with_values -%}
+            <div class="variant-group">
+              <div class="variant-group__label">
+                {{ option.name }}: <strong id="selected-opt-{{ option.position }}">{{ option.selected_value }}</strong>
+              </div>
+              <div class="variant-options" data-option-index="{{ forloop.index0 }}">
+                {%- for value in option.values -%}
+                  <button
+                    class="variant-option{% if option.selected_value == value %} is-selected{% endif %}"
+                    data-option-index="{{ forloop.parentloop.index0 }}"
+                    data-value="{{ value }}"
+                    type="button"
+                  >{{ value }}</button>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endunless %}
+
+      <!-- Product form -->
+      {%- form 'product', product, id: 'product-form' -%}
+        <input type="hidden" name="id" id="variant-id" value="{{ current_variant.id }}">
+
+        <!-- Quantity selector -->
+        <div class="product-main__qty-group">
+          <label class="product-main__qty-label" for="qty-input">Quantity</label>
+          <div class="qty-selector">
+            <button type="button" class="qty-btn qty-btn--minus" aria-label="Decrease quantity">&minus;</button>
+            <input
+              type="number"
+              id="qty-input"
+              name="quantity"
+              value="1"
+              min="1"
+              max="99"
+              class="qty-input"
+              readonly
+            >
+            <button type="button" class="qty-btn qty-btn--plus" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <!-- Add to Cart -->
+        <button
+          type="submit"
+          class="btn btn-gold btn-full product-main__atc"
+          id="product-atc-btn"
+          {%- unless current_variant.available %} disabled{%- endunless %}
+        >
+          {%- if current_variant.available -%}Add to Cart{%- else -%}Sold Out{%- endif -%}
+        </button>
+
+        <!-- Buy it Now -->
+        <div class="product-main__bitn">
+          {{ form | payment_button }}
+        </div>
+
+      {%- endform -%}
+
+      <!-- Trust icons row -->
+      <div class="product-main__trust">
+        <div class="product-main__trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <span>Free Shipping</span>
+        </div>
+        <div class="product-main__trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>30-Day Returns</span>
+        </div>
+        <div class="product-main__trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          <span>Secure Payment</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Sticky ATC bar (mobile only, shown when main ATC scrolled past) -->
+<div class="sticky-atc" id="sticky-atc" style="display:none">
+  <div class="sticky-atc__thumb">
+    {%- if product.featured_image %}
+      <img
+        src="{{ product.featured_image | image_url: width: 100 }}"
+        alt="{{ product.title | escape }}"
+        loading="lazy"
+        width="60"
+        height="60"
+      >
+    {%- endif %}
+  </div>
+  <div class="sticky-atc__info">
+    <div class="sticky-atc__name">{{ product.title }}</div>
+    <div class="sticky-atc__price" id="sticky-price">{{ current_variant.price | money }}</div>
+  </div>
+  {%- form 'product', product, id: 'sticky-atc-form' -%}
+    <input type="hidden" name="id" id="sticky-variant-id" value="{{ current_variant.id }}">
+    <button type="submit" class="btn btn-gold sticky-atc__btn">Add to Cart</button>
+  {%- endform -%}
+</div>
+
+<!-- Embedded product JSON for JS variant switching -->
+<script id="product-json" type="application/json">
+  {{ product | json }}
+</script>
+
+{% schema %}
+{
+  "name": "Product Main",
+  "settings": [],
+  "presets": [{ "name": "Product Main" }]
+}
+{% endschema %}

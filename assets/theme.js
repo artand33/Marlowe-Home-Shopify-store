@@ -10,9 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
   initFaqAccordions();
   initCarousels();
   initProductGallery();
+  initProductMainGallery();
   initStickyATC();
   initVariantSelector();
+  initVariantSwitcher();
   initCartQty();
+  initQtySelector();
 });
 
 /* =====================================================
@@ -328,6 +331,153 @@ function initVariantSelector() {
       group.querySelectorAll('.variant-option').forEach(o => o.classList.remove('is-selected'));
       option.classList.add('is-selected');
     });
+  });
+}
+
+/* =====================================================
+   PRODUCT MAIN — GALLERY (button thumbs with data-src)
+   ===================================================== */
+
+function initProductMainGallery() {
+  const mainImg = document.getElementById('main-product-img');
+  const thumbs = document.querySelectorAll('.product-main__thumb');
+  if (!mainImg || !thumbs.length) return;
+
+  thumbs.forEach(function (thumb) {
+    thumb.addEventListener('click', function () {
+      thumbs.forEach(t => t.classList.remove('is-active'));
+      thumb.classList.add('is-active');
+
+      const newSrc = thumb.dataset.src;
+      if (newSrc) {
+        mainImg.style.opacity = '0';
+        setTimeout(function () {
+          mainImg.src = newSrc;
+          mainImg.style.opacity = '1';
+        }, 150);
+      }
+    });
+  });
+}
+
+/* =====================================================
+   VARIANT SWITCHER (product-main with product JSON)
+   ===================================================== */
+
+function initVariantSwitcher() {
+  const productJsonEl = document.getElementById('product-json');
+  if (!productJsonEl) return;
+
+  let product;
+  try { product = JSON.parse(productJsonEl.textContent); } catch (e) { return; }
+
+  const variants = product.variants;
+  if (!variants || !variants.length) return;
+
+  // Build initial selected options from marked buttons
+  const selectedOptions = [];
+  document.querySelectorAll('.variant-options[data-option-index]').forEach(function (group) {
+    const idx = parseInt(group.dataset.optionIndex);
+    const active = group.querySelector('.variant-option.is-selected');
+    if (active) selectedOptions[idx] = active.dataset.value;
+  });
+
+  document.querySelectorAll('.variant-option[data-option-index]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const optIdx = parseInt(btn.dataset.optionIndex);
+      const val = btn.dataset.value;
+
+      // Toggle active state within group
+      const group = btn.closest('.variant-options');
+      group.querySelectorAll('.variant-option').forEach(b => b.classList.remove('is-selected'));
+      btn.classList.add('is-selected');
+      selectedOptions[optIdx] = val;
+
+      // Update label showing selected value
+      const labelEl = document.getElementById('selected-opt-' + (optIdx + 1));
+      if (labelEl) labelEl.textContent = val;
+
+      // Find matching variant
+      const matched = variants.find(function (v) {
+        return v.options.every(function (opt, i) {
+          return selectedOptions[i] === undefined || selectedOptions[i] === opt;
+        });
+      });
+      if (!matched) return;
+
+      // Sync variant ID inputs (main form + sticky form)
+      ['variant-id', 'sticky-variant-id'].forEach(function (id) {
+        const el = document.getElementById(id);
+        if (el) el.value = matched.id;
+      });
+
+      // Update displayed price
+      const priceFormatted = formatMoneyEUR(matched.price);
+      ['product-price', 'sticky-price'].forEach(function (id) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = priceFormatted;
+      });
+
+      // Update compare-at price + badge
+      const compareEl = document.getElementById('product-price-compare');
+      const badgeEl = document.getElementById('product-price-badge');
+      if (compareEl) {
+        if (matched.compare_at_price && matched.compare_at_price > matched.price) {
+          compareEl.textContent = formatMoneyEUR(matched.compare_at_price);
+          compareEl.style.display = '';
+          if (badgeEl) {
+            const pct = Math.round((matched.compare_at_price - matched.price) / matched.compare_at_price * 100);
+            badgeEl.textContent = 'Save ' + pct + '%';
+            badgeEl.style.display = '';
+          }
+        } else {
+          compareEl.style.display = 'none';
+          if (badgeEl) badgeEl.style.display = 'none';
+        }
+      }
+
+      // Update ATC button state
+      const atcBtn = document.getElementById('product-atc-btn');
+      if (atcBtn) {
+        atcBtn.disabled = !matched.available;
+        atcBtn.textContent = matched.available ? 'Add to Cart' : 'Sold Out';
+      }
+    });
+  });
+}
+
+function formatMoneyEUR(cents) {
+  const euros = (cents / 100).toFixed(2).replace('.', ',');
+  return '€' + euros;
+}
+
+/* =====================================================
+   QTY SELECTOR (+/− for product-main)
+   ===================================================== */
+
+function initQtySelector() {
+  document.querySelectorAll('.qty-selector').forEach(function (wrap) {
+    const minusBtn = wrap.querySelector('.qty-btn--minus');
+    const plusBtn = wrap.querySelector('.qty-btn--plus');
+    const input = wrap.querySelector('.qty-input');
+    if (!input) return;
+
+    if (minusBtn) {
+      minusBtn.addEventListener('click', function () {
+        let v = parseInt(input.value) - 1;
+        if (v < 1) v = 1;
+        input.value = v;
+      });
+    }
+
+    if (plusBtn) {
+      plusBtn.addEventListener('click', function () {
+        let v = parseInt(input.value) + 1;
+        const max = parseInt(input.max) || 99;
+        if (v > max) v = max;
+        input.value = v;
+      });
+    }
   });
 }
 

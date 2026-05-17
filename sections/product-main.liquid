@@ -59,7 +59,7 @@
       <h1 class="product-main__title">{{ product.title }}</h1>
 
       <!-- Stock urgency notice -->
-      <p class="product-main__stock-notice">🔴 UPDATE — High demand: only a few units left in our warehouse. Orders are being processed daily.</p>
+      <p class="product-main__stock-notice">{{ 'products.stock_notice' | t }}</p>
 
       {%- comment -%}
         Auto-calculate the displayed original price so every product looks like it's on sale.
@@ -83,18 +83,18 @@
         <span class="product-main__price-compare" id="product-price-compare">
           {{ _orig_price | money }}
         </span>
-        <span class="product-main__price-badge" id="product-price-badge">Save 40%</span>
+        <span class="product-main__price-badge" id="product-price-badge">{{ 'products.save_percent' | t: percent: 40 }}</span>
       </div>
 
       <!-- Urgency pill -->
       <p class="product-main__urgency">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        Spring Sale &mdash; only a few left at this price
+        {{ 'products.urgency' | t }}
       </p>
 
       <!-- Countdown timer -->
       <div class="product-main__countdown" id="product-countdown" aria-live="polite" aria-label="Sale countdown timer">
-        <span class="product-main__countdown-label">Sale ends in:</span>
+        <span class="product-main__countdown-label">{{ 'products.countdown.label' | t }}</span>
         <div class="product-main__countdown-timer">
           <span class="product-main__countdown-unit">
             <span class="product-main__countdown-num" id="cd-hours">--</span><span class="product-main__countdown-sep">h</span>
@@ -141,7 +141,7 @@
         <div class="product-main__qty-atc-row">
 
           <div class="product-main__qty-group">
-            <label class="product-main__qty-label" for="qty-input">Quantity</label>
+            <label class="product-main__qty-label" for="qty-input">{{ 'products.quantity' | t }}</label>
             <div class="qty-selector">
               <button type="button" class="qty-btn qty-btn--minus" aria-label="Decrease quantity">&minus;</button>
               <input
@@ -164,7 +164,7 @@
             id="product-atc-btn"
             {%- unless current_variant.available %} disabled{%- endunless %}
           >
-            {%- if current_variant.available -%}Add to Cart{%- else -%}Sold Out{%- endif -%}
+            {%- if current_variant.available -%}{{ 'products.add_to_cart' | t }}{%- else -%}{{ 'products.sold_out' | t }}{%- endif -%}
           </button>
 
         </div>
@@ -180,40 +180,40 @@
       <div class="product-main__trust">
         <div class="product-main__trust-item">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          <span>Free Shipping</span>
+          <span>{{ 'products.trust.free_shipping' | t }}</span>
         </div>
         <div class="product-main__trust-item">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <span>30-Day Returns</span>
+          <span>{{ 'products.trust.returns' | t }}</span>
         </div>
         <div class="product-main__trust-item">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-          <span>Secure Payment</span>
+          <span>{{ 'products.trust.secure_payment' | t }}</span>
         </div>
       </div>
 
       <!-- ===== BUY MORE SAVE MORE ===== -->
       <div class="product-main__volume">
-        <p class="product-main__volume-heading">Buy More, Save More</p>
-        <table class="volume-table" aria-label="Volume discount table">
+        <p class="product-main__volume-heading">{{ 'products.volume.heading' | t }}</p>
+        <table class="volume-table" aria-label="{{ 'products.volume.heading' | t }}">
           <thead>
             <tr>
-              <th scope="col">Quantity</th>
-              <th scope="col">You Save</th>
+              <th scope="col">{{ 'products.volume.quantity_col' | t }}</th>
+              <th scope="col">{{ 'products.volume.you_save_col' | t }}</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Buy 2</td>
-              <td class="volume-table__discount">10% off</td>
+              <td>{{ 'products.volume.buy_2' | t }}</td>
+              <td class="volume-table__discount">{{ 'products.volume.off_10' | t }}</td>
             </tr>
             <tr>
-              <td>Buy 3</td>
-              <td class="volume-table__discount">15% off</td>
+              <td>{{ 'products.volume.buy_3' | t }}</td>
+              <td class="volume-table__discount">{{ 'products.volume.off_15' | t }}</td>
             </tr>
             <tr>
-              <td>Buy 4+</td>
-              <td class="volume-table__discount">20% off</td>
+              <td>{{ 'products.volume.buy_4_plus' | t }}</td>
+              <td class="volume-table__discount">{{ 'products.volume.off_20' | t }}</td>
             </tr>
           </tbody>
         </table>
@@ -258,7 +258,7 @@
       {%- if section.settings.in_the_box != blank -%}
         <p class="product-main__in-the-box">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-          <span class="product-main__in-the-box-label">In the box:&nbsp;</span>{{ section.settings.in_the_box }}
+          <span class="product-main__in-the-box-label">{{ 'products.in_the_box' | t }}&nbsp;</span>{{ section.settings.in_the_box }}
         </p>
       {%- endif -%}
 
@@ -285,7 +285,7 @@
   </div>
   {%- form 'product', product, id: 'sticky-atc-form' -%}
     <input type="hidden" name="id" id="sticky-variant-id" value="{{ current_variant.id }}">
-    <button type="submit" class="btn btn-gold sticky-atc__btn">Add to Cart</button>
+    <button type="submit" class="btn btn-gold sticky-atc__btn">{{ 'products.add_to_cart' | t }}</button>
   {%- endform -%}
 </div>
 
@@ -297,7 +297,38 @@
 {% schema %}
 {
   "name": "Product Main",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "highlight_1",
+      "label": "Highlight 1",
+      "default": "Warm ambient glow for any room"
+    },
+    {
+      "type": "text",
+      "id": "highlight_2",
+      "label": "Highlight 2",
+      "default": "Cordless & portable design"
+    },
+    {
+      "type": "text",
+      "id": "highlight_3",
+      "label": "Highlight 3",
+      "default": "Dimmable with touch control"
+    },
+    {
+      "type": "text",
+      "id": "highlight_4",
+      "label": "Highlight 4",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "in_the_box",
+      "label": "In the Box contents",
+      "default": "Lamp, USB charging cable, user guide"
+    }
+  ],
   "presets": [{ "name": "Product Main" }]
 }
 {% endschema %}

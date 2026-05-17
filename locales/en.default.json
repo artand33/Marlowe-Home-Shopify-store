@@ -15,6 +15,7 @@
   },
   "header": {
     "nav": {
+      "home": "Home",
       "sale": "Spring Sale",
       "collections": "Collections",
       "about": "About",
@@ -35,7 +36,31 @@
     "sale": "Sale",
     "save": "Save {{ amount }}",
     "unavailable": "Unavailable",
-    "on_sale": "On Sale"
+    "on_sale": "On Sale",
+    "quantity": "Quantity",
+    "save_percent": "Save {{ percent }}%",
+    "stock_notice": "🔴 UPDATE — High demand: only a few units left in our warehouse. Orders are being processed daily.",
+    "urgency": "Spring Sale — only a few left at this price",
+    "trust": {
+      "free_shipping": "Free Shipping",
+      "returns": "30-Day Returns",
+      "secure_payment": "Secure Payment"
+    },
+    "countdown": {
+      "label": "Sale ends in:"
+    },
+    "volume": {
+      "heading": "Buy More, Save More",
+      "quantity_col": "Quantity",
+      "you_save_col": "You Save",
+      "buy_2": "Buy 2",
+      "buy_3": "Buy 3",
+      "buy_4_plus": "Buy 4+",
+      "off_10": "10% off",
+      "off_15": "15% off",
+      "off_20": "20% off"
+    },
+    "in_the_box": "In the box:"
   },
   "cart": {
     "title": "Your Cart",
@@ -48,7 +73,11 @@
     "total": "Total",
     "checkout": "Proceed to Checkout",
     "free_shipping_note": "Free shipping on orders over €50",
-    "remove": "Remove"
+    "remove": "Remove",
+    "order_summary": "Order Summary",
+    "free": "Free",
+    "estimated_total": "Estimated Total",
+    "start_shopping": "Start Shopping"
   },
   "search": {
     "title": "Search",
@@ -89,5 +118,8 @@
     "skip_to_content": "Skip to content",
     "close_menu": "Close menu",
     "open_menu": "Open menu"
+  },
+  "localization": {
+    "language_label": "Language"
   }
 }

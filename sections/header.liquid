@@ -66,11 +66,29 @@
       <a href="/pages/contact" class="header__nav-link">
         {{ section.settings.nav_contact | default: 'Contact' }}
       </a>
+
+      <!-- Language Switcher — Desktop -->
+      {%- if localization.available_languages.size > 1 -%}
+        {%- form 'localization', return_to: request.path, class: 'lang-form lang-form--desktop' -%}
+          <div class="lang-switcher" role="group" aria-label="{{ 'localization.language_label' | t }}">
+            {%- for language in localization.available_languages -%}
+              <button
+                class="lang-btn{% if language.iso_code == localization.language.iso_code %} is-active{% endif %}"
+                name="locale_code"
+                value="{{ language.iso_code }}"
+                type="submit"
+                aria-pressed="{{ language.iso_code == localization.language.iso_code }}"
+              >{{ language.iso_code | upcase }}</button>
+              {%- unless forloop.last -%}<span class="lang-sep" aria-hidden="true">|</span>{%- endunless -%}
+            {%- endfor -%}
+          </div>
+        {%- endform -%}
+      {%- endif -%}
     </nav>
 
     <div class="header__mobile-end">
       <div class="header__icons">
-        <a href="{{ routes.search_url }}" class="header__icon-btn header__icon-btn--search" aria-label="Search">
+        <a href="{{ routes.search_url }}" class="header__icon-btn header__icon-btn--search" aria-label="{{ 'general.search' | t }}">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </a>
 
@@ -78,7 +96,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </a>
 
-        <a href="{{ routes.cart_url }}" class="header__icon-btn" aria-label="Cart ({{ cart.item_count }} items)">
+        <a href="{{ routes.cart_url }}" class="header__icon-btn" aria-label="{{ 'cart.title' | t }} ({{ cart.item_count }})">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           {%- if cart.item_count > 0 %}
             <span class="cart-count">{{ cart.item_count }}</span>
@@ -86,7 +104,7 @@
         </a>
       </div>
 
-      <button class="header__hamburger" aria-label="Open menu" aria-expanded="false">
+      <button class="header__hamburger" aria-label="{{ 'accessibility.open_menu' | t }}" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -99,16 +117,36 @@
 <!-- Mobile Navigation Overlay -->
 <nav class="mobile-nav" aria-label="Mobile navigation">
   <div class="mobile-nav__panel">
-    <button class="mobile-nav__close" aria-label="Close menu">&#215;</button>
+    <button class="mobile-nav__close" aria-label="{{ 'accessibility.close_menu' | t }}">&#215;</button>
     <ul class="mobile-nav__links">
-      <li><a href="/" class="mobile-nav__link">Home</a></li>
-      <li><a href="/collections/all" class="mobile-nav__link mobile-nav__link--sale">Spring Sale</a></li>
-      <li><a href="/collections" class="mobile-nav__link">Collections</a></li>
-      <li><a href="/pages/about" class="mobile-nav__link">About</a></li>
-      <li><a href="/pages/track-order" class="mobile-nav__link">Track Order</a></li>
-      <li><a href="/pages/contact" class="mobile-nav__link">Contact</a></li>
-      <li><a href="{{ routes.cart_url }}" class="mobile-nav__link">Cart ({{ cart.item_count }})</a></li>
+      <li><a href="/" class="mobile-nav__link">{{ 'header.nav.home' | t }}</a></li>
+      <li><a href="/collections/all" class="mobile-nav__link mobile-nav__link--sale">{{ 'header.nav.sale' | t }}</a></li>
+      <li><a href="/collections" class="mobile-nav__link">{{ 'header.nav.collections' | t }}</a></li>
+      <li><a href="/pages/about" class="mobile-nav__link">{{ 'header.nav.about' | t }}</a></li>
+      <li><a href="/pages/track-order" class="mobile-nav__link">{{ 'header.nav.track' | t }}</a></li>
+      <li><a href="/pages/contact" class="mobile-nav__link">{{ 'header.nav.contact' | t }}</a></li>
+      <li><a href="{{ routes.cart_url }}" class="mobile-nav__link">{{ 'cart.title' | t }} ({{ cart.item_count }})</a></li>
     </ul>
+
+    <!-- Language Switcher — Mobile -->
+    {%- if localization.available_languages.size > 1 -%}
+      <div class="mobile-nav__lang">
+        {%- form 'localization', return_to: request.path, class: 'lang-form lang-form--mobile' -%}
+          <div class="lang-switcher" role="group" aria-label="{{ 'localization.language_label' | t }}">
+            {%- for language in localization.available_languages -%}
+              <button
+                class="lang-btn{% if language.iso_code == localization.language.iso_code %} is-active{% endif %}"
+                name="locale_code"
+                value="{{ language.iso_code }}"
+                type="submit"
+                aria-pressed="{{ language.iso_code == localization.language.iso_code }}"
+              >{{ language.iso_code | upcase }}</button>
+              {%- unless forloop.last -%}<span class="lang-sep" aria-hidden="true">|</span>{%- endunless -%}
+            {%- endfor -%}
+          </div>
+        {%- endform -%}
+      </div>
+    {%- endif -%}
   </div>
 </nav>
 

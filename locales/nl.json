@@ -1,0 +1,116 @@
+{
+  "general": {
+    "shop_name": "Marlowe Home",
+    "close": "Sluiten",
+    "search": "Zoeken"
+  },
+  "header": {
+    "nav": {
+      "home": "Home",
+      "sale": "Lente Sale",
+      "collections": "Collecties",
+      "about": "Over Ons",
+      "track": "Bestelling Volgen",
+      "contact": "Contact"
+    },
+    "search_placeholder": "Zoek producten...",
+    "cart_count": "{{ count }} artikelen"
+  },
+  "announcement": {
+    "message_1": "Gratis verzending bij bestellingen boven €50",
+    "message_2": "30 dagen niet goed, geld terug",
+    "message_3": "Lente Sale — 40% korting op geselecteerde artikelen"
+  },
+  "products": {
+    "add_to_cart": "In winkelwagen",
+    "sold_out": "Uitverkocht",
+    "sale": "Sale",
+    "save": "Bespaar {{ amount }}",
+    "unavailable": "Niet beschikbaar",
+    "on_sale": "In de aanbieding",
+    "quantity": "Aantal",
+    "save_percent": "Bespaar {{ percent }}%",
+    "stock_notice": "🔴 UPDATE — Hoge vraag: nog maar een paar stuks over in ons magazijn. Bestellingen worden dagelijks verwerkt.",
+    "urgency": "Lente Sale — nog maar een paar op deze prijs",
+    "trust": {
+      "free_shipping": "Gratis verzending",
+      "returns": "30 dagen retour",
+      "secure_payment": "Veilig betalen"
+    },
+    "countdown": {
+      "label": "Aanbieding eindigt over:"
+    },
+    "volume": {
+      "heading": "Meer kopen, meer besparen",
+      "quantity_col": "Aantal",
+      "you_save_col": "Jij bespaart",
+      "buy_2": "Koop er 2",
+      "buy_3": "Koop er 3",
+      "buy_4_plus": "Koop er 4+",
+      "off_10": "10% korting",
+      "off_15": "15% korting",
+      "off_20": "20% korting"
+    },
+    "in_the_box": "In de doos:"
+  },
+  "cart": {
+    "title": "Je winkelwagen",
+    "empty": "Je winkelwagen is leeg",
+    "empty_sub": "Het lijkt erop dat je nog niets hebt toegevoegd.",
+    "continue_shopping": "Verder winkelen",
+    "subtotal": "Subtotaal",
+    "shipping": "Verzending",
+    "shipping_calculated": "Berekend bij het afrekenen",
+    "total": "Totaal",
+    "checkout": "Afrekenen",
+    "free_shipping_note": "Gratis verzending bij bestellingen boven €50",
+    "remove": "Verwijderen",
+    "order_summary": "Besteloverzicht",
+    "free": "Gratis",
+    "estimated_total": "Geschat totaal",
+    "start_shopping": "Begin met winkelen"
+  },
+  "search": {
+    "title": "Zoeken",
+    "placeholder": "Zoek in onze winkel...",
+    "submit": "Zoeken",
+    "results_with_count": "{{ count }} resultaten voor \"{{ terms }}\"",
+    "no_results": "Geen resultaten voor \"{{ terms }}\". Controleer de spelling of gebruik een ander woord."
+  },
+  "pages": {
+    "404": {
+      "title": "Pagina niet gevonden",
+      "subheading": "De pagina die je zocht bestaat niet.",
+      "cta": "Naar de homepage"
+    }
+  },
+  "footer": {
+    "newsletter_heading": "Word lid van de Marlowe Circle",
+    "newsletter_placeholder": "Je e-mailadres",
+    "newsletter_submit": "Inschrijven",
+    "newsletter_success": "Bedankt voor je inschrijving!",
+    "copyright": "© {{ year }} Marlowe Home. Alle rechten voorbehouden.",
+    "links": {
+      "shop": "Winkel",
+      "all_products": "Alle producten",
+      "collections": "Collecties",
+      "sale": "Lente Sale",
+      "about": "Over ons"
+    },
+    "policies": {
+      "heading": "Beleid",
+      "privacy": "Privacybeleid",
+      "returns": "Retour & terugbetaling",
+      "shipping": "Verzendbeleid",
+      "terms": "Servicevoorwaarden"
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "Sla over naar inhoud",
+    "close_menu": "Menu sluiten",
+    "open_menu": "Menu openen"
+  },
+  "localization": {
+    "language_label": "Taal"
+  }
+}

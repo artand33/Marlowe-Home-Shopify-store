@@ -1,26 +1,26 @@
 <section class="social-proof section-pad">
   <div class="container text-center">
-    <span class="label-tag">Customer Love</span>
-    <h2 class="social-proof__heading">{{ section.settings.heading | default: 'Trusted by 10,000+ Homes Across Europe' }}</h2>
+    <span class="label-tag">{{ 'sections.social_proof_reviews.label' | t }}</span>
+    <h2 class="social-proof__heading">{{ 'sections.social_proof_reviews.heading' | t }}</h2>
     <div class="social-proof__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
 
     <div class="reviews-strip">
       <div class="review-card">
         <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-card__text">"{{ section.settings.review_1_text | default: 'Absolutely stunning. The quality is incredible and delivery was super fast to Belgium. My living room has never looked so warm and inviting.' }}"</p>
-        <span class="review-card__author">— {{ section.settings.review_1_author | default: 'Sophie V.' }}</span>
+        <p class="review-card__text">"{{ 'sections.social_proof_reviews.review_1_text' | t }}"</p>
+        <span class="review-card__author">— {{ 'sections.social_proof_reviews.review_1_author' | t }}</span>
       </div>
 
       <div class="review-card">
         <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-card__text">"{{ section.settings.review_2_text | default: 'Finally a lighting brand that gets it. Premium quality, warm aesthetic - everything looks exactly as described. 100% recommend.' }}"</p>
-        <span class="review-card__author">— {{ section.settings.review_2_author | default: 'Thomas K.' }}</span>
+        <p class="review-card__text">"{{ 'sections.social_proof_reviews.review_2_text' | t }}"</p>
+        <span class="review-card__author">— {{ 'sections.social_proof_reviews.review_2_author' | t }}</span>
       </div>
 
       <div class="review-card">
         <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-card__text">"{{ section.settings.review_3_text | default: 'Ordered twice now. The candle holders are a masterpiece. My guests always ask where I bought them. Love Marlowe Home!' }}"</p>
-        <span class="review-card__author">— {{ section.settings.review_3_author | default: 'Emma D.' }}</span>
+        <p class="review-card__text">"{{ 'sections.social_proof_reviews.review_3_text' | t }}"</p>
+        <span class="review-card__author">— {{ 'sections.social_proof_reviews.review_3_author' | t }}</span>
       </div>
     </div>
   </div>
@@ -34,43 +34,43 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Trusted by 10,000+ Homes Across Europe"
+      "default": "t:sections.social_proof_reviews.heading"
     },
     {
       "type": "textarea",
       "id": "review_1_text",
       "label": "Review 1 Text",
-      "default": "Absolutely stunning. The quality is incredible and delivery was super fast to Belgium. My living room has never looked so warm and inviting."
+      "default": "t:sections.social_proof_reviews.review_1_text"
     },
     {
       "type": "text",
       "id": "review_1_author",
       "label": "Review 1 Author",
-      "default": "Sophie V."
+      "default": "t:sections.social_proof_reviews.review_1_author"
     },
     {
       "type": "textarea",
       "id": "review_2_text",
       "label": "Review 2 Text",
-      "default": "Finally a lighting brand that gets it. Premium quality, warm aesthetic - everything looks exactly as described. 100% recommend."
+      "default": "t:sections.social_proof_reviews.review_2_text"
     },
     {
       "type": "text",
       "id": "review_2_author",
       "label": "Review 2 Author",
-      "default": "Thomas K."
+      "default": "t:sections.social_proof_reviews.review_2_author"
     },
     {
       "type": "textarea",
       "id": "review_3_text",
       "label": "Review 3 Text",
-      "default": "Ordered twice now. The candle holders are a masterpiece. My guests always ask where I bought them. Love Marlowe Home!"
+      "default": "t:sections.social_proof_reviews.review_3_text"
     },
     {
       "type": "text",
       "id": "review_3_author",
       "label": "Review 3 Author",
-      "default": "Emma D."
+      "default": "t:sections.social_proof_reviews.review_3_author"
     }
   ],
   "presets": [{ "name": "Social Proof Reviews" }]

@@ -2,40 +2,42 @@
   <div class="reviews-grid__inner">
 
     <div class="reviews-grid__header">
-      <span class="label-tag">Customer Reviews</span>
-      <h2 class="reviews-grid__heading">{{ section.settings.heading | default: 'What Our Customers Say' }}</h2>
+      <span class="label-tag">{{ 'sections.reviews_grid.label' | t }}</span>
+      <h2 class="reviews-grid__heading">{{ 'sections.reviews_grid.heading' | t }}</h2>
       <span class="reviews-grid__underline"></span>
       <div class="reviews-grid__summary">
-        <span class="reviews-grid__stars" aria-label="4.8 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="reviews-grid__summary-text">{{ section.settings.rating | default: '4.8' }} out of 5 &nbsp;&middot;&nbsp; {{ section.settings.review_count | default: '500+' }} verified reviews</span>
+        {%- assign rating_value = section.settings.rating | default: '4.8' -%}
+        {%- assign count_value = section.settings.review_count | default: '500+' -%}
+        <span class="reviews-grid__stars" aria-label="{{ 'sections.reviews_grid.stars_label' | t: rating: rating_value }}">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="reviews-grid__summary-text">{{ 'sections.reviews_grid.summary_text' | t: rating: rating_value, count: count_value }}</span>
       </div>
     </div>
 
     <div class="reviews-grid__grid">
 
       {%- for i in (1..3) -%}
-        {%- assign title_key  = 'review_' | append: i | append: '_title' -%}
-        {%- assign text_key   = 'review_' | append: i | append: '_text' -%}
-        {%- assign author_key = 'review_' | append: i | append: '_author' -%}
-        {%- assign date_key   = 'review_' | append: i | append: '_date' -%}
         {%- assign rating_key = 'review_' | append: i | append: '_rating' -%}
-
         {%- assign rating_val = section.settings[rating_key] | default: 5 | plus: 0 -%}
+
+        {%- assign title_locale  = 'sections.reviews_grid.review_' | append: i | append: '_title' -%}
+        {%- assign text_locale   = 'sections.reviews_grid.review_' | append: i | append: '_text' -%}
+        {%- assign author_locale = 'sections.reviews_grid.review_' | append: i | append: '_author' -%}
+        {%- assign date_locale   = 'sections.reviews_grid.review_' | append: i | append: '_date' -%}
 
         <div class="review-card">
           <div class="review-card__top">
-            <div class="review-card__stars" aria-label="{{ rating_val }} out of 5 stars">
+            <div class="review-card__stars" aria-label="{{ 'sections.reviews_grid.card_stars_label' | t: rating: rating_val }}">
               {%- for s in (1..rating_val) -%}&#9733;{%- endfor -%}
               {%- assign empty = 5 | minus: rating_val -%}
               {%- for s in (1..empty) -%}<span class="review-card__star--empty">&#9733;</span>{%- endfor -%}
             </div>
-            <span class="review-card__date">{{ section.settings[date_key] | default: 'May 2025' }}</span>
+            <span class="review-card__date">{{ date_locale | t }}</span>
           </div>
-          <p class="review-card__title">{{ section.settings[title_key] | default: 'Absolutely love it!' }}</p>
-          <p class="review-card__text">&ldquo;{{ section.settings[text_key] | default: 'This product exceeded all my expectations. The quality is exceptional and delivery was quick.' }}&rdquo;</p>
+          <p class="review-card__title">{{ title_locale | t }}</p>
+          <p class="review-card__text">&ldquo;{{ text_locale | t }}&rdquo;</p>
           <div class="review-card__footer">
-            <span class="review-card__author">{{ section.settings[author_key] | default: 'Verified Customer' }}</span>
-            <span class="review-card__verified">&#10003; Verified Purchase</span>
+            <span class="review-card__author">{{ author_locale | t }}</span>
+            <span class="review-card__verified">&#10003; {{ 'sections.reviews_grid.verified_purchase' | t }}</span>
           </div>
         </div>
 
@@ -54,7 +56,7 @@
       "type": "text",
       "id": "heading",
       "label": "Section Heading",
-      "default": "What Our Customers Say"
+      "default": "t:sections.reviews_grid.heading"
     },
     {
       "type": "text",
@@ -85,25 +87,25 @@
       "type": "text",
       "id": "review_1_title",
       "label": "Title",
-      "default": "Exactly what I was looking for"
+      "default": "t:sections.reviews_grid.review_1_title"
     },
     {
       "type": "textarea",
       "id": "review_1_text",
       "label": "Review Text",
-      "default": "The lamp arrived beautifully packed. The brass finish is stunning and the light it casts is so warm and inviting. My living room has never looked so good."
+      "default": "t:sections.reviews_grid.review_1_text"
     },
     {
       "type": "text",
       "id": "review_1_author",
       "label": "Reviewer Name & Location",
-      "default": "Sophie V. — Belgium"
+      "default": "t:sections.reviews_grid.review_1_author"
     },
     {
       "type": "text",
       "id": "review_1_date",
       "label": "Date",
-      "default": "May 2025"
+      "default": "t:sections.reviews_grid.review_1_date"
     },
     {
       "type": "header",
@@ -122,25 +124,25 @@
       "type": "text",
       "id": "review_2_title",
       "label": "Title",
-      "default": "Premium quality, fast delivery"
+      "default": "t:sections.reviews_grid.review_2_title"
     },
     {
       "type": "textarea",
       "id": "review_2_text",
       "label": "Review Text",
-      "default": "Ordered on Monday, arrived Thursday to the Netherlands. The craftsmanship is excellent — feels like a luxury item at a very fair price. Highly recommend."
+      "default": "t:sections.reviews_grid.review_2_text"
     },
     {
       "type": "text",
       "id": "review_2_author",
       "label": "Reviewer Name & Location",
-      "default": "Thomas K. — Netherlands"
+      "default": "t:sections.reviews_grid.review_2_author"
     },
     {
       "type": "text",
       "id": "review_2_date",
       "label": "Date",
-      "default": "April 2025"
+      "default": "t:sections.reviews_grid.review_2_date"
     },
     {
       "type": "header",
@@ -159,25 +161,25 @@
       "type": "text",
       "id": "review_3_title",
       "label": "Title",
-      "default": "Ordered twice already"
+      "default": "t:sections.reviews_grid.review_3_title"
     },
     {
       "type": "textarea",
       "id": "review_3_text",
       "label": "Review Text",
-      "default": "This is my second purchase. The first lamp was such a hit that I bought another for my bedroom. Customer service was also fantastic. Love Marlowe Home!"
+      "default": "t:sections.reviews_grid.review_3_text"
     },
     {
       "type": "text",
       "id": "review_3_author",
       "label": "Reviewer Name & Location",
-      "default": "Emma D. — Belgium"
+      "default": "t:sections.reviews_grid.review_3_author"
     },
     {
       "type": "text",
       "id": "review_3_date",
       "label": "Date",
-      "default": "March 2025"
+      "default": "t:sections.reviews_grid.review_3_date"
     }
   ],
   "presets": [{ "name": "Reviews Grid" }]

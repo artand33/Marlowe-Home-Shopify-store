@@ -4,9 +4,9 @@
 <section class="upsell-bundle section-pad">
   <div class="container">
     <div class="section-header">
-      <span class="label-tag">Bundle & Save</span>
-      <h2 class="section-header__heading section-header__heading--dark">{{ section.settings.heading | default: 'Complete the Atmosphere - Save 15%' }}</h2>
-      <p class="section-header__sub">{{ section.settings.subheading | default: 'Customers who bought this also loved:' }}</p>
+      <span class="label-tag">{{ 'sections.upsell_bundle.label' | t }}</span>
+      <h2 class="section-header__heading section-header__heading--dark">{{ 'sections.upsell_bundle.heading' | t }}</h2>
+      <p class="section-header__sub">{{ 'sections.upsell_bundle.subheading' | t }}</p>
     </div>
 
     <div class="product-grid">
@@ -21,7 +21,7 @@
               {{ 'product-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
             </div>
             <div class="product-card__body">
-              <h3 class="product-card__title product-card__title--dark">Related Product {{ i }}</h3>
+              <h3 class="product-card__title product-card__title--dark">{{ 'sections.upsell_bundle.sample_product' | t }} {{ i }}</h3>
               <div class="product-card__price">
                 <span class="product-card__price-sale">€44.99</span>
                 <span class="product-card__price-compare">€79.99</span>
@@ -42,13 +42,13 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Complete the Atmosphere - Save 15%"
+      "default": "t:sections.upsell_bundle.heading"
     },
     {
       "type": "text",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Customers who bought this also loved:"
+      "default": "t:sections.upsell_bundle.subheading"
     },
     {
       "type": "collection",

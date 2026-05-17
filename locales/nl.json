@@ -11,7 +11,9 @@
   "general": {
     "shop_name": "Marlowe Home",
     "close": "Sluiten",
-    "search": "Zoeken"
+    "search": "Zoeken",
+    "previous": "Vorige",
+    "next": "Volgende"
   },
   "header": {
     "nav": {
@@ -28,7 +30,9 @@
   "announcement": {
     "message_1": "Gratis verzending bij bestellingen boven €50",
     "message_2": "30 dagen niet goed, geld terug",
-    "message_3": "Lente Sale — 40% korting op geselecteerde artikelen"
+    "message_3": "Lente Sale — 40% korting op geselecteerde artikelen",
+    "previous": "Vorig bericht",
+    "next": "Volgend bericht"
   },
   "products": {
     "add_to_cart": "In winkelwagen",
@@ -60,7 +64,12 @@
       "off_15": "15% korting",
       "off_20": "20% korting"
     },
-    "in_the_box": "In de doos:"
+    "in_the_box": "In de doos:",
+    "in_the_box_contents": "Lamp, USB-oplaadkabel, gebruikershandleiding",
+    "highlights_label": "Producteigenschappen",
+    "highlight_1": "Warme sfeervolle gloed voor elke kamer",
+    "highlight_2": "Draadloos & draagbaar ontwerp",
+    "highlight_3": "Dimbaar met touch-bediening"
   },
   "cart": {
     "title": "Je winkelwagen",
@@ -81,30 +90,46 @@
   },
   "search": {
     "title": "Zoeken",
+    "heading": "Zoek in onze winkel",
     "placeholder": "Zoek in onze winkel...",
     "submit": "Zoeken",
+    "results_title": "Resultaten voor \"{{ terms }}\"",
     "results_with_count": "{{ count }} resultaten voor \"{{ terms }}\"",
     "no_results": "Geen resultaten voor \"{{ terms }}\". Controleer de spelling of gebruik een ander woord."
+  },
+  "collection": {
+    "products_count": "{{ count }} producten",
+    "empty": "Geen producten gevonden in deze collectie.",
+    "sort": {
+      "featured": "Aanbevolen",
+      "price_asc": "Prijs: laag naar hoog",
+      "price_desc": "Prijs: hoog naar laag",
+      "newest": "Nieuwste",
+      "best_selling": "Best verkocht"
+    }
   },
   "pages": {
     "404": {
       "title": "Pagina niet gevonden",
-      "subheading": "De pagina die je zocht bestaat niet.",
+      "subheading": "De pagina die je zocht bestaat niet of is verplaatst.",
       "cta": "Naar de homepage"
     }
   },
   "footer": {
+    "brand_body": "Wij geloven dat je huis zich net zo goed moet voelen als het eruitziet. Premium verlichting en sfeerproducten, samengesteld voor het moderne Europese huis. Geïnspireerd door Britse elegantie.",
     "newsletter_heading": "Word lid van de Marlowe Circle",
     "newsletter_placeholder": "Je e-mailadres",
     "newsletter_submit": "Inschrijven",
     "newsletter_success": "Bedankt voor je inschrijving!",
     "copyright": "© {{ year }} Marlowe Home. Alle rechten voorbehouden.",
+    "information_heading": "Informatie",
     "links": {
       "shop": "Winkel",
       "all_products": "Alle producten",
       "collections": "Collecties",
       "sale": "Lente Sale",
-      "about": "Over ons"
+      "about": "Over ons",
+      "contact": "Contact"
     },
     "policies": {
       "heading": "Beleid",
@@ -114,10 +139,158 @@
       "terms": "Servicevoorwaarden"
     }
   },
+  "sections": {
+    "hero": {
+      "label": "Nieuwe Collectie",
+      "heading": "Licht verandert alles",
+      "subheading": "Ontdek premium verlichting, gemaakt voor het huis dat je verdient.",
+      "button_label": "Nu winkelen"
+    },
+    "trust_bar": {
+      "item_1_title": "Gratis verzending",
+      "item_1_sub": "Bij bestellingen boven €50",
+      "item_2_title": "30 dagen geld terug",
+      "item_2_sub": "Zonder vragen",
+      "item_3_title": "Veilig betalen",
+      "item_3_sub": "SSL-versleutelde checkout"
+    },
+    "featured_collection": {
+      "label": "Uitgelicht",
+      "heading": "Bestsellers",
+      "subheading": "Onze meest geliefde stukken van dit seizoen.",
+      "sample_product": "Voorbeeld product"
+    },
+    "new_arrivals": {
+      "label": "Net binnen",
+      "heading": "Nieuw binnen",
+      "subheading": "Verse stukken voor het seizoen.",
+      "sample_product": "Nieuw binnen"
+    },
+    "brand_story": {
+      "label": "Ons verhaal",
+      "heading": "Welkom bij Marlowe Home",
+      "body": "<p>Bij Marlowe Home geloven we dat je ruimte zich net zo goed moet voelen als het eruitziet. We selecteren verlichting en sfeerproducten met één ding voor ogen - warmte.</p><p>Ontworpen voor het moderne huis. Geïnspireerd door Britse elegantie.</p>"
+    },
+    "mood_banner": {
+      "heading": "Jouw huis. Jouw sfeer.",
+      "button_label": "Bekijk de collectie"
+    },
+    "lifestyle_split": {
+      "label": "Waarom Marlowe",
+      "heading": "Gemaakt voor de manier waarop jij leeft",
+      "bullet_1": "Samengesteld voor Belgische & Nederlandse huizen",
+      "bullet_2": "Premium materialen, eerlijke prijzen",
+      "bullet_3": "Ontworpen om sfeer te creëren, niet alleen licht",
+      "bullet_4": "Elk stuk getest op warmte en kwaliteit",
+      "button_label": "Ontdek ons verhaal"
+    },
+    "contact_cta": {
+      "label": "Klantenservice",
+      "heading": "Wij staan voor je klaar",
+      "body": "Ons team is beschikbaar maandag tot vrijdag, 9.00-18.00 uur CET. Gemiddelde reactietijd: 24 uur.",
+      "button_label": "Neem contact op"
+    },
+    "guarantee_block": {
+      "label": "Onze belofte",
+      "heading": "30 dagen niet goed, geld terug",
+      "body": "<p>Jouw geluk betekent alles voor ons. Elk Marlowe Home product komt met een volledige 30 dagen geld-terug-garantie. Als het niet goed voelt in je huis, stuur je het simpelweg terug - geen vragen, geen gedoe.</p>",
+      "button_label": "Meer over ons beleid"
+    },
+    "reviews_grid": {
+      "label": "Klantbeoordelingen",
+      "heading": "Wat onze klanten zeggen",
+      "stars_label": "{{ rating }} uit 5",
+      "summary_text": "{{ rating }} uit 5 · {{ count }} geverifieerde beoordelingen",
+      "card_stars_label": "{{ rating }} uit 5 sterren",
+      "verified_purchase": "Geverifieerde aankoop",
+      "review_1_title": "Precies wat ik zocht",
+      "review_1_text": "De lamp kwam prachtig verpakt aan. De messing afwerking is verbluffend en het licht is zo warm en uitnodigend. Mijn woonkamer heeft er nog nooit zo goed uitgezien.",
+      "review_1_author": "Sophie V. — België",
+      "review_1_date": "Mei 2025",
+      "review_2_title": "Premium kwaliteit, snelle levering",
+      "review_2_text": "Maandag besteld, donderdag bezorgd in Nederland. Het vakmanschap is uitstekend — voelt als een luxe item voor een zeer eerlijke prijs. Een echte aanrader.",
+      "review_2_author": "Thomas K. — Nederland",
+      "review_2_date": "April 2025",
+      "review_3_title": "Al twee keer besteld",
+      "review_3_text": "Dit is mijn tweede aankoop. De eerste lamp was zo'n succes dat ik er nog één voor mijn slaapkamer kocht. De klantenservice was ook fantastisch. Ik ben gek op Marlowe Home!",
+      "review_3_author": "Emma D. — België",
+      "review_3_date": "Maart 2025"
+    },
+    "social_proof_line": {
+      "text": "Margaret V. en 8.000+ anderen verlichten hun huis met Marlowe."
+    },
+    "social_proof_reviews": {
+      "label": "Klantenliefde",
+      "heading": "Vertrouwd door 10.000+ huizen in Europa",
+      "review_1_text": "Absoluut prachtig. De kwaliteit is ongelooflijk en de levering naar België was super snel. Mijn woonkamer heeft er nog nooit zo warm en uitnodigend uitgezien.",
+      "review_1_author": "Sophie V.",
+      "review_2_text": "Eindelijk een verlichtingsmerk dat het snapt. Premium kwaliteit, warme uitstraling - alles ziet er precies zo uit als beschreven. 100% aanrader.",
+      "review_2_author": "Thomas K.",
+      "review_3_text": "Inmiddels twee keer besteld. De kaarsenhouders zijn een meesterwerk. Mijn gasten vragen altijd waar ik ze heb gekocht. Ik ben gek op Marlowe Home!",
+      "review_3_author": "Emma D."
+    },
+    "community_trust": {
+      "label": "Community",
+      "heading": "De Marlowe Home Community",
+      "subheading": "Sluit je aan bij ruim 10.000 Europese huizen die kozen voor warmte.",
+      "rating_text": "Uitstekend · 4,8 uit 5"
+    },
+    "faq": {
+      "heading": "Veelgestelde vragen",
+      "subheading": "Alles wat je moet weten voordat je bestelt.",
+      "q1_question": "Leveren jullie aan België en Nederland?",
+      "q1_answer": "Ja, we leveren aan België, Nederland en de rest van de EU. Bestellingen komen meestal binnen 5–7 werkdagen aan met volledige track & trace.",
+      "q2_question": "Wat als ik mijn aankoop niet leuk vind?",
+      "q2_answer": "We bieden een 30 dagen geld-terug-garantie, zonder vragen. Als een stuk niet goed voelt in je huis, stuur je het terug voor een volledige terugbetaling.",
+      "q3_question": "Worden jullie producten getest op kwaliteit?",
+      "q3_answer": "Elk product is met de hand geselecteerd en getest op kwaliteit, duurzaamheid en warmte. We voeren alleen stukken die we ook in ons eigen huis zouden zetten.",
+      "q4_question": "Bieden jullie cadeauverpakking aan?",
+      "q4_answer": "We bieden premium cadeauverpakking aan op geselecteerde artikelen. Neem voor het bestellen contact op met ons team om dit te regelen voor iemand bijzonder.",
+      "q5_question": "Hoe volg ik mijn bestelling?",
+      "q5_answer": "Je ontvangt per e-mail een trackingnummer zodra je bestelling is verzonden. Zo volg je je pakket elke stap van de weg.",
+      "q6_question": "Hoe neem ik contact op met de klantenservice?",
+      "q6_answer": "Ons team is beschikbaar van maandag tot vrijdag, 9.00-18.00 uur CET. Bereik ons via de contactpagina en we reageren binnen 24 uur."
+    },
+    "upsell_bundle": {
+      "label": "Bundel & bespaar",
+      "heading": "Maak de sfeer compleet - bespaar 15%",
+      "subheading": "Klanten die dit kochten hielden ook van:",
+      "sample_product": "Gerelateerd product"
+    },
+    "collapsible_info": {
+      "block_1_title": "Verzendinformatie",
+      "block_1_body": "<p>We verzenden naar België en Nederland binnen 2-5 werkdagen. Alle bestellingen worden gevolgd en je ontvangt een tracking-link per e-mail zodra je bestelling is verzonden.</p>",
+      "block_2_title": "Retour & terugbetaling",
+      "block_2_body": "<p>We bieden een 30 dagen geld-terug-garantie. Ben je niet tevreden met je aankoop, neem dan binnen 30 dagen contact op en we regelen een volledige terugbetaling.</p>",
+      "block_3_title": "Heb je een vraag?",
+      "block_3_body": "<p>Ons klantenserviceteam is beschikbaar van maandag tot vrijdag, 9.00-18.00 uur CET. Gemiddelde reactietijd is 24 uur.</p>"
+    },
+    "product_description": {
+      "heading": "Waarom je dit geweldig zult vinden",
+      "fallback_body": "<p>Geef je ruimte een nieuwe uitstraling met dit prachtig gemaakte stuk. <strong>Ontworpen om sfeer te creëren</strong>, niet alleen licht — elk detail is doordacht om warmte en elegantie in je huis te brengen.</p><p>Of je nu de sfeer zet voor een avondje thuis of simpelweg je dagelijkse omgeving wilt verfraaien, dit stuk levert de ambiance die van een huis een thuis maakt.</p><p>Vervaardigd uit <strong>premium materialen</strong> en doordacht ontworpen voor het moderne Europese interieur.</p>"
+    },
+    "product_specs": {
+      "heading": "Productdetails",
+      "spec_1_label": "Afmetingen",
+      "spec_1_value": "Stel in via Shopify admin",
+      "spec_2_label": "Materialen",
+      "spec_2_value": "Stel in via Shopify admin",
+      "spec_3_label": "Stroomvoorziening",
+      "spec_3_value": "Stel in via Shopify admin",
+      "spec_4_label": "Onderhoud",
+      "spec_4_value": "Stel in via Shopify admin"
+    },
+    "product_secondary_image": {
+      "quote": "Warmte die je voelt. Sfeer die je ziet."
+    }
+  },
   "accessibility": {
     "skip_to_content": "Sla over naar inhoud",
     "close_menu": "Menu sluiten",
-    "open_menu": "Menu openen"
+    "open_menu": "Menu openen",
+    "main_nav": "Hoofdnavigatie",
+    "mobile_nav": "Mobiele navigatie",
+    "account": "Account"
   },
   "localization": {
     "language_label": "Taal"

@@ -11,7 +11,9 @@
   "general": {
     "shop_name": "Marlowe Home",
     "close": "Close",
-    "search": "Search"
+    "search": "Search",
+    "previous": "Previous",
+    "next": "Next"
   },
   "header": {
     "nav": {
@@ -28,7 +30,9 @@
   "announcement": {
     "message_1": "Free shipping on orders over €50",
     "message_2": "30-day money back guarantee",
-    "message_3": "Spring Sale — 40% off selected items"
+    "message_3": "Spring Sale — 40% off selected items",
+    "previous": "Previous message",
+    "next": "Next message"
   },
   "products": {
     "add_to_cart": "Add to Cart",
@@ -60,7 +64,12 @@
       "off_15": "15% off",
       "off_20": "20% off"
     },
-    "in_the_box": "In the box:"
+    "in_the_box": "In the box:",
+    "in_the_box_contents": "Lamp, USB charging cable, user guide",
+    "highlights_label": "Product highlights",
+    "highlight_1": "Warm ambient glow for any room",
+    "highlight_2": "Cordless & portable design",
+    "highlight_3": "Dimmable with touch control"
   },
   "cart": {
     "title": "Your Cart",
@@ -81,30 +90,46 @@
   },
   "search": {
     "title": "Search",
+    "heading": "Search Our Store",
     "placeholder": "Search our store...",
     "submit": "Search",
+    "results_title": "Results for \"{{ terms }}\"",
     "results_with_count": "{{ count }} results for \"{{ terms }}\"",
     "no_results": "No results for \"{{ terms }}\". Check the spelling or use a different word."
+  },
+  "collection": {
+    "products_count": "{{ count }} products",
+    "empty": "No products found in this collection.",
+    "sort": {
+      "featured": "Featured",
+      "price_asc": "Price: Low to High",
+      "price_desc": "Price: High to Low",
+      "newest": "Newest",
+      "best_selling": "Best Selling"
+    }
   },
   "pages": {
     "404": {
       "title": "Page Not Found",
-      "subheading": "The page you were looking for doesn't exist.",
+      "subheading": "The page you were looking for doesn't exist or has been moved.",
       "cta": "Go to Homepage"
     }
   },
   "footer": {
+    "brand_body": "We believe your home should feel as good as it looks. Premium lighting and ambiance products, curated for the modern European home. Inspired by British elegance.",
     "newsletter_heading": "Join the Marlowe Circle",
     "newsletter_placeholder": "Your email address",
     "newsletter_submit": "Subscribe",
     "newsletter_success": "Thank you for subscribing!",
     "copyright": "© {{ year }} Marlowe Home. All rights reserved.",
+    "information_heading": "Information",
     "links": {
       "shop": "Shop",
       "all_products": "All Products",
       "collections": "Collections",
       "sale": "Spring Sale",
-      "about": "About Us"
+      "about": "About Us",
+      "contact": "Contact Us"
     },
     "policies": {
       "heading": "Policies",
@@ -114,10 +139,158 @@
       "terms": "Terms of Service"
     }
   },
+  "sections": {
+    "hero": {
+      "label": "New Collection",
+      "heading": "Light Changes Everything",
+      "subheading": "Discover premium lighting crafted for the home you deserve.",
+      "button_label": "Shop Now"
+    },
+    "trust_bar": {
+      "item_1_title": "Free Shipping",
+      "item_1_sub": "On orders over €50",
+      "item_2_title": "30-Day Money Back",
+      "item_2_sub": "No questions asked",
+      "item_3_title": "Secure Payment",
+      "item_3_sub": "SSL encrypted checkout"
+    },
+    "featured_collection": {
+      "label": "Featured",
+      "heading": "Best Sellers",
+      "subheading": "Our most loved pieces this season.",
+      "sample_product": "Sample Product"
+    },
+    "new_arrivals": {
+      "label": "Just In",
+      "heading": "New Arrivals",
+      "subheading": "Fresh pieces for the season.",
+      "sample_product": "New Arrival"
+    },
+    "brand_story": {
+      "label": "Our Story",
+      "heading": "Welcome to Marlowe Home",
+      "body": "<p>At Marlowe Home, we believe your space should feel as good as it looks. We curate lighting and ambiance products with one thing in mind - warmth.</p><p>Designed for the modern home. Inspired by British elegance.</p>"
+    },
+    "mood_banner": {
+      "heading": "Your home. Your atmosphere.",
+      "button_label": "Shop the Collection"
+    },
+    "lifestyle_split": {
+      "label": "Why Marlowe",
+      "heading": "Crafted for the way you live",
+      "bullet_1": "Curated for Belgian & Dutch homes",
+      "bullet_2": "Premium materials, honest prices",
+      "bullet_3": "Designed to create atmosphere, not just light",
+      "bullet_4": "Every piece tested for warmth and quality",
+      "button_label": "Discover Our Story"
+    },
+    "contact_cta": {
+      "label": "Support",
+      "heading": "We're here for you",
+      "body": "Our team is available Monday-Friday, 9am-6pm CET. Average response time: 24 hours.",
+      "button_label": "Contact Us"
+    },
+    "guarantee_block": {
+      "label": "Our Promise",
+      "heading": "30-Day Money Back Guarantee",
+      "body": "<p>Your happiness means everything to us. Every Marlowe Home product comes with a full 30-day money-back guarantee. If it doesn't feel right in your home, simply return it - no questions asked, no hassle.</p>",
+      "button_label": "Learn More About Our Policy"
+    },
+    "reviews_grid": {
+      "label": "Customer Reviews",
+      "heading": "What Our Customers Say",
+      "stars_label": "{{ rating }} out of 5",
+      "summary_text": "{{ rating }} out of 5 · {{ count }} verified reviews",
+      "card_stars_label": "{{ rating }} out of 5 stars",
+      "verified_purchase": "Verified Purchase",
+      "review_1_title": "Exactly what I was looking for",
+      "review_1_text": "The lamp arrived beautifully packed. The brass finish is stunning and the light it casts is so warm and inviting. My living room has never looked so good.",
+      "review_1_author": "Sophie V. — Belgium",
+      "review_1_date": "May 2025",
+      "review_2_title": "Premium quality, fast delivery",
+      "review_2_text": "Ordered on Monday, arrived Thursday to the Netherlands. The craftsmanship is excellent — feels like a luxury item at a very fair price. Highly recommend.",
+      "review_2_author": "Thomas K. — Netherlands",
+      "review_2_date": "April 2025",
+      "review_3_title": "Ordered twice already",
+      "review_3_text": "This is my second purchase. The first lamp was such a hit that I bought another for my bedroom. Customer service was also fantastic. Love Marlowe Home!",
+      "review_3_author": "Emma D. — Belgium",
+      "review_3_date": "March 2025"
+    },
+    "social_proof_line": {
+      "text": "Margaret V. and 8,000+ others are lighting their home with Marlowe."
+    },
+    "social_proof_reviews": {
+      "label": "Customer Love",
+      "heading": "Trusted by 10,000+ Homes Across Europe",
+      "review_1_text": "Absolutely stunning. The quality is incredible and delivery was super fast to Belgium. My living room has never looked so warm and inviting.",
+      "review_1_author": "Sophie V.",
+      "review_2_text": "Finally a lighting brand that gets it. Premium quality, warm aesthetic - everything looks exactly as described. 100% recommend.",
+      "review_2_author": "Thomas K.",
+      "review_3_text": "Ordered twice now. The candle holders are a masterpiece. My guests always ask where I bought them. Love Marlowe Home!",
+      "review_3_author": "Emma D."
+    },
+    "community_trust": {
+      "label": "Community",
+      "heading": "The Marlowe Home Community",
+      "subheading": "Join over 10,000 European homes that chose warmth.",
+      "rating_text": "Excellent · 4.8 out of 5"
+    },
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "subheading": "Everything you need to know before you order.",
+      "q1_question": "Do you ship to Belgium and the Netherlands?",
+      "q1_answer": "Yes, we ship to Belgium, the Netherlands, and across the EU. Orders typically arrive within 5–7 business days with full tracked delivery.",
+      "q2_question": "What if I don't love my purchase?",
+      "q2_answer": "We offer a 30-day money-back guarantee, no questions asked. If a piece doesn't feel right in your home, return it for a full refund.",
+      "q3_question": "Are your products tested for quality?",
+      "q3_answer": "Every product is hand-selected and tested for quality, durability, and warmth. We only carry pieces we would place in our own homes.",
+      "q4_question": "Do you offer gift wrapping?",
+      "q4_answer": "We offer premium gift packaging on select items. Contact our team before ordering to arrange this for someone special.",
+      "q5_question": "How do I track my order?",
+      "q5_answer": "You will receive a tracking number by email as soon as your order ships. You can follow your package every step of the way.",
+      "q6_question": "How do I contact customer support?",
+      "q6_answer": "Our team is available Monday to Friday, 9am to 6pm CET. Reach us via the contact page and we will respond within 24 hours."
+    },
+    "upsell_bundle": {
+      "label": "Bundle & Save",
+      "heading": "Complete the Atmosphere - Save 15%",
+      "subheading": "Customers who bought this also loved:",
+      "sample_product": "Related Product"
+    },
+    "collapsible_info": {
+      "block_1_title": "Shipping Information",
+      "block_1_body": "<p>We ship to Belgium and the Netherlands within 2-5 business days. All orders are tracked and you will receive a tracking link via email once your order is dispatched.</p>",
+      "block_2_title": "Returns & Refund Policy",
+      "block_2_body": "<p>We offer a 30-day money back guarantee. If you are not satisfied with your purchase, contact us within 30 days and we will arrange a full refund.</p>",
+      "block_3_title": "Have a Question?",
+      "block_3_body": "<p>Our customer support team is available Monday to Friday, 9am-6pm CET. Average response time is 24 hours.</p>"
+    },
+    "product_description": {
+      "heading": "Why You Will Love This",
+      "fallback_body": "<p>Transform your space with this beautifully crafted piece. <strong>Designed to create atmosphere</strong>, not just light — every detail has been considered to bring warmth and elegance to your home.</p><p>Whether you're setting the mood for an evening in, or simply elevating your everyday surroundings, this piece delivers the kind of ambiance that turns a house into a home.</p><p>Crafted from <strong>premium materials</strong> and thoughtfully designed for the modern European interior.</p>"
+    },
+    "product_specs": {
+      "heading": "Product Details",
+      "spec_1_label": "Dimensions",
+      "spec_1_value": "Set in Shopify admin",
+      "spec_2_label": "Materials",
+      "spec_2_value": "Set in Shopify admin",
+      "spec_3_label": "Power Source",
+      "spec_3_value": "Set in Shopify admin",
+      "spec_4_label": "Care Instructions",
+      "spec_4_value": "Set in Shopify admin"
+    },
+    "product_secondary_image": {
+      "quote": "Warmth you can feel. Atmosphere you can see."
+    }
+  },
   "accessibility": {
     "skip_to_content": "Skip to content",
     "close_menu": "Close menu",
-    "open_menu": "Open menu"
+    "open_menu": "Open menu",
+    "main_nav": "Main navigation",
+    "mobile_nav": "Mobile navigation",
+    "account": "Account"
   },
   "localization": {
     "language_label": "Language"

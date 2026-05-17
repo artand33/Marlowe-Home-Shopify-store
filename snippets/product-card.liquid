@@ -11,7 +11,7 @@
 
     {%- if product.compare_at_price > product.price %}
       {%- assign savings = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price -%}
-      <span class="product-card__badge">Save {{ savings }}%</span>
+      <span class="product-card__badge">{{ 'products.save_percent' | t: percent: savings }}</span>
     {%- endif %}
   </div>
 

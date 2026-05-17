@@ -1,6 +1,7 @@
+{%- assign quote_alt = 'sections.product_secondary_image.quote' | t -%}
 <section class="product-secondary-image">
   {%- if section.settings.image %}
-    {{ section.settings.image | image_url: width: 1800 | image_tag: loading: 'lazy', alt: section.settings.quote }}
+    {{ section.settings.image | image_url: width: 1800 | image_tag: loading: 'lazy', alt: quote_alt }}
   {%- elsif product.images[1] %}
     {{ product.images[1] | image_url: width: 1800 | image_tag: loading: 'lazy', alt: product.title }}
   {%- else %}
@@ -8,7 +9,7 @@
   {%- endif %}
   <div class="product-secondary-image__overlay">
     <p class="product-secondary-image__quote">
-      "{{ section.settings.quote | default: 'Warmth you can feel. Atmosphere you can see.' }}"
+      "{{ 'sections.product_secondary_image.quote' | t }}"
     </p>
   </div>
 </section>
@@ -27,7 +28,7 @@
       "type": "text",
       "id": "quote",
       "label": "Pull Quote",
-      "default": "Warmth you can feel. Atmosphere you can see."
+      "default": "t:sections.product_secondary_image.quote"
     }
   ],
   "presets": [{ "name": "Product Secondary Image" }]

@@ -1,6 +1,7 @@
+{%- assign hero_alt = 'sections.hero.heading' | t -%}
 <section class="hero-banner">
   {%- if section.settings.image %}
-    {{ section.settings.image | image_url: width: 1800 | image_tag: class: 'hero-banner__bg', loading: 'eager', fetchpriority: 'high', alt: section.settings.heading }}
+    {{ section.settings.image | image_url: width: 1800 | image_tag: class: 'hero-banner__bg', loading: 'eager', fetchpriority: 'high', alt: hero_alt }}
   {%- else %}
     <div class="hero-banner__bg img-placeholder img-placeholder--hero">
       <span class="img-placeholder__label">[ Upload image here ]</span>
@@ -10,14 +11,12 @@
   <div class="hero-banner__overlay"></div>
 
   <div class="hero-banner__content">
-    <span class="label-tag">{{ section.settings.label | default: 'New Collection' }}</span>
-    <h1 class="hero-banner__heading">{{ section.settings.heading | default: 'Light Changes Everything' }}</h1>
-    <p class="hero-banner__subheading">{{ section.settings.subheading | default: 'Discover premium lighting crafted for the home you deserve.' }}</p>
-    {%- if section.settings.button_label != blank %}
-      <a href="{{ section.settings.button_link | default: '/collections/all' }}" class="btn btn-gold">
-        {{ section.settings.button_label }}
-      </a>
-    {%- endif %}
+    <span class="label-tag">{{ 'sections.hero.label' | t }}</span>
+    <h1 class="hero-banner__heading">{{ 'sections.hero.heading' | t }}</h1>
+    <p class="hero-banner__subheading">{{ 'sections.hero.subheading' | t }}</p>
+    <a href="{{ section.settings.button_link | default: '/collections/all' }}" class="btn btn-gold">
+      {{ 'sections.hero.button_label' | t }}
+    </a>
   </div>
 </section>
 
@@ -35,25 +34,29 @@
       "type": "text",
       "id": "label",
       "label": "Label (above heading)",
-      "default": "New Collection"
+      "default": "t:sections.hero.label",
+      "info": "Edit text in Online Store → Themes → Edit default theme content."
     },
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Light Changes Everything"
+      "default": "t:sections.hero.heading",
+      "info": "Edit text in Online Store → Themes → Edit default theme content."
     },
     {
       "type": "text",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Discover premium lighting crafted for the home you deserve."
+      "default": "t:sections.hero.subheading",
+      "info": "Edit text in Online Store → Themes → Edit default theme content."
     },
     {
       "type": "text",
       "id": "button_label",
       "label": "Button Label",
-      "default": "Shop Now"
+      "default": "t:sections.hero.button_label",
+      "info": "Edit text in Online Store → Themes → Edit default theme content."
     },
     {
       "type": "url",

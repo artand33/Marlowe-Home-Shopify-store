@@ -6,12 +6,12 @@
       <button class="accordion-trigger" aria-expanded="false">
         <span class="accordion-trigger__label">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          {{ section.settings.block_1_title | default: 'Shipping Info' }}
+          {{ 'sections.collapsible_info.block_1_title' | t }}
         </span>
         <span class="accordion-trigger__icon">+</span>
       </button>
       <div class="accordion-body">
-        <div class="accordion-body__inner">{{ section.settings.block_1_body }}</div>
+        <div class="accordion-body__inner">{{ 'sections.collapsible_info.block_1_body' | t }}</div>
       </div>
     </div>
 
@@ -20,12 +20,12 @@
       <button class="accordion-trigger" aria-expanded="false">
         <span class="accordion-trigger__label">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5.5 11h13M5.5 15h13M9 7h6m-6 12h6M9 3l-1 2h8l-1-2H9z"/></svg>
-          {{ section.settings.block_2_title | default: 'Materials & Care' }}
+          {{ 'sections.collapsible_info.block_2_title' | t }}
         </span>
         <span class="accordion-trigger__icon">+</span>
       </button>
       <div class="accordion-body">
-        <div class="accordion-body__inner">{{ section.settings.block_2_body }}</div>
+        <div class="accordion-body__inner">{{ 'sections.collapsible_info.block_2_body' | t }}</div>
       </div>
     </div>
 
@@ -34,12 +34,12 @@
       <button class="accordion-trigger" aria-expanded="false">
         <span class="accordion-trigger__label">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg>
-          {{ section.settings.block_3_title | default: 'Returns Policy' }}
+          {{ 'sections.collapsible_info.block_3_title' | t }}
         </span>
         <span class="accordion-trigger__icon">+</span>
       </button>
       <div class="accordion-body">
-        <div class="accordion-body__inner">{{ section.settings.block_3_body }}</div>
+        <div class="accordion-body__inner">{{ 'sections.collapsible_info.block_3_body' | t }}</div>
       </div>
     </div>
 
@@ -54,37 +54,37 @@
       "type": "text",
       "id": "block_1_title",
       "label": "Block 1 Title",
-      "default": "Shipping Information"
+      "default": "t:sections.collapsible_info.block_1_title"
     },
     {
       "type": "richtext",
       "id": "block_1_body",
       "label": "Block 1 Body",
-      "default": "<p>We ship to Belgium and the Netherlands within 2-5 business days. All orders are tracked and you will receive a tracking link via email once your order is dispatched.</p>"
+      "default": "t:sections.collapsible_info.block_1_body"
     },
     {
       "type": "text",
       "id": "block_2_title",
       "label": "Block 2 Title",
-      "default": "Returns & Refund Policy"
+      "default": "t:sections.collapsible_info.block_2_title"
     },
     {
       "type": "richtext",
       "id": "block_2_body",
       "label": "Block 2 Body",
-      "default": "<p>We offer a 30-day money back guarantee. If you are not satisfied with your purchase, contact us within 30 days and we will arrange a full refund.</p>"
+      "default": "t:sections.collapsible_info.block_2_body"
     },
     {
       "type": "text",
       "id": "block_3_title",
       "label": "Block 3 Title",
-      "default": "Have a Question?"
+      "default": "t:sections.collapsible_info.block_3_title"
     },
     {
       "type": "richtext",
       "id": "block_3_body",
       "label": "Block 3 Body",
-      "default": "<p>Our customer support team is available Monday to Friday, 9am-6pm CET. Average response time is 24 hours.</p>"
+      "default": "t:sections.collapsible_info.block_3_body"
     }
   ],
   "presets": [{ "name": "Collapsible Info" }]

@@ -2,9 +2,9 @@
   <div class="faq-section__inner">
 
     <div class="faq-section__header">
-      <h2 class="faq-section__heading">{{ section.settings.heading | default: 'Frequently Asked Questions' }}</h2>
+      <h2 class="faq-section__heading">{{ 'sections.faq.heading' | t }}</h2>
       <span class="faq-section__underline"></span>
-      <p class="faq-section__subheading">{{ section.settings.subheading | default: 'Everything you need to know before you order.' }}</p>
+      <p class="faq-section__subheading">{{ 'sections.faq.subheading' | t }}</p>
     </div>
 
     <div class="faq-section__list">
@@ -20,60 +20,19 @@
         </div>
       {%- else -%}
         {%- comment %} Fallback hardcoded questions when no blocks are added yet {%- endcomment %}
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-trigger__text">Do you ship to Belgium and the Netherlands?</span>
-            <span class="faq-trigger__icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body__inner"><p>Yes, we ship to Belgium, the Netherlands, and across the EU. Orders typically arrive within 5–7 business days with full tracked delivery.</p></div>
+        {%- for i in (1..6) -%}
+          {%- assign q_key = 'sections.faq.q' | append: i | append: '_question' -%}
+          {%- assign a_key = 'sections.faq.q' | append: i | append: '_answer' -%}
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-trigger__text">{{ q_key | t }}</span>
+              <span class="faq-trigger__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body__inner"><p>{{ a_key | t }}</p></div>
+            </div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-trigger__text">What if I don't love my purchase?</span>
-            <span class="faq-trigger__icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body__inner"><p>We offer a 30-day money-back guarantee, no questions asked. If a piece doesn't feel right in your home, return it for a full refund.</p></div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-trigger__text">Are your products tested for quality?</span>
-            <span class="faq-trigger__icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body__inner"><p>Every product is hand-selected and tested for quality, durability, and warmth. We only carry pieces we would place in our own homes.</p></div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-trigger__text">Do you offer gift wrapping?</span>
-            <span class="faq-trigger__icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body__inner"><p>We offer premium gift packaging on select items. Contact our team before ordering to arrange this for someone special.</p></div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-trigger__text">How do I track my order?</span>
-            <span class="faq-trigger__icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body__inner"><p>You will receive a tracking number by email as soon as your order ships. You can follow your package every step of the way.</p></div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-trigger__text">How do I contact customer support?</span>
-            <span class="faq-trigger__icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body__inner"><p>Our team is available Monday to Friday, 9am to 6pm CET. Reach us via the contact page and we will respond within 24 hours.</p></div>
-          </div>
-        </div>
+        {%- endfor -%}
       {%- endfor -%}
     </div>
 
@@ -88,13 +47,13 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Frequently Asked Questions"
+      "default": "t:sections.faq.heading"
     },
     {
       "type": "text",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Everything you need to know before you order."
+      "default": "t:sections.faq.subheading"
     }
   ],
   "blocks": [
@@ -120,51 +79,7 @@
   "max_blocks": 8,
   "presets": [
     {
-      "name": "FAQ Accordion",
-      "blocks": [
-        {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do you ship to Belgium and the Netherlands?",
-            "answer": "<p>Yes, we ship to Belgium, the Netherlands, and across the EU. Orders typically arrive within 5–7 business days with full tracked delivery.</p>"
-          }
-        },
-        {
-          "type": "faq_item",
-          "settings": {
-            "question": "What if I don't love my purchase?",
-            "answer": "<p>We offer a 30-day money-back guarantee, no questions asked. If a piece doesn't feel right in your home, return it for a full refund.</p>"
-          }
-        },
-        {
-          "type": "faq_item",
-          "settings": {
-            "question": "Are your products tested for quality?",
-            "answer": "<p>Every product is hand-selected and tested for quality, durability, and warmth. We only carry pieces we would place in our own homes.</p>"
-          }
-        },
-        {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do you offer gift wrapping?",
-            "answer": "<p>We offer premium gift packaging on select items. Contact our team before ordering to arrange this for someone special.</p>"
-          }
-        },
-        {
-          "type": "faq_item",
-          "settings": {
-            "question": "How do I track my order?",
-            "answer": "<p>You will receive a tracking number by email as soon as your order ships. You can follow your package every step of the way.</p>"
-          }
-        },
-        {
-          "type": "faq_item",
-          "settings": {
-            "question": "How do I contact customer support?",
-            "answer": "<p>Our team is available Monday to Friday, 9am to 6pm CET. Reach us via the contact page and we will respond within 24 hours.</p>"
-          }
-        }
-      ]
+      "name": "FAQ Accordion"
     }
   ]
 }

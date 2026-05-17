@@ -220,47 +220,32 @@
       </div>
 
       <!-- ===== HIGHLIGHTS LIST ===== -->
-      {%- assign has_highlights = false -%}
-      {%- if section.settings.highlight_1 != blank or section.settings.highlight_2 != blank or section.settings.highlight_3 != blank or section.settings.highlight_4 != blank -%}
-        {%- assign has_highlights = true -%}
-      {%- endif -%}
-
-      {%- if has_highlights -%}
-        <ul class="product-main__highlights" aria-label="Product highlights">
-          {%- if section.settings.highlight_1 != blank -%}
-            <li class="product-main__highlight-item">
-              <svg class="product-main__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>{{ section.settings.highlight_1 }}</span>
-            </li>
-          {%- endif -%}
-          {%- if section.settings.highlight_2 != blank -%}
-            <li class="product-main__highlight-item">
-              <svg class="product-main__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>{{ section.settings.highlight_2 }}</span>
-            </li>
-          {%- endif -%}
-          {%- if section.settings.highlight_3 != blank -%}
-            <li class="product-main__highlight-item">
-              <svg class="product-main__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>{{ section.settings.highlight_3 }}</span>
-            </li>
-          {%- endif -%}
-          {%- if section.settings.highlight_4 != blank -%}
-            <li class="product-main__highlight-item">
-              <svg class="product-main__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>{{ section.settings.highlight_4 }}</span>
-            </li>
-          {%- endif -%}
-        </ul>
-      {%- endif -%}
+      <ul class="product-main__highlights" aria-label="{{ 'products.highlights_label' | t }}">
+        <li class="product-main__highlight-item">
+          <svg class="product-main__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>{{ 'products.highlight_1' | t }}</span>
+        </li>
+        <li class="product-main__highlight-item">
+          <svg class="product-main__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>{{ 'products.highlight_2' | t }}</span>
+        </li>
+        <li class="product-main__highlight-item">
+          <svg class="product-main__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>{{ 'products.highlight_3' | t }}</span>
+        </li>
+        {%- if section.settings.highlight_4 != blank -%}
+          <li class="product-main__highlight-item">
+            <svg class="product-main__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>{{ section.settings.highlight_4 }}</span>
+          </li>
+        {%- endif -%}
+      </ul>
 
       <!-- ===== IN THE BOX ===== -->
-      {%- if section.settings.in_the_box != blank -%}
-        <p class="product-main__in-the-box">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-          <span class="product-main__in-the-box-label">{{ 'products.in_the_box' | t }}&nbsp;</span>{{ section.settings.in_the_box }}
-        </p>
-      {%- endif -%}
+      <p class="product-main__in-the-box">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        <span class="product-main__in-the-box-label">{{ 'products.in_the_box' | t }}&nbsp;</span>{{ 'products.in_the_box_contents' | t }}
+      </p>
 
     </div>
   </div>
@@ -302,19 +287,19 @@
       "type": "text",
       "id": "highlight_1",
       "label": "Highlight 1",
-      "default": "Warm ambient glow for any room"
+      "default": "t:products.highlight_1"
     },
     {
       "type": "text",
       "id": "highlight_2",
       "label": "Highlight 2",
-      "default": "Cordless & portable design"
+      "default": "t:products.highlight_2"
     },
     {
       "type": "text",
       "id": "highlight_3",
       "label": "Highlight 3",
-      "default": "Dimmable with touch control"
+      "default": "t:products.highlight_3"
     },
     {
       "type": "text",
@@ -325,7 +310,7 @@
       "type": "text",
       "id": "in_the_box",
       "label": "In the Box contents",
-      "default": "Lamp, USB charging cable, user guide"
+      "default": "t:products.in_the_box_contents"
     }
   ],
   "presets": [{ "name": "Product Main" }]

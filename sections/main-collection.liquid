@@ -9,15 +9,15 @@
 <section class="main-collection">
   <div class="collection-toolbar">
     <span class="collection-toolbar__count">
-      {{ collection.products_count }} products
+      {{ 'collection.products_count' | t: count: collection.products_count }}
     </span>
     <div class="collection-toolbar__sort">
       <select onchange="window.location.href='?sort_by=' + this.value">
-        <option value="manual" {% if collection.sort_by == 'manual' %}selected{% endif %}>Featured</option>
-        <option value="price-ascending" {% if collection.sort_by == 'price-ascending' %}selected{% endif %}>Price: Low to High</option>
-        <option value="price-descending" {% if collection.sort_by == 'price-descending' %}selected{% endif %}>Price: High to Low</option>
-        <option value="created-descending" {% if collection.sort_by == 'created-descending' %}selected{% endif %}>Newest</option>
-        <option value="best-selling" {% if collection.sort_by == 'best-selling' %}selected{% endif %}>Best Selling</option>
+        <option value="manual" {% if collection.sort_by == 'manual' %}selected{% endif %}>{{ 'collection.sort.featured' | t }}</option>
+        <option value="price-ascending" {% if collection.sort_by == 'price-ascending' %}selected{% endif %}>{{ 'collection.sort.price_asc' | t }}</option>
+        <option value="price-descending" {% if collection.sort_by == 'price-descending' %}selected{% endif %}>{{ 'collection.sort.price_desc' | t }}</option>
+        <option value="created-descending" {% if collection.sort_by == 'created-descending' %}selected{% endif %}>{{ 'collection.sort.newest' | t }}</option>
+        <option value="best-selling" {% if collection.sort_by == 'best-selling' %}selected{% endif %}>{{ 'collection.sort.best_selling' | t }}</option>
       </select>
     </div>
   </div>
@@ -27,7 +27,7 @@
       {% render 'product-card', product: product, light: true %}
     {%- else -%}
       <p style="color: var(--color-text-muted); padding: 40px; grid-column: 1/-1; text-align:center;">
-        No products found in this collection.
+        {{ 'collection.empty' | t }}
       </p>
     {%- endfor -%}
   </div>

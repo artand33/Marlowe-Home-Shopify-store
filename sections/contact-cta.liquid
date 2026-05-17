@@ -1,13 +1,11 @@
 <section class="contact-cta section-pad">
   <div class="container">
-    <span class="label-tag">Support</span>
-    <h2 class="contact-cta__heading">{{ section.settings.heading | default: "We're here for you" }}</h2>
-    <p class="contact-cta__body">{{ section.settings.body | default: 'Our team is available Monday-Friday, 9am-6pm CET. Average response time: 24 hours.' }}</p>
-    {%- if section.settings.button_label != blank %}
-      <a href="{{ section.settings.button_link | default: '/pages/contact' }}" class="btn btn-gold">
-        {{ section.settings.button_label }}
-      </a>
-    {%- endif %}
+    <span class="label-tag">{{ 'sections.contact_cta.label' | t }}</span>
+    <h2 class="contact-cta__heading">{{ 'sections.contact_cta.heading' | t }}</h2>
+    <p class="contact-cta__body">{{ 'sections.contact_cta.body' | t }}</p>
+    <a href="{{ section.settings.button_link | default: '/pages/contact' }}" class="btn btn-gold">
+      {{ 'sections.contact_cta.button_label' | t }}
+    </a>
   </div>
 </section>
 
@@ -19,19 +17,19 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "We're here for you"
+      "default": "t:sections.contact_cta.heading"
     },
     {
       "type": "text",
       "id": "body",
       "label": "Body Text",
-      "default": "Our team is available Monday-Friday, 9am-6pm CET. Average response time: 24 hours."
+      "default": "t:sections.contact_cta.body"
     },
     {
       "type": "text",
       "id": "button_label",
       "label": "Button Label",
-      "default": "Contact Us"
+      "default": "t:sections.contact_cta.button_label"
     },
     {
       "type": "url",

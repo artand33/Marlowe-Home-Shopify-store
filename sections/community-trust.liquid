@@ -1,11 +1,11 @@
 <section class="community-trust section-pad">
   <div class="container">
-    <span class="label-tag">Community</span>
-    <h2 class="community-trust__heading">{{ section.settings.heading | default: 'The Marlowe Home Community' }}</h2>
-    <p class="community-trust__sub">{{ section.settings.subheading | default: 'Join over 10,000 European homes that chose warmth.' }}</p>
+    <span class="label-tag">{{ 'sections.community_trust.label' | t }}</span>
+    <h2 class="community-trust__heading">{{ 'sections.community_trust.heading' | t }}</h2>
+    <p class="community-trust__sub">{{ 'sections.community_trust.subheading' | t }}</p>
     <div class="trustpilot-badge">
       <span class="trustpilot-badge__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <span>Excellent · 4.8 out of 5</span>
+      <span>{{ 'sections.community_trust.rating_text' | t }}</span>
     </div>
   </div>
 </section>
@@ -18,13 +18,13 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "The Marlowe Home Community"
+      "default": "t:sections.community_trust.heading"
     },
     {
       "type": "text",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Join over 10,000 European homes that chose warmth."
+      "default": "t:sections.community_trust.subheading"
     }
   ],
   "presets": [{ "name": "Community Trust" }]

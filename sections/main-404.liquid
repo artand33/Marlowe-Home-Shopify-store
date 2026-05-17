@@ -1,9 +1,9 @@
 <section class="page-404">
   <div>
     <p class="page-404__number">404</p>
-    <h1 class="page-404__heading">Page Not Found</h1>
-    <p class="page-404__sub">The page you were looking for doesn't exist or has been moved.</p>
-    <a href="{{ routes.root_url }}" class="btn btn-gold">Go to Homepage</a>
+    <h1 class="page-404__heading">{{ 'pages.404.title' | t }}</h1>
+    <p class="page-404__sub">{{ 'pages.404.subheading' | t }}</p>
+    <a href="{{ routes.root_url }}" class="btn btn-gold">{{ 'pages.404.cta' | t }}</a>
   </div>
 </section>
 

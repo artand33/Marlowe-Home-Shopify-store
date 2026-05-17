@@ -43,13 +43,13 @@
 
 <div class="announcement-bar">
   <div class="announcement-bar__inner">
-    <button class="announcement-bar__arrow announcement-bar__arrow--prev" aria-label="Previous">&#8592;</button>
+    <button class="announcement-bar__arrow announcement-bar__arrow--prev" aria-label="{{ 'announcement.previous' | t }}">&#8592;</button>
     <div class="announcement-bar__messages">
-      <span class="announcement-bar__message">{{ section.settings.message_1 }}</span>
-      <span class="announcement-bar__message">{{ section.settings.message_2 }}</span>
-      <span class="announcement-bar__message">{{ section.settings.message_3 }}</span>
+      <span class="announcement-bar__message">{{ 'announcement.message_1' | t }}</span>
+      <span class="announcement-bar__message">{{ 'announcement.message_2' | t }}</span>
+      <span class="announcement-bar__message">{{ 'announcement.message_3' | t }}</span>
     </div>
-    <button class="announcement-bar__arrow announcement-bar__arrow--next" aria-label="Next">&#8594;</button>
+    <button class="announcement-bar__arrow announcement-bar__arrow--next" aria-label="{{ 'announcement.next' | t }}">&#8594;</button>
   </div>
 </div>
 
@@ -61,19 +61,22 @@
       "type": "text",
       "id": "message_1",
       "label": "Message 1",
-      "default": "Free shipping on orders over €50"
+      "default": "t:announcement.message_1",
+      "info": "Edit text in Online Store → Themes → Edit default theme content."
     },
     {
       "type": "text",
       "id": "message_2",
       "label": "Message 2",
-      "default": "30-day money back guarantee"
+      "default": "t:announcement.message_2",
+      "info": "Edit text in Online Store → Themes → Edit default theme content."
     },
     {
       "type": "text",
       "id": "message_3",
       "label": "Message 3",
-      "default": "Spring Sale — 40% off selected items"
+      "default": "t:announcement.message_3",
+      "info": "Edit text in Online Store → Themes → Edit default theme content."
     }
   ]
 }

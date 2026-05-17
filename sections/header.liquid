@@ -77,7 +77,7 @@
                 name="locale_code"
                 value="{{ language.iso_code }}"
                 type="submit"
-                aria-pressed="{{ language.iso_code == localization.language.iso_code }}"
+                aria-pressed="{% if language.iso_code == localization.language.iso_code %}true{% else %}false{% endif %}"
               >{{ language.iso_code | upcase }}</button>
               {%- unless forloop.last -%}<span class="lang-sep" aria-hidden="true">|</span>{%- endunless -%}
             {%- endfor -%}
@@ -139,7 +139,7 @@
                 name="locale_code"
                 value="{{ language.iso_code }}"
                 type="submit"
-                aria-pressed="{{ language.iso_code == localization.language.iso_code }}"
+                aria-pressed="{% if language.iso_code == localization.language.iso_code %}true{% else %}false{% endif %}"
               >{{ language.iso_code | upcase }}</button>
               {%- unless forloop.last -%}<span class="lang-sep" aria-hidden="true">|</span>{%- endunless -%}
             {%- endfor -%}
